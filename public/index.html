@@ -1,0 +1,181 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Thomas Dargent</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="build/tailwind.css" />
+		<script src="js/leader-line.min.js"></script>
+	</head>
+	<body class="bg-slate-100 w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900">
+		<nav class="fixed isolate z-50 m-0 p-4 text-xl lg:m-8">
+			<a
+				class="border-b border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent"
+				href=""
+				>Thomas Dargent</a
+			>
+			<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent">
+				<li class="hover:ml-4 hover:text-pacific-blue-600 p-1"><a href="#portfolio">Portfolio</a></li>
+				<li class="hover:ml-4 hover:text-pacific-blue-600 p-1"><a href="#blog">Blog</a></li>
+				<li class="px-1 hover:ml-4 hover:text-pacific-blue-600"><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<section class="flex h-[100vh] w-screen items-center justify-center overflow-x-hidden">
+			<div id="Logo" class="relative">
+				<svg
+					viewBox="0 0 100 100"
+					xmlns="http://www.w3.org/2000/svg"
+					class="absolute -top-12 left-[calc(50%-9rem)] w-72 animate-spin-slow font-heading [overflow:visible] sm:-top-24 sm:left-[calc(50%-16rem)] sm:w-[32rem] xl:-top-36 xl:left-[calc(50%-21rem)] xl:w-[42rem]"
+					alt="Developper — Data Scientist — Tinkerer">
+					<path
+						fill="#00000000"
+						id="circlePath"
+						d="
+          M 18,50
+          a 32,32 0 1,1 64,0
+          32,32 0 1,1 -64,0
+        " />
+					<text>
+						<textPath fill="#1680a4" href="#circlePath">
+							Developer — Data Scientist — Tinkerer —
+						</textPath>
+					</text>
+				</svg>
+				<img src="img/card.png" class="w-48 sm:w-80 xl:w-96" />
+			</div>
+		</section>
+		<section id="whoAmI" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+			<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left">Who am I ?</h1>
+			<div class="flex flex-col md:flex-row">
+				<img
+					src="img/avatar.png"
+					class="m-4 mx-auto block h-40 w-40 max-w-full hover:rotate-1 hover:bg-pink-400 sm:h-64 sm:w-64 md:m-8" />
+				<div class="prose block text-gray-700">
+					<span class="text-4xl text-pacific-blue-900">Hi !</span>
+					<p>
+						My name is Thomas, I'm 27 years old.
+						<br />
+						I'm a creative person passionate about <b>web development</b> and <b>data science</b>.
+						<br />
+						I love working on lasting and meaningful projects. <br />
+						With experience in both backend and frontend technologies, I focus on creating intuitive
+						and efficient user experiences. My work in <b>medical data research</b> and deep
+						learning has honed my ability to handle complex datasets and innovative solutions.<br />
+						I have recently learned <b>COBOL</b>, which is really fun, and I can't wait to build
+						more projects with it.<br />
+						You can find my CV on
+						<a href="https://www.linkedin.com/in/thomas-dargent1/">Linkedin</a>. I am eager to bring
+						my expertise to new and challenging projects.
+					</p>
+					<p>
+						<br />
+						I love punk rock music, cute animals (so every animal I guess), cooking pies, and
+						watching the sun rise. <br />
+						I draw stuff, write stuff, try to make music stuff, love to fix stuff, and all around I
+						like to make stuff. Which, I guess, you'll see in this space !
+					</p>
+				</div>
+			</div>
+		</section>
+		<section id="portfolio" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+			<div>
+				<h1 class="text-left font-heading text-8xl">Portfolio</h1>
+				<p class="prose">Here's some projects I'm proud of !</p>
+				<div class="flex gap-6 flex-wrap mb-4 mt-8">
+					<div class="h-56 w-56 flex-shrink-0 border-4 border-gray-900">
+						<div class="group relative h-full w-full p-2">
+							<img src="img/portfolio/site.png" class="cover h-full w-full mix-blend-multiply" />
+							<span
+								class="tech-project"
+								>Thomasdargent.com</span
+							>
+						</div>
+					</div>
+					<div class="h-56 w-56 flex-shrink-0 border-4 border-gray-900">
+						<div class="group relative h-full w-full p-2">
+							<img src="img/portfolio/sancho.png" class="cover h-full w-full mix-blend-multiply" />
+							<span
+								class="tech-project"
+								>sanchoetcompagnie.com</span
+							>
+						</div>
+					</div>
+				</div>
+		</section>
+		<section id="blog" class="block min-h-[70vh] bg-gray-100 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+			<div>
+				<h1 class="font-heading text-8xl">Blog</h1>
+				<p>I sometime write about stuff. You can read about it here.</p>
+				<p class="prose">
+					In the spirit of keeping this website a bit more like the old web, there's no comment or
+					like button. If you feel the need to say something (nice), or correct me, send me an
+					email/a message !
+				</p>
+				<ul
+					class="relative z-10 before:content-[' '] [&>*:nth-child(3n)]:shadow-punk after:content-[' '] relative my-8 grid max-w-screen-lg justify-evenly grid-flow-row grid-cols-1 items-start gap-1 before:absolute before:-left-10 before:h-full before:w-1 before:bg-gradient-to-t before:from-gray-100 before:via-gray-700 before:to-gray-900 after:absolute after:-top-7 lg:after:-top-10 after:-left-[3.4rem] lg:after:-left-[3.85rem] lg:after:border-[1.5rem] after:border-[1rem] after:border-transparent sm:after:border-b-gray-900 md:grid-cols-2 xl:before:-left-32 xl:after:-left-[9.4rem] [&>*:nth-child(5n)]:scale-[80%]">
+					<span class="italic sm:block -rotate-90 absolute -left-14 xl:-left-36 sm:top-10 md:top-1/2 hidden">time (day)</span>
+					<a href="articles/BrevoForm1.html"><li class="code" >
+						<div id="brevo-part-1">
+						Creating new contacts with Brevo in Django (<span
+							class="text-pacific-blue-600"
+							>19/10/2024</span
+						>)</div>
+					</li></a>
+				</ul>
+			</div>
+		</section>
+		<section
+			id="contact"
+			class="block min-h-[70vh] bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+			<div>
+				<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left">Contact</h1>
+			</div>
+			<div class="prose block text-gray-700">
+				<p>
+					You want to speak to me about fun projects, send me job offers, love letters or music
+					recommandations ? Maybe just chat and ask questions ? I would love to talk to you. Contact
+					me at:
+				</p>
+				<ul class="list-none p-0">
+					<li>
+						<a href="https://www.linkedin.com/in/thomas-dargent1/" class="block"
+							><img src="img/LinkedInIcon.png" class="m-2 inline-block w-8 md:w-16" /> LinkedIn</a
+						>
+					</li>
+					<li>
+						<a href="mailto:thomas@dargent.xyz" class="block text-nowrap"
+							><img src="img/emailIcon.png" class="m-2 inline-block w-8 md:w-16" />
+							thomas@dargent.xyz</a
+						>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<script>
+			var brevo_1 = document.getElementById('brevo-part-1');
+			var brevo_2 = document.getElementById('brevo-part-2');
+			console.log(brevo_1.clientHeight/2);
+			setTimeout(() => {
+				line = new LeaderLine(
+					brevo_1, brevo_2,
+					{dash: true, color: '#17a1c5', path:'fluid'}
+				);
+				line.setOptions({startSocket: 'right'})
+				line.startSocketGravity = [100, -10 ];
+			}, 300);
+			var ld_1 = document.getElementById('ld-part-1');
+			var ld_2 = document.getElementById('ld-part-2');
+			setTimeout(() => {
+				line = new LeaderLine(
+					ld_1, ld_2,
+					{dash: true, color: '#db8bc3', path:'fluid'}
+				);
+				line.setOptions({startSocket: 'left'})
+				line.startSocketGravity = [-130, 50 ];
+			}, 300);
+		</script>
+	</body>
+</html>

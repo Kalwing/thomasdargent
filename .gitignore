@@ -1,0 +1,9 @@
+.prettierrc
+package.json
+ref/
+*.pyc
+.ipynb_checkpoints
+articles_jupyter/*_files/
+articles_jupyter/img/
+articles_jupyter/*.html
+node_modules
