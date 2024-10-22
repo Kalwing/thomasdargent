@@ -715,6 +715,18 @@ select {
 .container {
   width: 100%;
 }
+@media (min-width: 256px) {
+
+  .container {
+    max-width: 256px;
+  }
+}
+@media (min-width: 416px) {
+
+  .container {
+    max-width: 416px;
+  }
+}
 @media (min-width: 640px) {
 
   .container {
@@ -1366,8 +1378,83 @@ select {
 .shadow-punk {
         box-shadow: 0.3rem 0.3rem 0 var(--tw-shadow-color);
     }
+.demo {
+        box-shadow: 0.3rem 0.3rem 0 var(--tw-shadow-color);
+        min-height: 24rem;
+        width: 100%;
+        border-width: 2px;
+        --tw-border-opacity: 1;
+        border-color: rgb(219 139 195 / var(--tw-border-opacity));
+        --tw-shadow-color: #db8bc3;
+        --tw-shadow: var(--tw-shadow-colored);
+    }
+.demo-container {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 40rem;
+}
+.demo-container::after {
+        content: ' ';
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        display: block;
+        height: 100%;
+        width: 1px;
+        --tw-bg-opacity: 1;
+        background-color: rgb(66 21 47 / var(--tw-bg-opacity))}
+.resizer {
+  position: absolute;
+  right: -7px;
+  top: 0px;
+  display: block;
+  height: 100%;
+        width: 15px;
+        cursor: col-resize;
+}
+.resizer::after {
+        content: ' ';
+        position: absolute;
+        right: -50%;
+        top: 50%;
+        border-width: 8px;
+        border-color: #00000000;
+        --tw-border-opacity: 1;
+        border-left-color: rgb(66 21 47 / var(--tw-border-opacity))}
+.resizer:hover::after {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(132 48 97 / var(--tw-border-opacity));
+}
+.resizer::before {
+        content: ' ';
+        position: absolute;
+        left: -9px;
+        top: 50%;
+        border-width: 8px;
+        border-color: #00000000;
+        --tw-border-opacity: 1;
+        border-right-color: rgb(185 73 142 / var(--tw-border-opacity))}
+.resizer:hover::before {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(219 139 195 / var(--tw-border-opacity));
+}
+.resizer:active::after {
+  --tw-translate-x: 0.25rem;
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.resizer:active::before {
+  --tw-translate-x: -0.25rem;
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .visible {
   visibility: visible;
+}
+.collapse {
+  visibility: collapse;
 }
 .static {
   position: static;
@@ -1422,17 +1509,17 @@ select {
 .\!mb-10 {
   margin-bottom: 2.5rem !important;
 }
-.\!mb-8 {
-  margin-bottom: 2rem !important;
+.\!mb-16 {
+  margin-bottom: 4rem !important;
+}
+.\!mb-6 {
+  margin-bottom: 1.5rem !important;
 }
 .\!mt-8 {
   margin-top: 2rem !important;
 }
 .mb-12 {
   margin-bottom: 3rem;
-}
-.mb-16 {
-  margin-bottom: 4rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -1445,12 +1532,6 @@ select {
 }
 .mt-8 {
   margin-top: 2rem;
-}
-.\!mb-16 {
-  margin-bottom: 4rem !important;
-}
-.\!mb-6 {
-  margin-bottom: 1.5rem !important;
 }
 .block {
   display: block;
@@ -1488,6 +1569,9 @@ select {
 .min-h-\[70vh\] {
   min-height: 70vh;
 }
+.\!w-\[40rem\] {
+  width: 40rem !important;
+}
 .w-40 {
   width: 10rem;
 }
@@ -1509,8 +1593,17 @@ select {
 .w-screen {
   width: 100vw;
 }
+.min-w-40 {
+  min-width: 10rem;
+}
+.\!max-w-\[40rem\] {
+  max-width: 40rem !important;
+}
 .max-w-\[40em\] {
   max-width: 40em;
+}
+.max-w-\[40rem\] {
+  max-width: 40rem;
 }
 .max-w-full {
   max-width: 100%;
@@ -1518,11 +1611,17 @@ select {
 .max-w-screen-lg {
   max-width: 1024px;
 }
+.max-w-screen-sm {
+  max-width: 640px;
+}
 .flex-shrink-0 {
   flex-shrink: 0;
 }
 .-rotate-90 {
   --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 @keyframes spin {
@@ -1580,8 +1679,14 @@ select {
 .gap-6 {
   gap: 1.5rem;
 }
+.overflow-auto {
+  overflow: auto;
+}
 .overflow-hidden {
   overflow: hidden;
+}
+.\!overflow-visible {
+  overflow: visible !important;
 }
 .overflow-x-hidden {
   overflow-x: hidden;
@@ -1710,6 +1815,9 @@ select {
 .text-xl {
   font-size: 1.333rem;
 }
+.text-base {
+  font-size: 1rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1760,6 +1868,11 @@ select {
   --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .shadow-gray-900 {
   --tw-shadow-color: #1D343Aff;
   --tw-shadow: var(--tw-shadow-colored);
@@ -1774,11 +1887,10 @@ select {
 }
 .popping {
         opacity: 1;
-        animation: fadeInScale 0.5s forwards; /* Animate both opacity and scale */
+        animation: fadeInScale 0.5s forwards;
         position: absolute; /* Ensure it's positioned relative to the parent */
-        left: 50%; /* Center horizontally */
-        top: 50%; /* Center vertically */
-        transform: translate(-50%, -50%); /* Center it accurately */
+        left: 50%;
+        top: 50%;
     }
 @keyframes fadeInScale {
          0% {
@@ -2191,6 +2303,14 @@ select {
 }
 
 
+@media (min-width: 416px) {
+
+  .xsm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
 @media (min-width: 640px) {
 
   .sm\:-top-24 {
@@ -2254,6 +2374,10 @@ select {
   .sm\:text-8xl {
     font-size: 6rem;
     line-height: 1;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.333rem;
   }
 
   .sm\:after\:border-b-gray-900::after {

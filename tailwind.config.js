@@ -51,6 +51,13 @@ module.exports = {
         white: '3px 0 0 #FFF, -3px 0 0 #FFF, 0 3px 0 #FFF,  0 -3px 0 #FFF, 1.5px 1.5px 0 #FFF, -1.5px 1.5px 0 #FFF, -1.5px -1.5px 0 #FFF, -1.5px 1.5px 0 #FFF',
         DEFAULT: '3px 0 0  var(--tw-shadow-color), -3px 0 0  var(--tw-shadow-color), 0 3px 0  var(--tw-shadow-color),  0 -3px 0  var(--tw-shadow-color), 1.5px 1.5px 0  var(--tw-shadow-color), -1.5px 1.5px 0  var(--tw-shadow-color), -1.5px -1.5px 0  var(--tw-shadow-color), -1.5px 1.5px 0  var(--tw-shadow-color)',
       },
+      screens: {
+        'xxsm': '256px',
+        // => @media (min-width: 576px) { ... }
+
+        'xsm': '416px',
+        // => @media (min-width: 960px) { ... }
+      },
     }
   },
   plugins: [
