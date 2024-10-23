@@ -7,3 +7,4 @@ articles_jupyter/*_files/
 articles_jupyter/img/
 articles_jupyter/*.html
 node_modules
+.help.md

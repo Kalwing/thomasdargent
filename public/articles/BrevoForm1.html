@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="quarto_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
 
-<link href="../build/tailwind.css" rel="stylesheet"/></head>
+<link href="../build/tailwind.css" rel="stylesheet"/><script src="../js/iframe_demo.js"></script></head>
 <body class="bg-slate-100 fullContent w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900"><nav class="fixed isolate z-50 m-0 p-4 text-xl lg:m-8">
 <a class="border-b border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent" href="../index.html">
             Thomas Dargent
@@ -74,43 +74,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div class="px-6 pb-16 pt-48 lg:pt-16 sm:px-16 sm:pl-52 lg:pl-72 xl:pl-96" id="quarto-content">
 <main class="content" id="quarto-document-content">
-<header class="prose lg:prose-lg sm:text-center font-normal" id="title-block-header">
+<header class="prose lg:prose-lg text-center font-normal" id="title-block-header">
 <div class="quarto-title">
-<h1 class="font-heading text-4xl sm:text-6xl mb-12 mt-8 font-normal text-center">A simpler newsletter form : Creating new contacts with Brevo.</h1>
+<h1 class="font-heading text-4xl !w-full max-w-[40rem] sm:text-6xl mb-12 mt-8 font-normal text-center">A simpler newsletter form : Creating new contacts with Brevo.</h1>
 </div>
 <div class="quarto-title-meta">
 </div>
-<p class="prose lg:prose-lg text-xl text-gray-700 !mb-6 !-mt-6 text-gray-900 text-center">— OR —</p><p class="prose lg:prose-lg text-lg !mb-16 text-gray-900 text-center" role="doc-subtitle">“A Guide to Using Their API with Django”</p></header>
+<p class="prose lg:prose-lg text-xl !w-full max-w-[40rem] text-gray-700 !mb-6 !mt-2 text-gray-900 text-center">— OR —</p><p class="prose lg:prose-lg text-lg !mb-16 !w-full max-w-[40rem] text-gray-900 text-center" role="doc-subtitle">“A Guide to Using Their API with Django”</p></header>
 
 <section class="level2" id="wrestling-with-an-outdated-documentation">
-<h2 class="text-2xl sm:text-3xl mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="wrestling-with-an-outdated-documentation">Wrestling with an outdated documentation</h2>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">Brevo is an easy-to-use newsletter service that offers a lot of great features. There’s a free plan, pre-made templates, you can use SMS, Mail… and – more importantly – they have a nice API. But there’s a dark spot on the map. Brevo hide something. Brevo wasn’t always Brevo. Brevo swept its infancy under a rug… you see, before 2023, Brevo was… SendInBlue. Ok, jokes aside, it means that their otherwise impressive API documentation refers to an outdated SDK.</p>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">For a project, I had to implement a newsletter form so that users could join a mailing list. To better integrate it to the website, we wanted to use a custom form. Simple enough. Except the contacts’ documentation refer to a SendInBlue python SDK, and the package is <strong>complicated</strong>. I wanted to reverse engineer the SDK but it is huge, it isn’t easy to make your way through the code. Lazily, I decided to use the requests library to interact with the Brevo API directly. This tutorial describes the process.</p>
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="wrestling-with-an-outdated-documentation">Wrestling with an outdated documentation</h2>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">Brevo is an easy-to-use newsletter service that offers a lot of great features. There’s a free plan, pre-made templates, you can use SMS, Mail… and – more importantly – they have a nice API. But there’s a dark spot on the map. Brevo hide something. Brevo wasn’t always Brevo. Brevo swept its infancy under a rug… you see, before 2023, Brevo was… SendInBlue. Ok, jokes aside, it means that their otherwise impressive API documentation refers to an outdated SDK.</p>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">For a project, I had to implement a newsletter form so that users could join a mailing list. To better integrate it to the website, we wanted to use a custom form. Simple enough. Except the contacts’ documentation refer to a SendInBlue python SDK, and the package is <strong>complicated</strong>. I wanted to reverse engineer the SDK but it is huge, it isn’t easy to make your way through the code. Lazily, I decided to use the requests library to interact with the Brevo API directly. This tutorial describes the process.</p>
 <section class="level3" id="a-fake-problem-because-of-an-inconsistency">
-<h3 class="text-lg sm:text-2xl mb-4 mt-8 font-bold text-pacific-blue-900" data-anchor-id="a-fake-problem-because-of-an-inconsistency">A fake problem because of an inconsistency</h3>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">While writing this I realized that the <a href="https://github.com/getbrevo/brevo-python/blob/main/docs/ContactsApi.md#add_contact_to_list">github documentation</a> of the Brevo package, linked on the new SDK page, is up-to-date. As I said, that is not the case of the <a href="https://developers.brevo.com/reference/createcontact">API documentation of their website</a>, which refers to a SendInBlue GitHub profile. Nevermind, let’s just say this article might help people that were as lost as me find their way between both !</p>
+<h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900" data-anchor-id="a-fake-problem-because-of-an-inconsistency">A fake problem because of an inconsistency</h3>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">While writing this I realized that the <a href="https://github.com/getbrevo/brevo-python/blob/main/docs/ContactsApi.md#add_contact_to_list">github documentation</a> of the Brevo package, linked on the new SDK page, is up-to-date. As I said, that is not the case of the <a href="https://developers.brevo.com/reference/createcontact">API documentation of their website</a>, which refers to a SendInBlue GitHub profile. Nevermind, let’s just say this article might help people that were as lost as me find their way between both !</p>
 </section>
 </section>
 <section class="level2" id="what-to-expect-in-this-series">
-<h2 class="text-2xl sm:text-3xl mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="what-to-expect-in-this-series">What to expect in this series</h2>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">This first part will only focus on making your API with. The next one will describe the front end implementation with HTMX, as a bonus. Finally I will write an article on how you can add a custom captcha to the form (or any form, for that matter).</p>
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="what-to-expect-in-this-series">What to expect in this series</h2>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">This first part will only focus on making your API with. The next one will describe the front end implementation with HTMX, as a bonus. Finally I will write an article on how you can add a custom captcha to the form (or any form, for that matter).</p>
 </section>
 <section class="level2" id="adding-a-contact-to-a-brevo-list">
-<h2 class="text-2xl sm:text-3xl mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="adding-a-contact-to-a-brevo-list">Adding a contact to a Brevo list</h2>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4"><img alt="File architecture in our Django folders" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="img/BrevoForm1_Architecture.svg"/> In our views.py file, we’ll first get the POST data we need.</p>
-<div class="cellmax-w-screen-lg text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-execution_count="3" id="02738e23-7632-46cc-8c49-7df148195bd5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="adding-a-contact-to-a-brevo-list">Adding a contact to a Brevo list</h2>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4"><img alt="File architecture in our Django folders" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="img/BrevoForm1_Architecture.svg"/> In our views.py file, we’ll first get the POST data we need.</p>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb1"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="co"># Extracting the posted data from the request</span></span>
 <span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>    email <span class="op">=</span> request.POST.get(<span class="st">"email"</span>)</span>
 <span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>    last_name <span class="op">=</span> request.POST.get(<span class="st">"last_name"</span>)</span>
 <span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>    first_name <span class="op">=</span> request.POST.get(<span class="st">"first_name"</span>)</span>
 <span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    captcha_code <span class="op">=</span> request.POST.get(<span class="st">"captcha"</span>)</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 </div>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">We then use the data we got to construct our request. <code class="p-1 text-pink-600 shadow-inner">email</code> is a basic field, but all the others needs to be in an <code class="p-1 text-pink-600 shadow-inner">attributes</code> dict. All optional field needs to be written in full caps.</p>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">You can send your contacts as such, but you usually want them in a list, to have a better control on who you send your newsletter to. As such, you need to add a field to the dict containing a list of <code class="p-1 text-pink-600 shadow-inner">int</code> (you can send the contact to multiple lists as one). The list Id can be found on the main Brevo website after a <code class="p-1 text-pink-600 shadow-inner">#</code>. Sorry for the french interface, here the listId is 2 (which seems to be the default starting Id). <img alt="Sorry for the french. Here the listId is 2" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="./img/brevo_list.png"/></p>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">To send contacts to Brevo, they need to make sure we are the right person, otherwise anyone could spam our contact list. To do that, it gives use a secret key, called the API key. It’s super easy to get, and <a href="https://help.brevo.com/hc/fr/articles/209467485-Cr%C3%A9er-ou-supprimer-une-cl%C3%A9-API#heading-3">Brevo explains it well</a>. We also need to send the dict as json, and tell it so.</p>
-<div class="cellmax-w-screen-lg text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-execution_count="17" id="a72f07dc-e5dd-41d1-9e52-52c90d1c065f">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">We then use the data we got to construct our request. <code class="p-1 text-pink-600 shadow-inner">email</code> is a basic field, but all the others needs to be in an <code class="p-1 text-pink-600 shadow-inner">attributes</code> dict. All optional field needs to be written in full caps.</p>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">You can send your contacts as such, but you usually want them in a list, to have a better control on who you send your newsletter to. As such, you need to add a field to the dict containing a list of <code class="p-1 text-pink-600 shadow-inner">int</code> (you can send the contact to multiple lists as one). The list Id can be found on the main Brevo website after a <code class="p-1 text-pink-600 shadow-inner">#</code>. Sorry for the french interface, here the listId is 2 (which seems to be the default starting Id). <img alt="Sorry for the french. Here the listId is 2" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="./img/brevo_list.png"/></p>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">To send contacts to Brevo, they need to make sure we are the right person, otherwise anyone could spam our contact list. To do that, it gives use a secret key, called the API key. It’s super easy to get, and <a href="https://help.brevo.com/hc/fr/articles/209467485-Cr%C3%A9er-ou-supprimer-une-cl%C3%A9-API#heading-3">Brevo explains it well</a>. We also need to send the dict as json, and tell it so.</p>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb2"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>    <span class="co"># Constructing the Brevo API request payload with the posted data</span></span>
 <span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>    obj <span class="op">=</span> {</span>
@@ -128,9 +134,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>        <span class="st">"content-type"</span>: <span class="st">"application/json"</span>,</span>
 <span id="cb2-17"><a aria-hidden="true" href="#cb2-17" tabindex="-1"></a>    }</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 </div>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">The payload can now be sent in a POST request to Brevo.</p>
-<div class="cellmax-w-screen-lg text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-execution_count="12" id="f810f2a2-a895-4e77-aa28-71e5d65d1a02">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">The payload can now be sent in a POST request to Brevo.</p>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb3"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>    response <span class="op">=</span> requests.post(BREVO_URL, json<span class="op">=</span>obj, headers<span class="op">=</span>headers)</span>
 <span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a></span>
@@ -139,26 +148,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a>        <span class="cf">return</span> HttpResponseBadRequest(<span class="ss">f"Erreur d'inscription. Veuillez réessayer."</span>)</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 </div>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">To serve the API, it need to be linked to an url in the urls.py file of our app.</p>
-<div class="cellmax-w-screen-lg text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-900 shadow-punk border border-gray-900" id="16d10eeb-77bf-475c-ac94-b5f45a72504b">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">To serve the API, it need to be linked to an url in the urls.py file of our app.</p>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>urls.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="urls.py" id="cb4"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
 <span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
 <span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a></span>
 <span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
 <span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>    path(<span class="st">"create_contact"</span>, views.brevo_handler, name<span class="op">=</span><span class="st">"brevo_handler"</span>),</span>
 <span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>]</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 </div>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">You should have a working API. Sending the POST request will create a new contact in your contact list.</p>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">You should have a working API. Sending the POST request will create a new contact in your contact list.</p>
 </section>
 <section class="level2" id="handling-errors">
-<h2 class="text-2xl sm:text-3xl mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="handling-errors">Handling errors</h2>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">We might want a bit more granularity in the way we deal with errors. Brevo returns a code in the response_text explaining the reason the request couldn’t go through. Here’s a few listed in the doc :</p>
-<ul class="prose prose-stone list-disc pl-8 lg:prose-lg">
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="handling-errors">Handling errors</h2>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">We might want a bit more granularity in the way we deal with errors. Brevo returns a code in the response_text explaining the reason the request couldn’t go through. Here’s a few listed in the doc :</p>
+<ul class="prose prose-stone !w-full max-w-[40em]  list-disc pl-8 lg:prose-lg">
 <li><code class="p-1 text-pink-600 shadow-inner">invalid_parameter</code>, <code class="p-1 text-pink-600 shadow-inner">missing_parameter</code>, <code class="p-1 text-pink-600 shadow-inner">permission_denied</code>, <code class="p-1 text-pink-600 shadow-inner">unauthorized</code>, <code class="p-1 text-pink-600 shadow-inner">account_under_validation</code>, <code class="p-1 text-pink-600 shadow-inner">not_acceptable bad_request</code>, <code class="p-1 text-pink-600 shadow-inner">unprocessable_entity</code> : Should all be avoided with a proper forms and a properly set up account</li>
 <li><code class="p-1 text-pink-600 shadow-inner">duplicate_parameter</code>: happens when one contact is added twice, this should raise an error.</li>
 </ul>
-<div class="cellmax-w-screen-lg text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-execution_count="1" id="544a15e3-0f3f-4b3d-b473-3c7da8e0ca76">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb5"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">201</span>:  <span class="co"># Success</span></span>
 <span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">"_success_newsletter.html"</span>)</span>
@@ -174,10 +189,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section class="level2" id="full-code">
-<h2 class="text-2xl sm:text-3xl mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="full-code">Full code</h2>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">And here’s the full code to copy paste without thinking 😛 :</p>
-<div class="cellmax-w-screen-lg text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-execution_count="2" id="8b9cad21-164f-4265-9950-2bd578c38932">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="full-code">Full code</h2>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">And here’s the full code to copy paste without thinking 😛 :</p>
+<div class="cell overflow-auto  !max-w-[40rem] text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-execution_count="2" id="8b9cad21-164f-4265-9950-2bd578c38932">
+<div class="sourceCode cell-code mt-4" id="cb6"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>    <span class="co"># Extracting the posted data from the request</span></span>
 <span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>    email <span class="op">=</span> request.POST.get(<span class="st">"email"</span>)</span>
 <span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>    last_name <span class="op">=</span> request.POST.get(<span class="st">"last_name"</span>)</span>
@@ -214,8 +229,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section class="level2" id="conclusion">
-<h2 class="text-2xl sm:text-3xl mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="conclusion">Conclusion</h2>
-<p class="prose lg:prose-lg prose-stone max-w-[40em] mb-4">Here you go, simple indeed. Sometimes it’s easier to not use pre-made solutions. Next time we’ll make a dynamic form to uses our API.</p>
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="conclusion">Conclusion</h2>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">Here you go, simple indeed. Sometimes it’s easier to not use pre-made solutions. Next time we’ll make a dynamic form to uses our API.</p>
 </section>
 </main>
 <!-- /main column -->

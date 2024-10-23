@@ -18,8 +18,10 @@
 				>Thomas Dargent</a
 			>
 			<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent">
-				<li class="hover:ml-4 hover:text-pacific-blue-600 p-1"><a href="#portfolio">Portfolio</a></li>
-				<li class="hover:ml-4 hover:text-pacific-blue-600 p-1"><a href="#blog">Blog</a></li>
+				<li class="p-1 hover:ml-4 hover:text-pacific-blue-600">
+					<a href="#portfolio">Portfolio</a>
+				</li>
+				<li class="p-1 hover:ml-4 hover:text-pacific-blue-600"><a href="#blog">Blog</a></li>
 				<li class="px-1 hover:ml-4 hover:text-pacific-blue-600"><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
@@ -80,7 +82,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="portfolio" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+		<!-- <section id="portfolio" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
 				<h1 class="text-left font-heading text-8xl">Portfolio</h1>
 				<p class="prose">Here's some projects I'm proud of !</p>
@@ -104,7 +106,7 @@
 						</div>
 					</div>
 				</div>
-		</section>
+		</section> -->
 		<section id="blog" class="block min-h-[70vh] bg-gray-100 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
 				<h1 class="font-heading text-8xl">Blog</h1>
@@ -115,15 +117,31 @@
 					email/a message !
 				</p>
 				<ul
-					class="relative z-10 before:content-[' '] [&>*:nth-child(3n)]:shadow-punk after:content-[' '] relative my-8 grid max-w-screen-lg justify-evenly grid-flow-row grid-cols-1 items-start gap-1 before:absolute before:-left-10 before:h-full before:w-1 before:bg-gradient-to-t before:from-gray-100 before:via-gray-700 before:to-gray-900 after:absolute after:-top-7 lg:after:-top-10 after:-left-[3.4rem] lg:after:-left-[3.85rem] lg:after:border-[1.5rem] after:border-[1rem] after:border-transparent sm:after:border-b-gray-900 md:grid-cols-2 xl:before:-left-32 xl:after:-left-[9.4rem] [&>*:nth-child(5n)]:scale-[80%]">
-					<span class="italic sm:block -rotate-90 absolute -left-14 xl:-left-36 sm:top-10 md:top-1/2 hidden">time (day)</span>
-					<a href="articles/BrevoForm1.html"><li class="code" >
-						<div id="brevo-part-1">
-						Creating new contacts with Brevo in Django (<span
-							class="text-pacific-blue-600"
-							>19/10/2024</span
-						>)</div>
-					</li></a>
+					class="before:content-[' '] [&>*:nth-child(3n)]:shadow-punk after:content-[' '] relative relative z-10 my-8 grid max-w-screen-lg grid-flow-row grid-cols-1 items-start justify-evenly gap-1 before:absolute before:-left-10 before:h-full before:w-1 before:bg-gradient-to-t before:from-gray-100 before:via-gray-700 before:to-gray-900 after:absolute after:-left-[3.4rem] after:-top-7 after:border-[1rem] after:border-transparent sm:after:border-b-gray-900 md:grid-cols-2 lg:after:-left-[3.85rem] lg:after:-top-10 lg:after:border-[1.5rem] xl:before:-left-32 xl:after:-left-[9.4rem] [&>*:nth-child(5n)]:scale-[80%]">
+					<span
+						class="absolute -left-14 hidden -rotate-90 italic sm:top-10 sm:block md:top-1/2 xl:-left-36"
+						>time (day)</span
+					>
+					<a href="articles/BrevoForm2.html"
+						><li class="code">
+							<div id="brevo-part-2">
+								A simpler newsletter form : Building the form with HTMX (<span
+									class="text-pacific-blue-600"
+									>23/10/2024</span
+								>)
+							</div>
+						</li></a
+					>
+					<a href="articles/BrevoForm1.html"
+						><li class="code">
+							<div id="brevo-part-1">
+								A simpler newsletter form : Creating new contacts with Brevo (<span
+									class="text-pacific-blue-600"
+									>19/10/2024</span
+								>)
+							</div>
+						</li></a
+					>
 				</ul>
 			</div>
 		</section>
@@ -155,27 +173,20 @@
 			</div>
 		</section>
 		<script>
-			var brevo_1 = document.getElementById('brevo-part-1');
-			var brevo_2 = document.getElementById('brevo-part-2');
-			console.log(brevo_1.clientHeight/2);
+			var brevo_1 = document.getElementById('brevo-part-1')
+			var brevo_2 = document.getElementById('brevo-part-2')
 			setTimeout(() => {
-				line = new LeaderLine(
-					brevo_1, brevo_2,
-					{dash: true, color: '#17a1c5', path:'fluid'}
-				);
-				line.setOptions({startSocket: 'right'})
-				line.startSocketGravity = [100, -10 ];
-			}, 300);
-			var ld_1 = document.getElementById('ld-part-1');
-			var ld_2 = document.getElementById('ld-part-2');
-			setTimeout(() => {
-				line = new LeaderLine(
-					ld_1, ld_2,
-					{dash: true, color: '#db8bc3', path:'fluid'}
-				);
-				line.setOptions({startSocket: 'left'})
-				line.startSocketGravity = [-130, 50 ];
-			}, 300);
+				line = new LeaderLine(brevo_1, brevo_2, { dash: true, color: '#17a1c5', path: 'fluid' })
+				// line.setOptions({ startSocket: 'right' })
+				line.startSocketGravity = [100, -10]
+			}, 300)
+			// var ld_1 = document.getElementById('ld-part-1')
+			// var ld_2 = document.getElementById('ld-part-2')
+			// setTimeout(() => {
+			// 	line = new LeaderLine(ld_1, ld_2, { dash: true, color: '#db8bc3', path: 'fluid' })
+			// 	line.setOptions({ startSocket: 'left' })
+			// 	line.startSocketGravity = [-130, 50]
+			// }, 300)
 		</script>
 	</body>
 </html>

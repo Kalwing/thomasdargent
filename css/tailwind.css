@@ -69,7 +69,7 @@
         @apply w-full shadow-punk min-h-96 border-2 border-pink-400 shadow-pink-400
     }
     .demo-container {
-        @apply w-[40rem] relative mb-4
+        @apply w-full max-w-[40rem] lg:max-w-full lg:w-[40rem] relative mb-4
     }
     .demo-container::after {
         content: ' ';
@@ -93,6 +93,22 @@
     }
     .resizer:active::before {
         @apply scale-125 -translate-x-1
+    }
+
+    .callout {
+        @apply shadow-lg rotate-1
+    }
+    .callout-header {
+        @apply p-1
+    }
+    .callout-note > .callout-header {
+        @apply bg-pacific-blue-600  text-pacific-blue-100
+    }
+    .callout-warning > .callout-header {
+        @apply bg-pink-800 text-gray-100
+    }
+    .callout-body {
+        @apply p-2
     }
 }
 
