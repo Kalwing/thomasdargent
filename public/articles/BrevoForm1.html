@@ -51,14 +51,14 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-<script src="quarto_files/libs/clipboard/clipboard.min.js"></script>
-<script src="quarto_files/libs/quarto-html/quarto.js"></script>
-<script src="quarto_files/libs/quarto-html/popper.min.js"></script>
-<script src="quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="quarto_files/libs/quarto-html/anchor.min.js"></script>
+<script src="quarto_files/libs/clipboard/clipboard.min.js" type="module"></script>
+<script src="quarto_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="quarto_files/libs/quarto-html/popper.min.js" type="module"></script>
+<script src="quarto_files/libs/quarto-html/tippy.umd.min.js" type="module"></script>
+<script src="quarto_files/libs/quarto-html/anchor.min.js" type="module"></script>
 <link href="quarto_files/libs/quarto-html/tippy.css" rel="stylesheet"/>
 <link href="quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
-<script src="quarto_files/libs/bootstrap/bootstrap.min.js"></script>
+<script src="quarto_files/libs/bootstrap/bootstrap.min.js" type="module"></script>
 <link href="quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
 
 <link href="../build/tailwind.css" rel="stylesheet"/><script src="../js/iframe_demo.js"></script></head>
@@ -97,12 +97,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section class="level2" id="adding-a-contact-to-a-brevo-list">
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="adding-a-contact-to-a-brevo-list">Adding a contact to a Brevo list</h2>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4"><img alt="File architecture in our Django folders" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="img/BrevoForm1_Architecture.svg"/> In our views.py file, we’ll first get the POST data we need.</p>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4"><img alt="File architecture in our Django folders" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="img/BrevoForm1_Architecture.svg?as=webp&amp;quality=80"/> In our views.py file, we’ll first get the POST data we need.</p>
 <div class="code-with-filename mt-4">
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb1"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-filename="views.py" id="cb1"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="co"># Extracting the posted data from the request</span></span>
 <span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>    email <span class="op">=</span> request.POST.get(<span class="st">"email"</span>)</span>
 <span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>    last_name <span class="op">=</span> request.POST.get(<span class="st">"last_name"</span>)</span>
@@ -110,13 +110,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>    captcha_code <span class="op">=</span> request.POST.get(<span class="st">"captcha"</span>)</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 </div>
 <p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">We then use the data we got to construct our request. <code class="p-1 text-pink-600 shadow-inner">email</code> is a basic field, but all the others needs to be in an <code class="p-1 text-pink-600 shadow-inner">attributes</code> dict. All optional field needs to be written in full caps.</p>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">You can send your contacts as such, but you usually want them in a list, to have a better control on who you send your newsletter to. As such, you need to add a field to the dict containing a list of <code class="p-1 text-pink-600 shadow-inner">int</code> (you can send the contact to multiple lists as one). The list Id can be found on the main Brevo website after a <code class="p-1 text-pink-600 shadow-inner">#</code>. Sorry for the french interface, here the listId is 2 (which seems to be the default starting Id). <img alt="Sorry for the french. Here the listId is 2" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="./img/brevo_list.png"/></p>
+<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">You can send your contacts as such, but you usually want them in a list, to have a better control on who you send your newsletter to. As such, you need to add a field to the dict containing a list of <code class="p-1 text-pink-600 shadow-inner">int</code> (you can send the contact to multiple lists as one). The list Id can be found on the main Brevo website after a <code class="p-1 text-pink-600 shadow-inner">#</code>. Sorry for the french interface, here the listId is 2 (which seems to be the default starting Id). <img alt="Sorry for the french. Here the listId is 2" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 !mt-8 !mb-10" src="./img/brevo_list.png?as=webp&amp;quality=80"/></p>
 <p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">To send contacts to Brevo, they need to make sure we are the right person, otherwise anyone could spam our contact list. To do that, it gives use a secret key, called the API key. It’s super easy to get, and <a href="https://help.brevo.com/hc/fr/articles/209467485-Cr%C3%A9er-ou-supprimer-une-cl%C3%A9-API#heading-3">Brevo explains it well</a>. We also need to send the dict as json, and tell it so.</p>
 <div class="code-with-filename mt-4">
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb2"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-filename="views.py" id="cb2"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>    <span class="co"># Constructing the Brevo API request payload with the posted data</span></span>
 <span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>    obj <span class="op">=</span> {</span>
@@ -139,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb3"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-filename="views.py" id="cb3"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>    response <span class="op">=</span> requests.post(BREVO_URL, json<span class="op">=</span>obj, headers<span class="op">=</span>headers)</span>
 <span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a></span>
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>urls.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="urls.py" id="cb4"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-filename="urls.py" id="cb4"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
 <span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
 <span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a></span>
 <span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
@@ -173,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0 shadow-gray-900 shadow-punk" data-filename="views.py" id="cb5"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-filename="views.py" id="cb5"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">201</span>:  <span class="co"># Success</span></span>
 <span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">"_success_newsletter.html"</span>)</span>

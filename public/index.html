@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="build/tailwind.css" />
 		<script src="js/leader-line.min.js"></script>
+		<script type="module" src="js/ts/portfolio-gallery.ts"></script>
 	</head>
 	<body class="bg-slate-100 w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900">
 		<nav class="fixed isolate z-50 m-0 p-4 text-xl lg:m-8">
@@ -46,14 +47,14 @@
 						</textPath>
 					</text>
 				</svg>
-				<img src="img/card.png" class="w-48 sm:w-80 xl:w-96" />
+				<img src="img/card.png?as=webp&quality=50" class="w-48 sm:w-80 xl:w-96" />
 			</div>
 		</section>
 		<section id="whoAmI" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left">Who am I ?</h1>
 			<div class="flex flex-col md:flex-row">
 				<img
-					src="img/avatar.png"
+					src="img/avatar.png?as=webp&quality=50?width=280"
 					class="m-4 mx-auto block h-40 w-40 max-w-full hover:rotate-1 hover:bg-pink-400 sm:h-64 sm:w-64 md:m-8" />
 				<div class="prose block text-gray-700">
 					<span class="text-4xl text-pacific-blue-900">Hi !</span>
@@ -82,31 +83,14 @@
 				</div>
 			</div>
 		</section>
-		<!-- <section id="portfolio" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+		<section id="portfolio" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
 				<h1 class="text-left font-heading text-8xl">Portfolio</h1>
 				<p class="prose">Here's some projects I'm proud of !</p>
-				<div class="flex gap-6 flex-wrap mb-4 mt-8">
-					<div class="h-56 w-56 flex-shrink-0 border-4 border-gray-900">
-						<div class="group relative h-full w-full p-2">
-							<img src="img/portfolio/site.png" class="cover h-full w-full mix-blend-multiply" />
-							<span
-								class="tech-project"
-								>Thomasdargent.com</span
-							>
-						</div>
-					</div>
-					<div class="h-56 w-56 flex-shrink-0 border-4 border-gray-900">
-						<div class="group relative h-full w-full p-2">
-							<img src="img/portfolio/sancho.png" class="cover h-full w-full mix-blend-multiply" />
-							<span
-								class="tech-project"
-								>sanchoetcompagnie.com</span
-							>
-						</div>
-					</div>
+				<div class="flex gap-6 flex-wrap mb-4 mt-2">
+					<div id="portfolioGallery"></div>
 				</div>
-		</section> -->
+		</section>
 		<section id="blog" class="block min-h-[70vh] bg-gray-100 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
 				<h1 class="font-heading text-8xl">Blog</h1>
@@ -173,13 +157,13 @@
 			</div>
 		</section>
 		<script>
-			var brevo_1 = document.getElementById('brevo-part-1')
-			var brevo_2 = document.getElementById('brevo-part-2')
+			var brevo_1 = document.getElementById('brevo-part-1');
+			var brevo_2 = document.getElementById('brevo-part-2');
 			setTimeout(() => {
-				line = new LeaderLine(brevo_1, brevo_2, { dash: true, color: '#17a1c5', path: 'fluid' })
+				line = new LeaderLine(brevo_1, brevo_2, { dash: true, color: '#17a1c5', path: 'fluid' });
 				// line.setOptions({ startSocket: 'right' })
-				line.startSocketGravity = [100, -10]
-			}, 300)
+				line.startSocketGravity = [100, -10];
+			}, 1000);
 			// var ld_1 = document.getElementById('ld-part-1')
 			// var ld_2 = document.getElementById('ld-part-2')
 			// setTimeout(() => {

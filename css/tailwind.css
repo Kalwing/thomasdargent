@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "Le Murmure";
-    src: url("../fonts/LeMurmure-Regular.woff");
+    src: url("../fonts/LeMurmure-Regular.woff2");
 }
 
 @layer base {
@@ -96,7 +96,7 @@
     }
 
     .callout {
-        @apply shadow-lg rotate-1
+        @apply shadow-lg rotate-1 max-w-[40rem]
     }
     .callout-header {
         @apply p-1
