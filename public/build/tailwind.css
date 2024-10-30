@@ -1511,9 +1511,6 @@ select {
 .m-4 {
   margin: 1rem;
 }
-.m-\[8\%\] {
-  margin: 8%;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1525,10 +1522,6 @@ select {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-.-mx-4 {
-  margin-left: -1rem;
-  margin-right: -1rem;
 }
 .\!mb-10 {
   margin-bottom: 2.5rem !important;
@@ -1563,14 +1556,14 @@ select {
 .mt-0 {
   margin-top: 0px;
 }
+.mt-2 {
+  margin-top: 0.5rem;
+}
 .mt-4 {
   margin-top: 1rem;
 }
 .mt-8 {
   margin-top: 2rem;
-}
-.mt-2 {
-  margin-top: 0.5rem;
 }
 .block {
   display: block;
@@ -1593,6 +1586,9 @@ select {
 .h-14 {
   height: 3.5rem;
 }
+.h-2\/3 {
+  height: 66.666667%;
+}
 .h-40 {
   height: 10rem;
 }
@@ -1611,26 +1607,11 @@ select {
 .h-full {
   height: 100%;
 }
-.h-4 {
-  height: 1rem;
-}
-.h-1\/3 {
-  height: 33.333333%;
-}
-.h-2\/3 {
-  height: 66.666667%;
-}
 .h-screen {
   height: 100vh;
 }
-.max-h-\[50\%\] {
-  max-height: 50%;
-}
-.max-h-\[66\%\] {
-  max-height: 66%;
-}
-.max-h-\[calc\(100vh-4\%\)\] {
-  max-height: calc(100vh - 4%);
+.max-h-full {
+  max-height: 100%;
 }
 .max-h-screen {
   max-height: 100vh;
@@ -1674,6 +1655,12 @@ select {
 .w-screen {
   width: 100vw;
 }
+.w-4 {
+  width: 1rem;
+}
+.w-52 {
+  width: 13rem;
+}
 .min-w-40 {
   min-width: 10rem;
 }
@@ -1704,14 +1691,6 @@ select {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
-.-translate-y-1\/4 {
-  --tw-translate-y: -25%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-y-full {
-  --tw-translate-y: -100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 .-translate-y-\[200\%\] {
   --tw-translate-y: -200%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1726,6 +1705,10 @@ select {
 }
 .-rotate-90 {
   --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-1 {
+  --tw-rotate: 1deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .transform {
@@ -1773,9 +1756,6 @@ select {
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -1825,9 +1805,6 @@ select {
 .overflow-x-hidden {
   overflow-x: hidden;
 }
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
 .text-nowrap {
   text-wrap: nowrap;
 }
@@ -1846,6 +1823,9 @@ select {
 .border-b {
   border-bottom-width: 1px;
 }
+.border-t-0 {
+  border-top-width: 0px;
+}
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(94 108 106 / var(--tw-border-opacity));
@@ -1861,6 +1841,10 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(132 48 97 / var(--tw-border-opacity));
 }
+.border-pink-950 {
+  --tw-border-opacity: 1;
+  border-color: rgb(66 21 47 / var(--tw-border-opacity));
+}
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(247 246 243 / var(--tw-bg-opacity));
@@ -1868,11 +1852,11 @@ select {
 .bg-gray-200 {
   background-color: #DFDBCBff;
 }
-.bg-gray-200\/10 {
-  background-color: rgb(223 219 203 / 0.1);
-}
 .bg-gray-900 {
   background-color: #1D343Aff;
+}
+.bg-gray-900\/10 {
+  background-color: rgb(29 52 58 / 0.1);
 }
 .bg-gray-900\/80 {
   background-color: rgb(29 52 58 / 0.8);
@@ -1918,9 +1902,9 @@ select {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.px-\[8\%\] {
-  padding-left: 8%;
-  padding-right: 8%;
+.px-\[1\%\] {
+  padding-left: 1%;
+  padding-right: 1%;
 }
 .py-1 {
   padding-top: 0.25rem;
@@ -1929,10 +1913,6 @@ select {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-.px-\[1\%\] {
-  padding-left: 1%;
-  padding-right: 1%;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -1952,6 +1932,9 @@ select {
 .pt-8 {
   padding-top: 2rem;
 }
+.pt-1 {
+  padding-top: 0.25rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1960,9 +1943,6 @@ select {
 }
 .text-right {
   text-align: right;
-}
-.align-middle {
-  vertical-align: middle;
 }
 .font-body {
   font-family: Josefin Sans;
@@ -2108,12 +2088,6 @@ select {
      }
 .\[overflow\:visible\] {
   overflow: visible;
-}
-
-
-@font-face {
-    font-family: "Josefin Sans";
-    src: url("../fonts/JosefinSans-VariableFont_wght.ttf");
 }
 
 @font-face {
@@ -2482,8 +2456,8 @@ select {
 }
 
 
-.hover\:bg-gray-200\/20:hover {
-  background-color: rgb(223 219 203 / 0.2);
+.hover\:bg-gray-900\/20:hover {
+  background-color: rgb(29 52 58 / 0.2);
 }
 
 
@@ -2512,6 +2486,11 @@ select {
 }
 
 
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+
 @media (min-width: 416px) {
 
   .xsm\:grid-cols-2 {
@@ -2534,13 +2513,12 @@ select {
     top: 2.5rem;
   }
 
-  .sm\:mx-0 {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
   .sm\:block {
     display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
   }
 
   .sm\:h-64 {
@@ -2696,10 +2674,6 @@ select {
     height: 100%;
   }
 
-  .xl\:max-h-full {
-    max-height: 100%;
-  }
-
   .xl\:w-96 {
     width: 24rem;
   }
@@ -2711,10 +2685,6 @@ select {
   .xl\:translate-y-0 {
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .xl\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .xl\:flex-row {
@@ -2745,4 +2715,25 @@ select {
   --tw-scale-x: 80%;
   --tw-scale-y: 80%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+
+.\[\&_b\]\:font-bold b {
+  font-weight: 700;
+}
+
+
+.\[\&_b\]\:text-pacific-blue-100 b {
+  --tw-text-opacity: 1;
+  color: rgb(225 246 249 / var(--tw-text-opacity));
+}
+
+
+.\[\&_ul\]\:list-disc ul {
+  list-style-type: disc;
+}
+
+
+.\[\&_ul\]\:pl-5 ul {
+  padding-left: 1.25rem;
 }

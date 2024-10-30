@@ -5,7 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Examples</title>
 		<!-- Use static CSS from /public/build/tailwind.css -->
-		<link rel="stylesheet" href="{{ url_for('static', filename='build/tailwind.css') }}" />
+		<link rel="stylesheet" href="../../public/build/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
   </head>
 	<body class="w-full min-w-40 bg-gray-100 font-body text-gray-900">
         <div class="w-full max-w-screen-sm mx-auto p-4">
@@ -75,6 +79,6 @@
             </form>
           </div>
         </div>
-        <script src="{{ url_for('static', filename='js/send-data.js') }}"></script>
+        <script src="../../public/js/send-data.js"></script>
 	</body>
 </html>

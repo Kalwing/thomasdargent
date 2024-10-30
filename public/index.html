@@ -7,18 +7,21 @@
 		<title>Thomas Dargent</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="build/tailwind.css" />
-		<script src="js/leader-line.min.js"></script>
-		<script type="module" src="js/ts/portfolio-gallery.ts"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="build/tailwind.css"/>
+		<script type="module" src="js/ts/portfolio-gallery.ts" async></script>
 	</head>
 	<body class="bg-slate-100 w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900">
-		<nav class="fixed isolate z-50 m-0 p-4 text-xl lg:m-8">
+		<nav class="fixed isolate w-52 z-50 m-0 p-4 text-xl lg:m-8">
 			<a
-				class="border-b border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent"
+				class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent"
 				href=""
 				>Thomas Dargent</a
 			>
-			<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent">
+			<button id="show-btn" class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100  border border-pink-950 text-center" type="button">↧</button>
+			<ul id="menu" class="mt-4 *:bg-gray-200 *:lg:bg-transparent hidden sm:block text-base">
 				<li class="p-1 hover:ml-4 hover:text-pacific-blue-600">
 					<a href="#portfolio">Portfolio</a>
 				</li>
@@ -47,14 +50,14 @@
 						</textPath>
 					</text>
 				</svg>
-				<img src="img/card.png?as=webp&quality=50" class="w-48 sm:w-80 xl:w-96" />
+				<img src="img/card.png?as=webp&quality=100&width=350" class="w-48 sm:w-80 xl:w-96" />
 			</div>
 		</section>
 		<section id="whoAmI" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left">Who am I ?</h1>
 			<div class="flex flex-col md:flex-row">
 				<img
-					src="img/avatar.png?as=webp&quality=50?width=280"
+					src="img/avatar.png?as=webp&quality=60&width=300"
 					class="m-4 mx-auto block h-40 w-40 max-w-full hover:rotate-1 hover:bg-pink-400 sm:h-64 sm:w-64 md:m-8" />
 				<div class="prose block text-gray-700">
 					<span class="text-4xl text-pacific-blue-900">Hi !</span>
@@ -156,21 +159,7 @@
 				</ul>
 			</div>
 		</section>
-		<script>
-			var brevo_1 = document.getElementById('brevo-part-1');
-			var brevo_2 = document.getElementById('brevo-part-2');
-			setTimeout(() => {
-				line = new LeaderLine(brevo_1, brevo_2, { dash: true, color: '#17a1c5', path: 'fluid' });
-				// line.setOptions({ startSocket: 'right' })
-				line.startSocketGravity = [100, -10];
-			}, 1000);
-			// var ld_1 = document.getElementById('ld-part-1')
-			// var ld_2 = document.getElementById('ld-part-2')
-			// setTimeout(() => {
-			// 	line = new LeaderLine(ld_1, ld_2, { dash: true, color: '#db8bc3', path: 'fluid' })
-			// 	line.setOptions({ startSocket: 'left' })
-			// 	line.startSocketGravity = [-130, 50]
-			// }, 300)
-		</script>
+		<script type="module" src="./js/set-lines.js" defer></script>
+		<script type="module" src="./js/ts/menu.ts"></script>
 	</body>
 </html>

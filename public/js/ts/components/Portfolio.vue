@@ -21,7 +21,7 @@
             <div class="relative flex items-center justify-center w-full h-full px-[1%] sm:px-[8%]">
                 <!-- Previous Button -->
                 <div v-if="projectGallery[curProjIdx].length > 1" @click.stop="projectGalleryPrev"
-                    class="absolute left-4 select-none flex items-center justify-center text-gray-200 rounded-full cursor-pointer bg-gray-200/10 w-14 h-14 hover:bg-gray-200/20 -translate-y-[200%] xl:translate-y-0">
+                    class="absolute left-4 select-none flex items-center justify-center text-gray-200 rounded-full cursor-pointer bg-gray-900/10 w-14 h-14 hover:bg-gray-900/20 -translate-y-[200%] xl:translate-y-0">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="3" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -30,9 +30,9 @@
 
                 <!-- Image Display -->
                 <div class="flex flex-col xl:flex-row w-full h-screen max-h-screen justify-items-center gap-0">
-                    <div class="w-full select-none h-2/3 max-h-2/3 xl:h-full ">
+                    <div class="w-full select-none h-2/3 max-h-2/3 xl:h-full flex content-center">
                         <img :src="projectGalleryActiveUrl"
-                            class="mx-auto h-full object-contain block select-none cursor-zoom-out shadow-lg"
+                            class="mx-auto max-h-full object-contain block select-none cursor-zoom-out shadow-lg"
                             :alt='projectGallery[curProjIdx][curImageIdx].alt' />
                     </div>
                     <div @click.stop=""
@@ -40,14 +40,15 @@
                         <div>
                             <h1 class="text-pacific-blue-300 font-bold text-lg">{{
                                 projectGallery[curProjIdx][curImageIdx].title }} :</h1>
-                            <div class="" v-html="projectGallery[curProjIdx][curImageIdx].description.trim()"> </div>
+                            <div class="[&_ul]:list-disc [&_ul]:pl-5 [&_b]:text-pacific-blue-100 [&_b]:font-bold"
+                                v-html="projectGallery[curProjIdx][curImageIdx].description.trim()"> </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Next Button -->
                 <div v-if="projectGallery[curProjIdx].length > 1" @click.stop="projectGalleryNext"
-                    class="absolute select-none right-4 flex items-center justify-center text-gray-200 rounded-full cursor-pointer bg-gray-200/10 w-14 h-14 hover:bg-gray-200/20 -translate-y-[200%] xl:translate-y-0">
+                    class="absolute select-none right-4 flex items-center justify-center text-gray-200 rounded-full cursor-pointer bg-gray-900/10 w-14 h-14 hover:bg-gray-900/20 -translate-y-[200%] xl:translate-y-0">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="3" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -72,8 +73,8 @@ export default defineComponent({
     },
     setup(props) {
         const projectGalleryOpened = ref(false);
-        const projectGalleryActiveUrl = ref<string | null>(null);
-        const curImageIdx = ref<number | null>(null);
+        const projectGalleryActiveUrl = ref<string>("");
+        const curImageIdx = ref<number>(0);
         const curProjIdx = ref<number>(0);
 
         const projectGallery = ref(props.project_list);
@@ -86,7 +87,7 @@ export default defineComponent({
 
         const projectGalleryClose = () => {
             projectGalleryOpened.value = false;
-            setTimeout(() => (projectGalleryActiveUrl.value = null), 300);
+            setTimeout(() => (projectGalleryActiveUrl.value = ""), 300);
         };
 
         const projectGalleryNext = () => {

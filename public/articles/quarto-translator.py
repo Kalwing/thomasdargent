@@ -30,6 +30,23 @@ def modify_html(file_path, output_name):
     head = soup.head
     tailwind_link = soup.new_tag("link", rel="stylesheet", href="../build/tailwind.css")
     head.append(tailwind_link)
+    font_link = soup.new_tag(
+        "link", rel="preconnect", href="https://fonts.googleapis.com"
+    )
+    head.append(font_link)
+    font_link2 = soup.new_tag(
+        "link",
+        rel="preconnect",
+        href="https://fonts.gstatic.com",
+        attrs={"crossorigin": ""},
+    )
+    head.append(font_link2)
+    font_link3 = soup.new_tag(
+        "link",
+        rel="stylesheet",
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap",
+    )
+    head.append(font_link3)
 
     # 5. Modifier les classes de #quarto-content
     quarto_content = soup.find(id="quarto-content")
@@ -119,20 +136,26 @@ def modify_html(file_path, output_name):
     body = soup.body
     demo_script = soup.new_tag("script", src="../js/iframe_demo.js")
     head.append(demo_script)
+    menu_script = soup.new_tag("script", src="../js/ts/menu.ts")
+    head.append(menu_script)
 
     # 12. Ajouter un menu au début du body
     nav_html = """
-    <nav class="fixed isolate z-50 m-0 p-4 text-xl lg:m-8">
-        <a class="border-b border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent"
-         href="../index.html">
-            Thomas Dargent
-        </a>
-        <ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent">
-            <li class="hover:ml-4 hover:text-pacific-blue-600"><a href="../index.html#portfolio">Portfolio</a></li>
-            <li class="hover:ml-4 hover:text-pacific-blue-600"><a href="../index.html#blog">Blog</a></li>
-            <li class="hover:ml-4 hover:text-pacific-blue-600"><a href="../index.html#contact">Contact</a></li>
-        </ul>
-    </nav>
+		<nav class="fixed isolate w-52 z-50 m-0 p-4 text-xl lg:m-8">
+			<a
+				class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent"
+				href=""
+				>Thomas Dargent</a
+			>
+			<button id="show-btn" class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100  border border-pink-950 text-center" type="button">↧</button>
+			<ul id="menu" class="mt-4 *:bg-gray-200 *:lg:bg-transparent hidden sm:block text-base">
+				<li class="p-1 hover:ml-4 hover:text-pacific-blue-600">
+					<a href="#portfolio">Portfolio</a>
+				</li>
+				<li class="p-1 hover:ml-4 hover:text-pacific-blue-600"><a href="#blog">Blog</a></li>
+				<li class="px-1 hover:ml-4 hover:text-pacific-blue-600"><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
     """
     nav_tag = BeautifulSoup(nav_html, "lxml").nav
     body.insert(0, nav_tag)
