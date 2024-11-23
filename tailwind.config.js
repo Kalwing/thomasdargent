@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin');
 module.exports = {
+	darkMode: 'class',
 	content: [
 		'./public/*.html',
 		'./public/*/*.html',
@@ -10,20 +11,22 @@ module.exports = {
 		colors: {
 			gray: {
 				100: '#F7F6F3',
-				200: '#DFDBCBff',
+				200: '#DFDBCB',
 				700: '#5E6C6A',
-				900: '#1D343Aff',
+				900: '#1D343A',
+				1000: '#1D1D1D',
 			},
 			'pacific-blue': {
 				100: '#e1f6f9',
 				300: '#73d8ed',
 				500: '#17a1c5',
-				600: '#1680a4',
+				600: '#16657F',
 				900: '#1c475d',
 			},
 			pink: {
-				400: '#db8bc3',
+				400: '#D999C7',
 				600: '#b9498e',
+				700: '#993873',
 				800: '#843061',
 				950: '#42152f',
 			},
@@ -50,13 +53,14 @@ module.exports = {
 			},
 			fontFamily: {
 				heading: 'Le Murmure, serif',
-				body: 'Josefin Sans',
+				body: 'Josefin Sans, sans',
 			},
 			textShadow: {
 				white:
 					'3px 0 0 #FFF, -3px 0 0 #FFF, 0 3px 0 #FFF,  0 -3px 0 #FFF, 1.5px 1.5px 0 #FFF, -1.5px 1.5px 0 #FFF, -1.5px -1.5px 0 #FFF, -1.5px 1.5px 0 #FFF',
 				DEFAULT:
 					'3px 0 0  var(--tw-shadow-color), -3px 0 0  var(--tw-shadow-color), 0 3px 0  var(--tw-shadow-color),  0 -3px 0  var(--tw-shadow-color), 1.5px 1.5px 0  var(--tw-shadow-color), -1.5px 1.5px 0  var(--tw-shadow-color), -1.5px -1.5px 0  var(--tw-shadow-color), -1.5px 1.5px 0  var(--tw-shadow-color)',
+				thin: '1px 0 0  var(--tw-shadow-color), -1px 0 0  var(--tw-shadow-color), 0 1px 0  var(--tw-shadow-color),  0 -1px 0  var(--tw-shadow-color), 0.5px 0.5px 0  var(--tw-shadow-color), -0.5px 0.5px 0  var(--tw-shadow-color), -0.5px -0.5px 0  var(--tw-shadow-color), -0.5px 0.5px 0  var(--tw-shadow-color)',
 			},
 			screens: {
 				xxsm: '256px',

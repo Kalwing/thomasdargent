@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="quarto-1.4.554" name="generator"/>
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
@@ -51,51 +51,80 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-<script src="quarto_files/libs/clipboard/clipboard.min.js" type="module"></script>
-<script src="quarto_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="quarto_files/libs/quarto-html/popper.min.js" type="module"></script>
-<script src="quarto_files/libs/quarto-html/tippy.umd.min.js" type="module"></script>
-<script src="quarto_files/libs/quarto-html/anchor.min.js" type="module"></script>
-<link href="quarto_files/libs/quarto-html/tippy.css" rel="stylesheet"/>
-<link href="quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
-<script src="quarto_files/libs/bootstrap/bootstrap.min.js" type="module"></script>
-<link href="quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<script src="./quarto_files/libs/clipboard/clipboard.min.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/popper.min.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/tippy.umd.min.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/anchor.min.js" type="module"></script>
+<link href="./quarto_files/libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="./quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 
-<link href="../build/tailwind.css" rel="stylesheet"/><script src="../js/iframe_demo.js"></script></head>
-<body class="bg-slate-100 fullContent w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900"><nav class="fixed isolate z-50 m-0 p-4 text-xl lg:m-8">
-<a class="border-b border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent" href="../index.html">
-            Thomas Dargent
-        </a>
-<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent">
-<li class="hover:ml-4 hover:text-pacific-blue-600"><a href="../index.html#portfolio">Portfolio</a></li>
-<li class="hover:ml-4 hover:text-pacific-blue-600"><a href="../index.html#blog">Blog</a></li>
-<li class="hover:ml-4 hover:text-pacific-blue-600"><a href="../index.html#contact">Contact</a></li>
+
+
+<link href="../img/favicon.ico" rel="icon" type="image/x-icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet"/><link as="font" crossorigin="anonymous" href="../fonts/LeMurmure-Regular.woff2" rel="preload" type="font/woff2"/><link href="../build/tailwind.css" rel="stylesheet"/><script>
+                if (localStorage.getItem('dark-mode') === 'true' || (!('dark-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.querySelector('html').classList.add('dark');
+                } else {
+                    document.querySelector('html').classList.remove('dark');
+                }
+            </script><meta content="Today a blog post about '“Content for content lovers, color testers, and font enthusiasts.”'" name="description"/></head>
+<body class="bg-gray-100 fullContent w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900 dark:bg-gray-1000 dark:text-gray-200"><nav class="fixed isolate w-52 dark:w-56 z-50 m-0 p-4 text-xl lg:m-8">
+<a class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent dark:border-0 dark:bg-pink-400 dark:text-gray-1000 dark:font-black" href="https://thomasdargent.com">Thomas Dargent</a>
+<button class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100 border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" id="show-btn" type="button">↧</button>
+<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-900 dark:border dark:border-pink-400 dark:[&amp;_li+li]:border-t dark:[&amp;_li+li]:border-pink-400 hidden sm:block text-base" id="menu">
+<li class="p-1">
+<a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#portfolio">Portfolio</a>
+</li>
+<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#blog">Blog</a></li>
+<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#contact">Contact</a></li>
 </ul>
+<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-900 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
+<input class="sr-only" id="light-switch" name="light-switch" type="checkbox"/>
+<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
+<svg class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" viewbox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
+<path d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"></path>
+<polygon points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"></polygon>
+<polygon points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" style="transform-origin: 244.396px 245.729px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+<polygon points="314.274 177.389 322.388 158.397 341.324 150.733 330.842 168.392"></polygon>
+<polygon points="230.871 150.733 238.986 169.724 257.92 177.389 247.439 159.729" style="transform-origin: 244.396px 164.061px;" transform="matrix(-1, 0, 0, -1, -0.000030517578, 0)"></polygon>
+<path d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"></path>
+</svg>
+<div class="border-b border-pink-600 h-1/2 w-full"></div>
+<svg class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" viewbox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
+<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"></path>
+<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"></polygon>
+<polygon points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" style="transform-origin: 238.011px 239.826px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+<polygon points="348.134 132.81 360.922 103.07 390.763 91.069 374.244 118.722"></polygon>
+<polygon points="216.695 91.069 229.483 120.809 259.324 132.81 242.805 105.157" style="transform-origin: 238.01px 111.94px;" transform="matrix(-1, 0, 0, -1, 0, 0.000015258789)"></polygon>
+</svg>
+<span class="sr-only">Switch to light / dark version</span>
+</label>
+</div>
 </nav>
 <div class="px-6 pb-16 pt-48 lg:pt-16 sm:px-16 sm:pl-52 lg:pl-72 xl:pl-96" id="quarto-content">
 <main class="content" id="quarto-document-content">
 <header class="prose lg:prose-lg text-center font-normal" id="title-block-header">
 <div class="quarto-title">
-<h1 class="font-heading text-4xl !w-full max-w-[40rem] sm:text-6xl mb-12 mt-8 font-normal text-center">Exclusive Blog Content</h1>
+<h1 class="font-heading text-4xl !w-full max-w-[40rem] sm:text-6xl mb-12 mt-8 font-normal text-center dark:text-gray-100">Exclusive Blog Content</h1>
 </div>
 <div class="quarto-title-meta">
 </div>
-<p class="prose lg:prose-lg text-xl !w-full max-w-[40rem] text-gray-700 !mb-6 !mt-2 text-gray-900 text-center">— OR —</p><p class="prose lg:prose-lg text-lg !mb-16 !w-full max-w-[40rem] text-gray-900 text-center" role="doc-subtitle">“Content for content lovers, color testers, and font enthusiasts.”</p></header>
+<p class="prose lg:prose-lg text-xl !w-full max-w-[40rem] !mb-6 !mt-2 text-gray-900 dark:text-gray-200 text-center">— OR —</p><p class="prose lg:prose-lg text-lg !mb-16 !w-full max-w-[40rem] text-gray-900 dark:text-gray-200 text-center" role="doc-subtitle">“Content for content lovers, color testers, and font enthusiasts.”</p></header>
 
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">This is a blog content. You can use it to test the colors and fonts, mainly focusing on text. Your average simple, minimal blog post.</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">This is a blog content. You can use it to test the colors and fonts, mainly focusing on text. Your average simple, minimal blog post.</p>
 <dl>
 <dt>term</dt>
 <dd>
 definition
 </dd>
 </dl>
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">First, let’s check out how different fonts and sizes look on each heading.</p>
-<ul class="prose prose-stone !w-full max-w-[40em]  list-disc pl-8 lg:prose-lg">
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">First, let’s check out how different fonts and sizes look on each heading.</p>
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
 <li>unordered list
-<ul class="prose prose-stone !w-full max-w-[40em]  list-disc pl-8 lg:prose-lg">
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
 <li>sub-item 1</li>
 <li>sub-item 2
-<ul class="prose prose-stone !w-full max-w-[40em]  list-disc pl-8 lg:prose-lg">
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
 <li>sub-sub-item 1</li>
 <li></li>
 </ul></li>
@@ -104,41 +133,41 @@ definition
 <li><label><input checked="" type="checkbox"/>Task 2</label></li>
 </ul>
 <section class="level2" id="heres-an-h2-tag">
-<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600" data-anchor-id="heres-an-h2-tag">Here’s an H2 Tag</h2>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">H2 tags come right after the H1 tag. Usually, there’s one H1 tag per document, which is the title. The H2 tags are the main headings of the article, and they are kind of necessary because they help search engines understand the topic of that document. Here is a footnote<a class="footnote-ref" href="#fn1" id="fnref1" role="doc-noteref"><sup>1</sup></a> reference,<a class="footnote-ref" href="#fn2" id="fnref2" role="doc-noteref"><sup>2</sup></a> and another.<a class="footnote-ref" href="#fn3" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">This paragraph won’t be part of the note, because it isn’t indented.</p>
-<ol class="prose prose-stone !w-full max-w-[40em] list-decimal pl-8 lg:prose-lg" type="1">
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="heres-an-h2-tag">Here’s an H2 Tag</h2>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">H2 tags come right after the H1 tag. Usually, there’s one H1 tag per document, which is the title. The H2 tags are the main headings of the article, and they are kind of necessary because they help search engines understand the topic of that document. Here is a footnote<a class="footnote-ref" href="#fn1" id="fnref1" role="doc-noteref"><sup>1</sup></a> reference,<a class="footnote-ref" href="#fn2" id="fnref2" role="doc-noteref"><sup>2</sup></a> and another.<a class="footnote-ref" href="#fn3" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">This paragraph won’t be part of the note, because it isn’t indented.</p>
+<ol class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-decimal pl-8 lg:prose-lg" type="1">
 <li>A list whose numbering</li>
 </ol>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">continues after</p>
-<ol class="prose prose-stone !w-full max-w-[40em] list-decimal pl-8 lg:prose-lg" start="2" type="1">
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">continues after</p>
+<ol class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-decimal pl-8 lg:prose-lg" start="2" type="1">
 <li>an interruption</li>
 </ol>
 <section class="level3" id="here-comes-the-h3-tag">
-<h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900" data-anchor-id="here-comes-the-h3-tag">Here comes the H3 tag</h3>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">The H3 tags mark the subheadings and their main topics are still related to their respective H2 tags. For example, here, you’re still reading about headings and subheadings. Pandoc supports syntax highlighting for over 140 different languages. If your language is not supported then you can use the default language to get a similar visual treatment:</p>
-<div class="mb-4" id="cb2"><pre class="sourceCode default code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode default"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a>code</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
-<div class="mb-4" id="cb3"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+<h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="here-comes-the-h3-tag">Here comes the H3 tag</h3>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">The H3 tags mark the subheadings and their main topics are still related to their respective H2 tags. For example, here, you’re still reading about headings and subheadings. Pandoc supports syntax highlighting for over 140 different languages. If your language is not supported then you can use the default language to get a similar visual treatment:</p>
+<div class="mb-4" id="cb2"><pre class="sourceCode default code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode default"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a>code</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+<div class="mb-4" id="cb3"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <div class="code-with-filename mt-4">
-<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 py-1 px-2 -rotate-3">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>run.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] text-sm lg:text-base mb-8 p-2 shadow-gray-900 shadow-punk border border-gray-900" data-filename="run.py" id="cb4"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="run.py" id="cb4"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a></span>
 <span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a"</span>)</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 </div>
 <section class="level4" id="h4-tag">
-<h4 class="text-base sm:text-xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900" data-anchor-id="h4-tag">H4 tag?</h4>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">The journey through heading tags continues. The H4 tag is a subheading for the H3 tag. When do you even use it? Whenever you need a section even smaller than the subheading. It’s generally uncommon and doesn’t affect search engine optimization much.</p>
+<h4 class="text-base sm:text-xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="h4-tag">H4 tag?</h4>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">The journey through heading tags continues. The H4 tag is a subheading for the H3 tag. When do you even use it? Whenever you need a section even smaller than the subheading. It’s generally uncommon and doesn’t affect search engine optimization much.</p>
 <div class="shadow-punk shadow-pacific-blue-600">
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">This content can be styled with a border</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">This content can be styled with a border</p>
 </div>
 <blockquote class="blockquote">
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">Blockquote</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Blockquote</p>
 </blockquote>
 <section class="level5" id="theres-an-h5-too">
 <h5 class="anchored" data-anchor-id="theres-an-h5-too">There’s an H5 too?</h5>
-<p class="prose lg:prose-lg !w-full prose-stone max-w-[40rem] mb-4">Yes, there is. Again, it’s not that common, and probably just looks like average text. But who knows. Maybe you’ll need it.</p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Yes, there is. Again, it’s not that common, and probably just looks like average text. But who knows. Maybe you’ll need it.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -149,7 +178,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">Note that there are five types of callouts, including: <code class="p-1 text-pink-600 shadow-inner">note</code>, <code class="p-1 text-pink-600 shadow-inner">tip</code>, <code class="p-1 text-pink-600 shadow-inner">warning</code>, <code class="p-1 text-pink-600 shadow-inner">caution</code>, and <code class="p-1 text-pink-600 shadow-inner">important</code>.</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Note that there are five types of callouts, including: <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">note</code>, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">tip</code>, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">warning</code>, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">caution</code>, and <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">important</code>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -162,21 +191,21 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">Note that there are five types of callouts, including: <code class="p-1 text-pink-600 shadow-inner">note</code>, <code class="p-1 text-pink-600 shadow-inner">tip</code>, <code class="p-1 text-pink-600 shadow-inner">warning</code>, <code class="p-1 text-pink-600 shadow-inner">caution</code>, and <code class="p-1 text-pink-600 shadow-inner">important</code>.</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Note that there are five types of callouts, including: <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">note</code>, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">tip</code>, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">warning</code>, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">caution</code>, and <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">important</code>.</p>
 </div>
 </div>
 </section>
 </section>
 </section>
 </section>
-<div class="default" id="quarto-appendix"><section class="footnotes footnotes-end-of-document" id="footnotes" role="doc-endnotes"><h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600">Footnotes</h2>
-<ol class="prose prose-stone !w-full max-w-[40em] list-decimal pl-8 lg:prose-lg">
-<li id="fn1"><p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">Here is the footnote.<a class="footnote-back" href="#fnref1" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">Inlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.<a class="footnote-back" href="#fnref2" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">Here’s one with multiple blocks.</p>
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
-<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="p-1 text-pink-600 shadow-inner">{ some.code }</code></pre>
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone max-w-[40em]  mb-4">The whole paragraph can be indented, or just the first line. In this way, multi-paragraph footnotes work like multi-paragraph list items.<a class="footnote-back" href="#fnref3" role="doc-backlink">↩︎</a></p></li>
+<div class="default" id="quarto-appendix"><section class="footnotes footnotes-end-of-document" id="footnotes" role="doc-endnotes"><h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400">Footnotes</h2>
+<ol class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-decimal pl-8 lg:prose-lg">
+<li id="fn1"><p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Here is the footnote.<a class="footnote-back" href="#fnref1" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Inlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.<a class="footnote-back" href="#fnref2" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Here’s one with multiple blocks.</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">{ some.code }</code></pre>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">The whole paragraph can be indented, or just the first line. In this way, multi-paragraph footnotes work like multi-paragraph list items.<a class="footnote-back" href="#fnref3" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
@@ -590,4 +619,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-</body></html>
+<script src="../js/iframe_demo.js"></script><script src="../js/ts/menu.ts"></script><script src="../js/switch_theme.js"></script></body></html>

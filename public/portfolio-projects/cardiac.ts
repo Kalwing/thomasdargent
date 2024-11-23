@@ -4,22 +4,40 @@ const cardiac_projects = [
 			'../img/portfolio/cardiac/cto-coeur-details.png?width=800&as=webp&quality=90',
 			import.meta.url,
 		),
+		thumbnail: new URL(
+			'../img/portfolio/cardiac/cto-coeur-details.png?width=250&as=webp&quality=75',
+			import.meta.url,
+		),
 		alt: 'Diagram of cardiac anatomy',
 		title: 'Mesuring Cardiac Strain',
 		description: `
-In 2021 I did my final Master's internship at the CREATIS lab.
-I focused on studying cardiac function, specifically of the right ventricle.
-The heart, a complex four-chamber organ, plays a vital role in pumping blood between the lungs and the body.
-However, assessing the right ventricle is challenging due to its intricate shape. Long overlooked in clinical research,
-the study of the right ventricle has proven essential for certain pathologies.
+In 2021 I did my final Master's internship at the CREATIS lab. I studied cardiac function, specifically of the right ventricle.
 <br/><br/>
-Right ventricular dysfunction — caused by high pressure, excess volume, or heart disease — remains difficult to evaluate with traditional imaging methods
-like echocardiography and MRI, which provide only measurements for large surfaces and lack local precision.
-Here, myocardial strain analysis offers a solution by quantifying local deformation and pinpointing problematic areas more accurately.
-My work involved comparing different strain calculation techniques to better adapt these measurements to the unique characteristics of the right ventricle.
+<h2 class="text-pacific-blue-500">TLDR:</h2>
+I measured how much the heart stretches using a 3D model. Specifically, I focused on the right ventricle, and we had to find a way
+to mathematically define the movements of its complex shape. This work led to two scientific papers.
 <br/><br/>
+<h2 class="text-pacific-blue-500">Background:</h2>
+The heart is a muscle with two ventricles. The left ventricle, shaped like a big vase, pumps blood to the entire body.
+The right ventricle, which looks more like a twisted samosa, sends blood to the lungs to oxygenate it.
+Since the heart is a muscle, a lot of issues come down to problems with its <b>ability to contract or stretch</b>.
+Standard methods to diagnose these issues are very big-picture oriented (like the Ejection Fraction,
+which measures how much blood is pumped out with each beat, not how it happens).
+To really understand the root of the problem we have to locate its exact origin.
+That’s where <b>strain</b> comes in, it allows us to measure how much each part of the heart stretches,
+but it has yet to be widely used. <b>The catch</b>: the right ventricle’s more complex shape means it’s been studied less.
+My supervisors, <b>N. Duchateau and G. Bernardino</b>, set out to tackle these two challenges.
+<br/><br/>
+Strain is particularly valuable for studying the right ventricle (RV), whose complex shape makes it hard to assess using standard methods.
+However, strain's clinical use is held back by the lack of standardization in both its calculation and interpretation.
+Differences in operator technique and imaging methods introduce variability, limiting its reliability and reproducibility.
+<br/><br/>
+Several factors contribute to these challenges, such as the choice of anatomical directions used to break down the strain and the calculation method itself.
+Without a consensus on these methodological choices, comparing results across studies is difficult, which slows the broader clinical adoption of strain measurements.
 This research aims to refine diagnostic tools and provide physicians with more precise,
 localized metrics, ultimately helping to improve patient care for those with cardiac conditions.
+<br/>
+Let's tackle those issues : first the directions, then the calculations.
 `,
 	},
 	{
@@ -27,6 +45,7 @@ localized metrics, ultimately helping to improve patient care for those with car
 			'../img/portfolio/cardiac/directions.png?width=800&as=webp&quality=90',
 			import.meta.url,
 		),
+		thumbnail: '',
 		alt: 'Results of vectors calculated using differents methods on the heart',
 		title: 'Local Anatomical Direction Calculation of the Right Ventricle',
 		description: `
@@ -54,6 +73,7 @@ enhancing our ability to measure and interpret the mechanics of contraction.`,
 			'../img/portfolio/cardiac/diffstrain.png?width=800&as=webp&quality=90',
 			import.meta.url,
 		),
+		thumbnail: '',
 		alt: 'Mean difference of the two strains on each point of the ventricle for two population (Healthy and Fallot)',
 		title: 'Understanding Strain and Measuring It in Cardiac Deformation',
 		description: `
@@ -70,7 +90,6 @@ We used two types of strain :
 
     <li><b>Lagrangian Strain</b>: This type is better for measuring larger deformations and ignores rotation, focusing only on the actual stretching of the muscle.</li>
 </ul>
-<br/>
 To confirm our ideas about the better strain we have to understand strain differences across healthy and affected heart populations.
 We used methods that condense complex data into simpler patterns:
 <ul>
@@ -85,6 +104,7 @@ This analysis confirmed that Lagrangian strain is more reliable because it ignor
 			'../img/portfolio/cardiac/interest.png?width=800&as=webp&quality=90',
 			import.meta.url,
 		),
+		thumbnail: '',
 		alt: 'Histogram of the interest of the query "myocardial strain" on pubmed from 1951 to 2021. We can see a huge increase of interest those last few year.',
 		title: 'Wrapping it Up: ',
 		description: `
@@ -97,8 +117,7 @@ We tested our strain methods individually and at a population level, finding tha
 which led us to vote in favor of Lagrangian strain. We also confirmed strain is a good indicator of unhealthy heart movement patterns.
 <br/><br/>
 In the end, strain gives us a detailed look into what we want from the ventricle: its pumping power.
-Ejection fraction (EF) is a helpful, widely used number, but it's a big-picture view—like reading a headline instead of the whole story.
-EF tells us if there's a problem, but strain digs deeper, pointing out exactly where things might be going bad.
+EF is a helpful, widely used number, and tells us if there's a problem, but strain digs deeper, pointing out exactly where things might be going bad.
 Strain gives us insight that lets us track each heart muscle fiber's specific movements, and these informations can make a big difference in understanding heart function.
 <br/><br/>
 So, here’s our takeaway: choosing directions based on anatomy and a reliable local strain measure gives us a clear, practical view of cardiac function.
@@ -109,8 +128,10 @@ I was lucky enough to contribute - through this work - to 2 research papers focu
 <li>"<b>Which anatomical directions to quantify local right ventricular strain in 3D echocardiography?</b>" by M Di Folco, T Dargent, G Bernardino, P Clarysse, N Duchateau</li>
 <li>"<b>Strainger things: discrete differential geometry for transporting right ventricular deformation across meshes</b>" by G Bernardino, T Dargent, O Camara, N Duchateau</li>
 </ul>
-This experience allowed me to better undestand discrete geometry, population analysis and also, unsurprisingly, cardiology. I surprised myself by talking with my med student roommate about cardiac pathologies, and understanding the terms he threw at me.
-One of my best work experience, with the nicest team on earth.
+<br/>
+This experience allowed me to better undestand discrete geometry, population analysis and also, unsurprisingly, cardiology.
+I surprised myself by talking with my med student roommate about cardiac pathologies, and understanding the terms he threw at me.
+One of my best work experience, with one of the nicest team on earth.
 `,
 	},
 ];

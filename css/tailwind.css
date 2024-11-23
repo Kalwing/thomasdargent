@@ -3,127 +3,127 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Le Murmure";
-    src: url("../fonts/LeMurmure-Regular.woff2");
+	font-family: 'Le Murmure';
+	src: url('../fonts/LeMurmure-Regular.woff2');
+	font-display: block;
 }
 
 @layer base {
-    b {
-        @apply text-pacific-blue-900
-    }
-    .prose  a {
-        @apply text-pacific-blue-600 font-bold underline
-    }
-    header + [role="doc-subtitle"] {
-        @apply -mt-4
-    }
+	b {
+		@apply text-pacific-blue-900;
+	}
+	.prose a {
+		@apply font-bold text-pacific-blue-600 underline;
+	}
+	header + [role='doc-subtitle'] {
+		@apply -mt-4;
+	}
 }
 
 @layer components {
-    /* categories */
-    .data {
-        @apply sm:mx-8 sm:my-6 hover:bg-pacific-blue-100 hover:rotate-1 shadow-gray-900 m-5 block max-w-fit rotate-3 justify-items-start border-2 border-gray-900 p-2 before:absolute before:-left-6 before:-top-6 before:block before:w-10 before:rounded-full before:bg-pacific-blue-300 before:py-2 before:text-center before:shadow-sm before:content-['data'];
-    }
-    .code {
-        @apply sm:mx-8 sm:my-6 hover:scale-105 shadow-gray-900 m-5 inline-block max-w-fit -rotate-2 border-2 border-gray-900 p-2 before:absolute before:-left-6 before:-top-7 before:block before:w-20 before:-rotate-12 before:bg-gray-900 before:py-2 before:text-center before:text-gray-100 before:shadow-lg before:content-['C0DE'];
-    }
-    .art {
-        @apply sm:mx-8 sm:my-6 hover:bg-pink-600 shadow-gray-700 before:text-shadow-white m-5 block max-w-fit rotate-1 justify-items-start border-4 border-gray-700 p-2 before:absolute before:-left-3 before:-top-8 before:block before:w-10 before:rounded-full before:font-heading before:text-3xl before:text-pink-950 before:shadow-gray-900 before:content-['art'];
-    }
-    .opinion {
-        @apply sm:mx-8 sm:my-6 m-5 mb-7 hover:scale-110 hover:rotate-3 shadow-pink-950 inline-block max-w-fit -rotate-3 border-2 border-pink-950 p-2 after:absolute after:-bottom-8 after:-right-6 after:block after:w-20 after:border-2 after:border-pink-950 after:bg-gray-100 after:py-1 after:text-center after:text-pink-950 after:content-['opinion'];
-    }
-    .life {
-        @apply sm:mx-8 sm:my-6 hover:bg-pink-600 m-5 inline-block max-w-fit rotate-3 border-2 border-pink-400 p-2 shadow-punk shadow-pink-400 after:absolute after:-bottom-8 after:-right-8 after:block after:w-12 after:rotate-12 after:rounded-full after:border-2 after:border-pink-600 after:bg-gray-100 after:py-3 after:text-center after:text-pink-600 after:shadow-md after:content-['LIFE'];
-    }
-    .project {
-        @apply sm:mx-8 sm:my-6 hover:bg-gray-900 hover:text-gray-100 shadow-gray-900 shadow-punk m-5 inline-block max-w-fit -rotate-3 border-2 border-gray-900 p-2 after:absolute after:-bottom-8 after:-right-8 after:block after:w-12 after:rotate-12 after:bg-pink-600 after:py-3 after:text-center after:text-sm after:text-gray-100 after:opacity-95 after:shadow-sm after:content-['Project'];
-    }
-    .readings {
-        @apply sm:mx-8 sm:my-6 hover:bg-pacific-blue-300 shadow-gray-900 m-4 inline-block max-w-fit rotate-2 border-2 border-gray-900 p-2 after:absolute after:-bottom-4 after:-right-8 after:block after:w-10 after:-rotate-12 after:rounded-full after:text-2xl after:border-2 after:border-pacific-blue-900 after:bg-gray-100 after:pt-1 after:content-baseline after:pb-0 after:text-center after:shadow-sm after:content-['📖'];
-    }
-    /* portfolio */
-    .code-project {
-        @apply absolute -bottom-6 bg-gray-900 p-2 text-gray-100 group-hover:-rotate-3 group-hover:scale-105;
-    }
-    .tech-project {
-        @apply absolute -bottom-6 bg-gray-100 shadow-md p-2 text-gray-900 group-hover:-rotate-3 group-hover:scale-105;
-    }
-    .data-project {
-        @apply absolute -bottom-6 bg-pacific-blue-600 p-2 text-gray-100 group-hover:-rotate-3 group-hover:scale-105;
-    }
-    .art-project {
-        @apply absolute -bottom-6 bg-pink-600 p-2 font-bold text-gray-100 group-hover:-rotate-3 group-hover:scale-105;
-    }
-    /* other */
-    .shadow-punk {
-        box-shadow: 0.3rem 0.3rem 0 var(--tw-shadow-color);
-    }
-    .demo {
-        @apply w-full shadow-punk min-h-96 border-2 border-pink-400 shadow-pink-400
-    }
-    .demo-container {
-        @apply w-full max-w-[40rem] lg:max-w-full lg:w-[40rem] relative mb-4
-    }
-    .demo-container::after {
-        content: ' ';
-        @apply bg-pink-950 h-full block w-[1px] absolute right-0 top-0
-    }
-    .resizer {
-        @apply h-full absolute -right-[7px] block top-0;
-        width: 15px;
-        cursor: col-resize;
-    }
-    .resizer::after {
-        content: ' ';
-        @apply border-transparent border-l-pink-950 border-8 -right-1/2 absolute top-1/2 hover:border-l-pink-800
-    }
-    .resizer::before {
-        content: ' ';
-        @apply border-transparent border-r-pink-600 border-8 -left-[9px] absolute top-1/2 hover:border-r-pink-400
-    }
-    .resizer:active::after {
-        @apply scale-125 translate-x-1
-    }
-    .resizer:active::before {
-        @apply scale-125 -translate-x-1
-    }
+	/* categories */
+	.data {
+		@apply m-5 block max-w-fit rotate-3 justify-items-start border-2 border-gray-900 shadow-gray-900 before:absolute before:-left-6 before:-top-6 before:block before:w-10 before:rounded-full before:bg-pacific-blue-300 before:py-2 before:text-center before:shadow-sm before:content-['data'] hover:rotate-1 hover:bg-pacific-blue-100 dark:border-pink-800 dark:shadow-pink-800 sm:mx-8 sm:my-6;
+	}
+	.code {
+		@apply m-5 inline-block max-w-fit -rotate-2 border-2 border-gray-900 shadow-gray-900 before:absolute before:-left-6 before:-top-7 before:block before:w-20 before:-rotate-12 before:bg-gray-900 before:py-2 before:text-center before:text-gray-100 before:shadow-lg before:content-['C0DE'] hover:scale-105 dark:border-pink-800 dark:shadow-pink-800 dark:before:bg-pink-950 dark:before:text-gray-200 sm:mx-8 sm:my-6;
+	}
+	.art {
+		@apply m-5 block max-w-fit rotate-1 justify-items-start border-4 border-gray-700 shadow-gray-700 before:absolute before:-left-3 before:-top-8 before:block before:w-10 before:rounded-full before:font-heading before:text-3xl before:text-pink-950 before:shadow-gray-900 before:content-['art'] before:text-shadow-white hover:bg-pink-600 sm:mx-8 sm:my-6;
+	}
+	.opinion {
+		@apply m-5 mb-7 inline-block max-w-fit -rotate-3 border-2 border-pink-950 shadow-pink-950 after:absolute after:-bottom-8 after:-right-6 after:block after:w-20 after:border-2 after:border-pink-950 after:bg-gray-100 after:py-1 after:text-center after:text-pink-950 after:content-['opinion'] hover:rotate-3 hover:scale-110 sm:mx-8 sm:my-6;
+	}
+	.life {
+		@apply shadow-punk m-5 inline-block max-w-fit rotate-3 border-2 border-pink-400 shadow-pink-400 after:absolute after:-bottom-8 after:-right-8 after:block after:w-12 after:rotate-12 after:rounded-full after:border-2 after:border-pink-600 after:bg-gray-100 after:py-3 after:text-center after:text-pink-600 after:shadow-md after:content-['LIFE'] hover:bg-pink-600 sm:mx-8 sm:my-6;
+	}
+	.project {
+		@apply shadow-punk m-5 inline-block max-w-fit -rotate-3 border-2 border-gray-900 shadow-gray-900 after:absolute after:-bottom-8 after:-right-8 after:block after:w-12 after:rotate-12 after:bg-pink-600 after:py-3 after:text-center after:text-sm after:text-gray-100 after:opacity-95 after:shadow-sm after:content-['Project'] hover:bg-gray-900 hover:text-gray-100 sm:mx-8 sm:my-6;
+	}
+	.readings {
+		@apply m-4 inline-block max-w-fit rotate-2 border-2 border-gray-900 shadow-gray-900 after:absolute after:-bottom-4 after:-right-8 after:block after:w-10 after:-rotate-12 after:content-baseline after:rounded-full after:border-2 after:border-pacific-blue-900 after:bg-gray-100 after:pb-0 after:pt-1 after:text-center after:text-2xl after:shadow-sm after:content-['📖'] hover:bg-pacific-blue-300 sm:mx-8 sm:my-6;
+	}
+	/* portfolio */
+	.code-project {
+		@apply absolute -bottom-6 bg-gray-900 text-gray-100 group-hover:-rotate-3 group-hover:scale-105;
+	}
+	.tech-project {
+		@apply absolute -bottom-6 bg-gray-100 text-gray-900 shadow-md group-hover:-rotate-3 group-hover:scale-105;
+	}
+	.data-project {
+		@apply absolute -bottom-6 bg-pacific-blue-600 text-gray-100 group-hover:-rotate-3 group-hover:scale-105;
+	}
+	.art-project {
+		@apply absolute -bottom-6 bg-pink-600 font-bold text-gray-100 group-hover:-rotate-3 group-hover:scale-105;
+	}
+	/* other */
+	.shadow-punk {
+		box-shadow: 0.3rem 0.3rem 0 var(--tw-shadow-color);
+	}
+	.demo {
+		@apply shadow-punk min-h-96 w-full border-2 border-pink-400 shadow-pink-400;
+	}
+	.demo-container {
+		@apply relative mb-4 w-full max-w-[40rem] lg:w-[40rem] lg:max-w-full;
+	}
+	.demo-container::after {
+		content: ' ';
+		@apply absolute right-0 top-0 block h-full w-[1px] bg-pink-950;
+	}
+	.resizer {
+		@apply absolute -right-[7px] top-0 block h-full;
+		width: 15px;
+		cursor: col-resize;
+	}
+	.resizer::after {
+		content: ' ';
+		@apply absolute -right-1/2 top-1/2 border-8 border-transparent border-l-pink-950 hover:border-l-pink-800;
+	}
+	.resizer::before {
+		content: ' ';
+		@apply absolute -left-[9px] top-1/2 border-8 border-transparent border-r-pink-600 hover:border-r-pink-400;
+	}
+	.resizer:active::after {
+		@apply translate-x-1 scale-125;
+	}
+	.resizer:active::before {
+		@apply -translate-x-1 scale-125;
+	}
 
-    .callout {
-        @apply shadow-lg rotate-1 max-w-[40rem]
-    }
-    .callout-header {
-        @apply p-1
-    }
-    .callout-note > .callout-header {
-        @apply bg-pacific-blue-600  text-pacific-blue-100
-    }
-    .callout-warning > .callout-header {
-        @apply bg-pink-800 text-gray-100
-    }
-    .callout-body {
-        @apply p-2
-    }
+	.callout {
+		@apply max-w-[40rem] rotate-1 shadow-lg;
+	}
+	.callout-header {
+		@apply p-1;
+	}
+	.callout-note > .callout-header {
+		@apply bg-pacific-blue-600  text-pacific-blue-100;
+	}
+	.callout-warning > .callout-header {
+		@apply bg-pink-800 text-gray-100;
+	}
+	.callout-body {
+		@apply p-2;
+	}
 }
 
-
 @layer utilities {
-    .popping {
-        opacity: 1;
-        animation: fadeInScale 0.5s forwards;
-        position: absolute; /* Ensure it's positioned relative to the parent */
-        left: 50%;
-        top: 50%;
-    }
+	.popping {
+		opacity: 1;
+		animation: fadeInScale 0.5s forwards;
+		position: absolute; /* Ensure it's positioned relative to the parent */
+		left: 50%;
+		top: 50%;
+	}
 
-    @keyframes fadeInScale {
-         0% {
-             opacity: 0;
-             transform: translate(-500%, -50%) scale(1); /* Start smaller */
-         }
-         100% {
-             opacity: 1;
-             transform: translate(-50%, -50%) scale(1); /* End at full size */
-         }
-     }
-    }
+	@keyframes fadeInScale {
+		0% {
+			opacity: 0;
+			transform: translate(-500%, -50%) scale(1); /* Start smaller */
+		}
+		100% {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1); /* End at full size */
+		}
+	}
+}

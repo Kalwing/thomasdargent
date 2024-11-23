@@ -1,67 +1,112 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title>Thomas Dargent</title>
-		<meta name="description" content="" />
+		<meta name="description" content="The personal website of Thomas Dargent : Data Scientist, Developer, and all around tinkerer" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+		<link rel="preload" href="./fonts/LeMurmure-Regular.woff2" as="font" type="font/woff2 " crossorigin="anonymous">
 		<link rel="stylesheet" href="build/tailwind.css"/>
 		<script type="module" src="js/ts/portfolio-gallery.ts" async></script>
+		<script>
+			if (localStorage.getItem('dark-mode') === 'true' || (!('dark-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.querySelector('html').classList.add('dark');
+			} else {
+				document.querySelector('html').classList.remove('dark');
+			}
+		</script>
 	</head>
-	<body class="bg-slate-100 w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900">
-		<nav class="fixed isolate w-52 z-50 m-0 p-4 text-xl lg:m-8">
+	<body class="bg-slate-100 w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900 dark:bg-gray-1000 dark:text-gray-200">
+		<nav class="fixed isolate w-52 dark:w-56 z-50 m-0 p-4 text-xl lg:m-8">
 			<a
-				class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent"
+				class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent dark:border-0 dark:bg-pink-400 dark:text-gray-1000 dark:font-black"
 				href=""
 				>Thomas Dargent</a
 			>
-			<button id="show-btn" class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100  border border-pink-950 text-center" type="button">↧</button>
-			<ul id="menu" class="mt-4 *:bg-gray-200 *:lg:bg-transparent hidden sm:block text-base">
-				<li class="p-1 hover:ml-4 hover:text-pacific-blue-600">
-					<a href="#portfolio">Portfolio</a>
+			<button id="show-btn" class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100  border border-pink-950 text-center dark:bg-gray-1000 dark:border-pink-600" type="button">↧</button>
+			<ul id="menu" class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-1000 dark:border dark:border-pink-400 dark:[&_li+li]:border-t dark:[&_li+li]:border-pink-400 hidden sm:block text-base">
+				<li class="p-1">
+					<a href="#portfolio" class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400">Portfolio</a>
 				</li>
-				<li class="p-1 hover:ml-4 hover:text-pacific-blue-600"><a href="#blog">Blog</a></li>
-				<li class="px-1 hover:ml-4 hover:text-pacific-blue-600"><a href="#contact">Contact</a></li>
+				<li class="p-1"><a href="#blog"  class=" hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400">Blog</a></li>
+				<li class="p-1"><a href="#contact" class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400">Contact</a></li>
 			</ul>
+			<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-1000 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
+					<input type="checkbox" name="light-switch" id="light-switch" class="sr-only" />
+					<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
+						<svg class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" viewBox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
+							<path  d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"/>
+							<polygon  points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"/>
+							<polygon style="transform-origin: 244.396px 245.729px;" points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"/>
+							<polygon  points="314.274 177.389 322.388 158.397 341.324 150.733 330.842 168.392"/>
+							<polygon style="transform-origin: 244.396px 164.061px;" points="230.871 150.733 238.986 169.724 257.92 177.389 247.439 159.729" transform="matrix(-1, 0, 0, -1, -0.000030517578, 0)"/>
+							<path  d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"/>
+						  </svg>
+						  <div class="border-b border-pink-600 h-1/2 w-full"></div>
+						<svg class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" viewBox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"/>
+							<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"/>
+							<polygon style="transform-origin: 238.011px 239.826px;" points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"/>
+							<polygon points="348.134 132.81 360.922 103.07 390.763 91.069 374.244 118.722"/>
+							<polygon style="transform-origin: 238.01px 111.94px;" points="216.695 91.069 229.483 120.809 259.324 132.81 242.805 105.157" transform="matrix(-1, 0, 0, -1, 0, 0.000015258789)"/>
+						  </svg>
+						<span class="sr-only">Switch to light / dark version</span>
+					</label>
+			</div>
 		</nav>
-		<section class="flex h-[100vh] w-screen items-center justify-center overflow-x-hidden">
+		<section class="relative flex min-h-[max(100vh,42rem)] w-screen items-center justify-center overflow-hidden">
 			<div id="Logo" class="relative">
+				<img src="img/card.png?as=webp&quality=100&width=350" alt="Logo Thomas Dargent" class="w-48 sm:w-80 xl:w-96 dark:sm:w-48 dark:xl:w-56 dark:mix-blend-color-dodge opacity-80" />
+				<div class="absolute top-0 left-0 w-full h-full mix-blend-darken bg-pink-400 hidden dark:block"></div>
 				<svg
 					viewBox="0 0 100 100"
 					xmlns="http://www.w3.org/2000/svg"
-					class="absolute -top-12 left-[calc(50%-9rem)] w-72 animate-spin-slow font-heading [overflow:visible] sm:-top-24 sm:left-[calc(50%-16rem)] sm:w-[32rem] xl:-top-36 xl:left-[calc(50%-21rem)] xl:w-[42rem]"
+					class="fill-pacific-blue-600 dark:fill-pink-400 absolute -top-12 left-[calc(50%-9rem)] w-72 animate-spin-slow font-heading [overflow:visible] sm:-top-24 sm:left-[calc(50%-16rem)] sm:w-[32rem] dark:sm:-top-40 xl:-top-36 xl:left-[calc(50%-21rem)] xl:w-[42rem] dark:xl:-top-52"
 					alt="Developper — Data Scientist — Tinkerer">
 					<path
 						fill="#00000000"
 						id="circlePath"
 						d="
-          M 18,50
-          a 32,32 0 1,1 64,0
-          32,32 0 1,1 -64,0
-        " />
+						M 18,50
+						a 32,32 0 1,1 64,0
+						32,32 0 1,1 -64,0
+						" />
 					<text>
-						<textPath fill="#1680a4" href="#circlePath">
+						<textPath href="#circlePath">
 							Developer — Data Scientist — Tinkerer —
 						</textPath>
 					</text>
 				</svg>
-				<img src="img/card.png?as=webp&quality=100&width=350" class="w-48 sm:w-80 xl:w-96" />
+
+			</div>
+			<div class="hidden dark:lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-gray-100 opacity-15  h-full w-full max-h-[768px] max-w-screen-md" style="background-image: url(img/grid.webp)"></div>
+			<div class="absolute hidden dark:md:block right-8 top-8 text-4xl font-heading text-pink-600" aria-hidden="true">
+				<p class="leading-none"><span class="hidden xl:inline-block">THOMAS</span> DARGENT</p>
+				<p class="text-gray-1000 leading-none text-shadow-thin shadow-gray-200 opacity-75"><span class="hidden xl:inline-block">THOMAS</span> DARGENT</p>
+				<p class="text-gray-1000 leading-none text-shadow-thin shadow-gray-700 opacity-75"><span class="hidden xl:inline-block">THOMAS</span> DARGENT</p>
+			</div>
+			<div class="absolute hidden dark:block bottom-0 left-0 h-full w-full max-w-[100vw] overflow-x-hidden" aria-hidden="true">
+				<img alt="Pink flowers" id="flowers_l" class="max-h-64 absolute bottom-0 left-1/4 -translate-x-1/2 hidden md:block">
+				<img alt="Pink flowers" id="flowers_r" class="max-h-56 absolute bottom-0 left-3/4 -translate-x-1/2 hidden md:block">
+				<img alt="Pink flowers" id="flowers" class="max-w-4xl max-h-80 absolute bottom-0 left-1/2 -translate-x-1/2">
 			</div>
 		</section>
-		<section id="whoAmI" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
-			<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left">Who am I ?</h1>
+		<section id="whoAmI" class="block overflow-x-hidden bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+			<h1 class="relative text-right font-heading text-6xl sm:text-8xl lg:text-left dark:text-pink-400 after:content-[''] after:w-full after:h-[2px] after:bg-pink-600 after:absolute after:top-1/2 lg:after:left-72 sm:after:right-72 after:right-44 dark:after:block after:hidden">Who am I ?</h1>
 			<div class="flex flex-col md:flex-row">
 				<img
 					src="img/avatar.png?as=webp&quality=60&width=300"
-					class="m-4 mx-auto block h-40 w-40 max-w-full hover:rotate-1 hover:bg-pink-400 sm:h-64 sm:w-64 md:m-8" />
-				<div class="prose block text-gray-700">
-					<span class="text-4xl text-pacific-blue-900">Hi !</span>
-					<p>
+					alt="A picture of me"
+					class="m-4 mx-auto block h-40 w-40 max-w-full hover:rotate-1 hover:bg-pink-400 dark:border-4 dark:border-gray-200 dark:mix-blend-color-dodge dark:rotate-1 dark:bg-pink-400 sm:h-64 sm:w-64 md:m-8" />
+				<div class="prose block text-gray-700 dark:text-gray-200 dark:[&_b]:text-pink-600 dark:[&_a]:text-pink-600">
+					<span class="text-4xl text-pacific-blue-900 dark:text-gray-200">Hi !</span>
+					<p class="prose text-gray-900 dark:text-gray-200">
 						My name is Thomas, I'm 27 years old.
 						<br />
 						I'm a creative person passionate about <b>web development</b> and <b>data science</b>.
@@ -76,7 +121,7 @@
 						<a href="https://www.linkedin.com/in/thomas-dargent1/">Linkedin</a>. I am eager to bring
 						my expertise to new and challenging projects.
 					</p>
-					<p>
+					<p class="prose text-gray-900 dark:text-gray-200">
 						<br />
 						I love punk rock music, cute animals (so every animal I guess), cooking pies, and
 						watching the sun rise. <br />
@@ -86,59 +131,57 @@
 				</div>
 			</div>
 		</section>
-		<section id="portfolio" class="block bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+		<section id="portfolio" class="block bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 dark:text-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
-				<h1 class="text-left font-heading text-8xl">Portfolio</h1>
-				<p class="prose">Here's some projects I'm proud of !</p>
+				<h1 class="text-left font-heading text-8xl dark:text-pink-400">Portfolio</h1>
+				<p class="prose text-gray-900 dark:text-gray-200">Here's some projects I'm proud of !</p>
 				<div class="flex gap-6 flex-wrap mb-4 mt-2">
 					<div id="portfolioGallery"></div>
 				</div>
 		</section>
-		<section id="blog" class="block min-h-[70vh] bg-gray-100 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+		<section id="blog" class="block min-h-[70vh] bg-gray-100 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 dark:text-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
-				<h1 class="font-heading text-8xl">Blog</h1>
+				<h1 class="font-heading text-8xl dark:text-pink-400 ">Blog</h1>
 				<p>I sometime write about stuff. You can read about it here.</p>
-				<p class="prose">
+				<p class="prose dark:text-gray-200 ">
 					In the spirit of keeping this website a bit more like the old web, there's no comment or
 					like button. If you feel the need to say something (nice), or correct me, send me an
 					email/a message !
 				</p>
-				<ul
-					class="before:content-[' '] [&>*:nth-child(3n)]:shadow-punk after:content-[' '] relative relative z-10 my-8 grid max-w-screen-lg grid-flow-row grid-cols-1 items-start justify-evenly gap-1 before:absolute before:-left-10 before:h-full before:w-1 before:bg-gradient-to-t before:from-gray-100 before:via-gray-700 before:to-gray-900 after:absolute after:-left-[3.4rem] after:-top-7 after:border-[1rem] after:border-transparent sm:after:border-b-gray-900 md:grid-cols-2 lg:after:-left-[3.85rem] lg:after:-top-10 lg:after:border-[1.5rem] xl:before:-left-32 xl:after:-left-[9.4rem] [&>*:nth-child(5n)]:scale-[80%]">
-					<span
-						class="absolute -left-14 hidden -rotate-90 italic sm:top-10 sm:block md:top-1/2 xl:-left-36"
-						>time (day)</span
-					>
-					<a href="articles/BrevoForm2.html"
-						><li class="code">
-							<div id="brevo-part-2">
+				<ul class="before:content-[''] [&>*:nth-child(3n)]:shadow-punk after:content-[''] relative z-10 my-8 grid max-w-screen-lg grid-flow-row grid-cols-1 items-start justify-evenly gap-1 before:absolute before:-left-10 before:h-full before:w-1 before:bg-gradient-to-t before:from-gray-100 before:via-gray-700 before:to-gray-900 dark:before:from-gray-1000 dark:before:via-pink-800 dark:before:to-pink-600 after:absolute after:-left-[3.4rem] after:-top-7 after:border-[1rem] after:border-transparent sm:after:border-b-gray-900 dark:sm:after:border-b-pink-600 md:grid-cols-2 lg:after:-left-[3.85rem] lg:after:-top-10 lg:after:border-[1.5rem] xl:before:-left-32 xl:after:-left-[9.4rem] [&>*:nth-child(5n)]:scale-[80%]">
+					<li class="absolute -left-14 hidden -rotate-90 italic sm:top-10 sm:block md:top-1/2 xl:-left-36 dark:text-pink-600 dark:font-light" aria-hidden="true">
+						time (day)
+					</li>
+					<li class="code">
+						<a href="articles/BrevoForm2.html">
+							<div id="brevo-part-2" class="p-2">
 								A simpler newsletter form : Building the form with HTMX (<span
-									class="text-pacific-blue-600"
+									class="text-pacific-blue-600 dark:text-pacific-blue-300"
 									>23/10/2024</span
 								>)
 							</div>
-						</li></a
-					>
-					<a href="articles/BrevoForm1.html"
-						><li class="code">
-							<div id="brevo-part-1">
+						</a>
+					</li>
+					<li class="code">
+						<a href="articles/BrevoForm1.html">
+							<div id="brevo-part-1" class="p-2">
 								A simpler newsletter form : Creating new contacts with Brevo (<span
-									class="text-pacific-blue-600"
+									class="text-pacific-blue-600 dark:text-pacific-blue-300"
 									>19/10/2024</span
 								>)
 							</div>
-						</li></a
-					>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</section>
 		<section
 			id="contact"
-			class="block min-h-[70vh] bg-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+			class="relative block h-[70vh] overflow-hidden bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
-				<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left">Contact</h1>
+				<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left relative dark:text-pink-400 dark:after:content-[''] dark:after:block dark:after:h-10 dark:after:w-10 dark:after:absolute dark:after:-top-8 dark:after:right-20 dark:sm:after:right-36 dark:lg:after:left-44 dark:after:bg-[url(../img/star.svg)] dark:after:bg-contain">Contact</h1>
 			</div>
-			<div class="prose block text-gray-700">
+			<div class="prose block text-gray-900 dark:text-gray-200">
 				<p>
 					You want to speak to me about fun projects, send me job offers, love letters or music
 					recommandations ? Maybe just chat and ask questions ? I would love to talk to you. Contact
@@ -147,19 +190,22 @@
 				<ul class="list-none p-0">
 					<li>
 						<a href="https://www.linkedin.com/in/thomas-dargent1/" class="block"
-							><img src="img/LinkedInIcon.png" class="m-2 inline-block w-8 md:w-16" /> LinkedIn</a
+							><img src="img/LinkedInIcon.png" alt="LinkedIn Icon" class="m-2 inline-block w-8 md:w-16" width="14rem" height="14rem"/>LinkedIn</a
 						>
 					</li>
 					<li>
-						<a href="mailto:thomas@dargent.xyz" class="block text-nowrap"
-							><img src="img/emailIcon.png" class="m-2 inline-block w-8 md:w-16" />
-							thomas@dargent.xyz</a
-						>
+						<a href="mailto:thomas@dargent.xyz" class="block text-nowrap">
+							<img src="img/LinkedInIcon.png" alt="Email Icon" class="m-2 inline-block w-8 md:w-16 dark:bg-pink-600" width="14rem" height="14rem" />thomas@dargent.xyz</a>
+
 					</li>
 				</ul>
 			</div>
+			<img id="sakine" class="absolute hidden dark:block h-[48rem] -right-44 -bottom-[24rem] xsm:-bottom-[28rem] sm:-right-36 sm:top-56 lg:scale-x-[-1] lg:top-0  lg:-left-44 2xl:left-auto 2xl:-right-56 2xl:h-[76rem] 2xl:scale-x-[1]"
+				alt="Picture of my baby cat that is so cute" style="object-fit: contain;" aria-hidden="true">
 		</section>
 		<script type="module" src="./js/set-lines.js" defer></script>
 		<script type="module" src="./js/ts/menu.ts"></script>
+		<script type="module" src="./js/switch_theme.js"></script>
+		<script type="module" src="./js/lazy-loading.js"></script>
 	</body>
 </html>

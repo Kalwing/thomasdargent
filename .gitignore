@@ -6,5 +6,11 @@ ref/
 articles_jupyter/*_files/
 articles_jupyter/img/
 articles_jupyter/*.html
+articles_jupyter/_*.ipynb
 node_modules
 .help.md
+dist/
+.parcel-cache/
+articles_jupyter/data/
+articles_jupyter/unfinished/
+articles_jupyter/_*
