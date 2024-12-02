@@ -1,0 +1,65 @@
+{
+	"name": "ux",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"buildCSS": "postcss css/tailwind.css -o public/build/tailwind.css --minify",
+		"watchCSS": "postcss css/tailwind.css -o public/build/tailwind.css --watch",
+		"devBundle": "parcel",
+		"devFlask": "python -m flask_app.app",
+		"warning": "echo \"\\033[0;31mRemember to record new backend static/templates files in your package.json targets parameters.\\n \\033[1mOtherwise they won't be processed by parcel 😥.\\033[0m\"",
+		"buildBundle": "rm -rf dist && ./generate_articles.sh && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
+		"fullBuild": "rm -rf dist && ./generate_articles.sh --regenerate && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
+		"prodData": "./prepare_quote.sh && python ./process_data.py public/data dist/backend/data",
+		"deploy": "./push_prod.sh"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@popperjs/core": "^2.11.8",
+		"leader-line": "^1.0.7",
+		"mathjs": "^13.2.0",
+		"postcss-cli": "^11.0.0",
+		"postcss-import": "^16.1.0",
+		"ts-loader": "^9.5.1",
+		"vue": "^3.5.12"
+	},
+	"devDependencies": {
+		"@parcel/transformer-vue": "^2.12.0",
+		"@tailwindcss/forms": "^0.5.7",
+		"@tailwindcss/typography": "^0.5.15",
+		"@vue/compiler-sfc": "^3.5.12",
+		"@vue/runtime-core": "^3.5.12",
+		"@vue/runtime-dom": "^3.5.12",
+		"autoprefixer": "^10.4.19",
+		"parcel": "^2.12.0",
+		"postcss": "^8.4.39",
+		"prettier": "^3.3.3",
+		"prettier-plugin-tailwindcss": "^0.5.14",
+		"sharp": "^0.31.3",
+		"tailwindcss": "^3.4.14",
+		"typescript": "^5.6.3"
+	},
+	"prettier": {
+		"plugins": [
+			"prettier-plugin-tailwindcss"
+		]
+	},
+	"browserslist": "fully supports css-grid",
+	"targets": {
+		"frontend": {
+			"source": "./public/index.html"
+		},
+		"backend": {
+			"source": [
+				"./flask_templates/brevo/brevo_error.html",
+				"./flask_templates/brevo/brevo_form.html",
+				"./flask_templates/brevo/brevo_success.html",
+				"./flask_templates/brevo/brevo_success_2.html",
+				"./flask_templates/quotes/mass_effect_quote.html",
+				"./flask_templates/quotes/show_quote.html"
+			],
+			"publicUrl": "/f/"
+		}
+	}
+}
