@@ -1,5 +1,5 @@
 .prettierrc
-package.json
+package-lock.json
 ref/
 *.pyc
 .ipynb_checkpoints

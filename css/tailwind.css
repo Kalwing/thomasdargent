@@ -10,10 +10,10 @@
 
 @layer base {
 	b {
-		@apply text-pacific-blue-900;
+		@apply text-pacific-blue-900 dark:text-pink-600;
 	}
 	.prose a {
-		@apply font-bold text-pacific-blue-600 underline;
+		@apply font-bold text-pacific-blue-600 underline dark:text-pink-400;
 	}
 	header + [role='doc-subtitle'] {
 		@apply -mt-4;
@@ -91,7 +91,7 @@
 	}
 
 	.callout {
-		@apply max-w-[40rem] rotate-1 shadow-lg;
+		@apply mt-4 max-w-[40rem] rotate-1 shadow-lg dark:shadow-none;
 	}
 	.callout-header {
 		@apply p-1;
@@ -103,7 +103,29 @@
 		@apply bg-pink-800 text-gray-100;
 	}
 	.callout-body {
-		@apply p-2;
+		@apply p-2 dark:border dark:border-b-2 dark:border-t-0;
+	}
+	.callout-note > .callout-body {
+		@apply dark:border-x-pacific-blue-600 dark:border-b-pacific-blue-300;
+	}
+	.callout-warning > .callout-body {
+		@apply dark:border-x-pink-800 dark:border-b-pink-400;
+	}
+
+	.blockquote {
+		@apply relative my-12 bg-gray-700/20 p-2 px-8 opacity-85 before:absolute before:-left-4 before:-top-2 before:block before:text-6xl before:text-pacific-blue-500 after:absolute after:-bottom-12 after:-right-4 after:block after:text-6xl after:text-pacific-blue-500 dark:before:text-pink-400 dark:after:text-pink-400;
+	}
+	.blockquote:before {
+		content: '“';
+	}
+	.blockquote:after {
+		content: '”';
+	}
+	.blockquote:is(.dark *)::before {
+		content: '“';
+	}
+	.blockquote:is(.dark *)::after {
+		content: '”';
 	}
 }
 

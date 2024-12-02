@@ -14,7 +14,7 @@ def modify_html(folder_path: Path, filename, output_name):
 
         # Charger le fichier HTML
         with open(file_path, "r", encoding="utf-8") as file:
-            soup = BeautifulSoup(file, "lxml")
+            soup = BeautifulSoup(file, "html5lib")
 
         # 0. Add HTML attributes
         html = soup.find("html")
@@ -90,7 +90,7 @@ def modify_html(folder_path: Path, filename, output_name):
                 }
             </script>
         """
-        dark_select_tag = BeautifulSoup(dark_select_html, "lxml").script
+        dark_select_tag = BeautifulSoup(dark_select_html, "html5lib").script
         head.append(dark_select_tag)
 
 
@@ -98,7 +98,7 @@ def modify_html(folder_path: Path, filename, output_name):
         quarto_content = soup.find(id="quarto-content")
         if quarto_content:
             quarto_content["class"] = (
-                "px-6 pb-16 pt-48 lg:pt-16 sm:px-16 sm:pl-52 lg:pl-72 xl:pl-96"
+                "px-6 pb-16 pt-48 sm:pt-16 lg:pt-16 sm:px-16 sm:pl-56 lg:pl-72 xl:pl-96"
             )
 
         # 6. Modifier les classes des titres
@@ -130,7 +130,7 @@ def modify_html(folder_path: Path, filename, output_name):
             ):
                 source_code["class"] = (
                     " ".join(source_code["class"])
-                    + " overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
+                    + " overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
                 ).split(" ")
             if (
                 source_code.parent.name == "div"
@@ -145,7 +145,7 @@ def modify_html(folder_path: Path, filename, output_name):
             ):
                 source_code["class"] = (
                     " ".join(source_code["class"])
-                    + " !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
+                    + " !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
                 ).split(" ")
             if source_code.parent.name == "section":
                 source_code["class"] = ("mb-4").split(" ")
@@ -161,7 +161,7 @@ def modify_html(folder_path: Path, filename, output_name):
         for cell in soup.find_all(class_="cell"):
             cell["class"] = (
                 " ".join(cell["class"])
-                + " overflow-auto  !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
+                + " overflow-auto  !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 mt-4 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
             )
 
         # 9. Ajouter des classes aux éléments avec la classe "cell-output"
@@ -196,17 +196,17 @@ def modify_html(folder_path: Path, filename, output_name):
 				>Thomas Dargent</a
 			>
 			<button id="show-btn" class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100  border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" type="button">↧</button>
-			<ul id="menu" class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-900 dark:border dark:border-pink-400 dark:[&_li+li]:border-t dark:[&_li+li]:border-pink-400 hidden sm:block text-base">
+			<ul id="menu" class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-1000 dark:border dark:border-pink-400 dark:[&_li+li]:border-t dark:[&_li+li]:border-pink-400 hidden sm:block text-base">
 				<li class="p-1">
 					<a href="https://thomasdargent.com/#portfolio" class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400">Portfolio</a>
 				</li>
 				<li class="p-1"><a href="https://thomasdargent.com/#blog"  class=" hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400">Blog</a></li>
 				<li class="p-1"><a href="https://thomasdargent.com/#contact" class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400">Contact</a></li>
 			</ul>
-			<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-900 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
+			<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-1000 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
 					<input type="checkbox" name="light-switch" id="light-switch" class="sr-only" />
 					<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
-						<svg class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" viewBox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
+						<svg alt="Dark theme icon" role="img" aria-label="Switch to dark" class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" viewBox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
 							<path  d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"/>
 							<polygon  points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"/>
 							<polygon style="transform-origin: 244.396px 245.729px;" points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"/>
@@ -215,7 +215,7 @@ def modify_html(folder_path: Path, filename, output_name):
 							<path  d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"/>
 						  </svg>
 						  <div class="border-b border-pink-600 h-1/2 w-full"></div>
-						<svg class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" viewBox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
+						<svg alt="Light theme icon" role="img" aria-label="Switch to light" class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" viewBox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
 							<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"/>
 							<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"/>
 							<polygon style="transform-origin: 238.011px 239.826px;" points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"/>
@@ -227,7 +227,7 @@ def modify_html(folder_path: Path, filename, output_name):
 			</div>
 		</nav>
         """
-        nav_tag = BeautifulSoup(nav_html, "lxml").nav
+        nav_tag = BeautifulSoup(nav_html, "html5lib").nav
         body.insert(0, nav_tag)
 
         # 13. Mettre --tw-prose-pre-code et --tw-prose-pre-bg à 'null' pour tous les éléments <pre>
@@ -252,6 +252,14 @@ def modify_html(folder_path: Path, filename, output_name):
                 )
                 for code in ul.find_all("code"):
                     code["class"] = "p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap"
+                for li in ul.find_all("li"):
+                    for label in li.find_all("label"):
+                        for input in label.find_all("input"):
+                            if input["type"] == "checkbox":
+                                input.attrs["disabled"] = True
+                                input["class"] = "w-4 h-4 absolute -left-5 top-1 align-text-bottom accent-pacific-blue-500 dark:accent-pink-600"
+                                li["class"] = "list-none relative"
+
             for ol in main.find_all("ol"):
                 ol["class"] = (
                     "prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-decimal pl-8 lg:prose-lg"
@@ -264,6 +272,8 @@ def modify_html(folder_path: Path, filename, output_name):
                 table.parent["class"] = "prose-sm lg:prose-base prose-stone dark:prose-invert"
                 for code in table.find_all("code"):
                     code["class"] = "p-1 text-pink-700 shadow-inner dark:text-pacific-blue-500 "
+            for blockquote in main.find_all("blockquote"):
+                blockquote["class"] = "blockquote"
         sections = soup.find_all("section")
         if sections:
             for section in sections:

@@ -7,7 +7,7 @@ import coordconv_project from '../../portfolio-projects/coordconv';
 
 // Adding the portfolio to the DOM
 const project_list = [cardiac_project, coordconv_project];
-const gallery = document.querySelector('#portfolioGallery');
+const gallery = document.getElementById('portfolioGallery');
 const app = createApp(Portfolio, { project_list });
 app.mount(gallery);
 
@@ -19,6 +19,5 @@ function preloadImages(imageUrls: string[]) {
 	});
 }
 
-console.log(cardiac_project[0].image);
 const imageUrls: string[] = cardiac_project.map((slide) => slide.image.href);
 preloadImages(imageUrls);

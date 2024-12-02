@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+
 <meta charset="utf-8"/>
 <meta content="quarto-1.4.554" name="generator"/>
+
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+
 <title>A Simpler Newsletter Form : Building The Form with HTMX</title>
 <style>
 code{white-space: pre-wrap;}
@@ -51,6 +55,8 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
+
+
 <script src="./quarto_files/libs/clipboard/clipboard.min.js" type="module"></script>
 <script src="./quarto_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="./quarto_files/libs/quarto-html/popper.min.js" type="module"></script>
@@ -61,6 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
+
 <link href="../img/favicon.ico" rel="icon" type="image/x-icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet"/><link as="font" crossorigin="anonymous" href="../fonts/LeMurmure-Regular.woff2" rel="preload" type="font/woff2"/><link href="../build/tailwind.css" rel="stylesheet"/><script>
                 if (localStorage.getItem('dark-mode') === 'true' || (!('dark-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.querySelector('html').classList.add('dark');
@@ -68,48 +76,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                     document.querySelector('html').classList.remove('dark');
                 }
             </script><meta content="Today a blog post about '“How to show API results nicely and dynamically”'" name="description"/></head>
+
 <body class="bg-gray-100 fullContent w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900 dark:bg-gray-1000 dark:text-gray-200"><nav class="fixed isolate w-52 dark:w-56 z-50 m-0 p-4 text-xl lg:m-8">
-<a class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent dark:border-0 dark:bg-pink-400 dark:text-gray-1000 dark:font-black" href="https://thomasdargent.com">Thomas Dargent</a>
-<button class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100 border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" id="show-btn" type="button">↧</button>
-<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-900 dark:border dark:border-pink-400 dark:[&amp;_li+li]:border-t dark:[&amp;_li+li]:border-pink-400 hidden sm:block text-base" id="menu">
-<li class="p-1">
-<a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#portfolio">Portfolio</a>
-</li>
-<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#blog">Blog</a></li>
-<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#contact">Contact</a></li>
-</ul>
-<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-900 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
-<input class="sr-only" id="light-switch" name="light-switch" type="checkbox"/>
-<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
-<svg class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" viewbox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
-<path d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"></path>
-<polygon points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"></polygon>
-<polygon points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" style="transform-origin: 244.396px 245.729px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
-<polygon points="314.274 177.389 322.388 158.397 341.324 150.733 330.842 168.392"></polygon>
-<polygon points="230.871 150.733 238.986 169.724 257.92 177.389 247.439 159.729" style="transform-origin: 244.396px 164.061px;" transform="matrix(-1, 0, 0, -1, -0.000030517578, 0)"></polygon>
-<path d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"></path>
-</svg>
-<div class="border-b border-pink-600 h-1/2 w-full"></div>
-<svg class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" viewbox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
-<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"></path>
-<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"></polygon>
-<polygon points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" style="transform-origin: 238.011px 239.826px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
-<polygon points="348.134 132.81 360.922 103.07 390.763 91.069 374.244 118.722"></polygon>
-<polygon points="216.695 91.069 229.483 120.809 259.324 132.81 242.805 105.157" style="transform-origin: 238.01px 111.94px;" transform="matrix(-1, 0, 0, -1, 0, 0.000015258789)"></polygon>
-</svg>
-<span class="sr-only">Switch to light / dark version</span>
-</label>
-</div>
-</nav>
-<div class="px-6 pb-16 pt-48 lg:pt-16 sm:px-16 sm:pl-52 lg:pl-72 xl:pl-96" id="quarto-content">
+			<a class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent dark:border-0 dark:bg-pink-400 dark:text-gray-1000 dark:font-black" href="https://thomasdargent.com">Thomas Dargent</a>
+			<button class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100 border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" id="show-btn" type="button">↧</button>
+			<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-1000 dark:border dark:border-pink-400 dark:[&amp;_li+li]:border-t dark:[&amp;_li+li]:border-pink-400 hidden sm:block text-base" id="menu">
+				<li class="p-1">
+					<a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#portfolio">Portfolio</a>
+				</li>
+				<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#blog">Blog</a></li>
+				<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#contact">Contact</a></li>
+			</ul>
+			<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-1000 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
+					<input class="sr-only" id="light-switch" name="light-switch" type="checkbox"/>
+					<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
+						<svg alt="Dark theme icon" aria-label="Switch to dark" class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" role="img" viewBox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"></path>
+							<polygon points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"></polygon>
+							<polygon points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" style="transform-origin: 244.396px 245.729px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+							<polygon points="314.274 177.389 322.388 158.397 341.324 150.733 330.842 168.392"></polygon>
+							<polygon points="230.871 150.733 238.986 169.724 257.92 177.389 247.439 159.729" style="transform-origin: 244.396px 164.061px;" transform="matrix(-1, 0, 0, -1, -0.000030517578, 0)"></polygon>
+							<path d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"></path>
+						  </svg>
+						  <div class="border-b border-pink-600 h-1/2 w-full"></div>
+						<svg alt="Light theme icon" aria-label="Switch to light" class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" role="img" viewBox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"></path>
+							<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"></polygon>
+							<polygon points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" style="transform-origin: 238.011px 239.826px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+							<polygon points="348.134 132.81 360.922 103.07 390.763 91.069 374.244 118.722"></polygon>
+							<polygon points="216.695 91.069 229.483 120.809 259.324 132.81 242.805 105.157" style="transform-origin: 238.01px 111.94px;" transform="matrix(-1, 0, 0, -1, 0, 0.000015258789)"></polygon>
+						  </svg>
+						<span class="sr-only">Switch to light / dark version</span>
+					</label>
+			</div>
+		</nav>
+
+<div class="px-6 pb-16 pt-48 sm:pt-16 lg:pt-16 sm:px-16 sm:pl-56 lg:pl-72 xl:pl-96" id="quarto-content">
+
 <main class="content" id="quarto-document-content">
+
 <header class="prose lg:prose-lg text-center font-normal" id="title-block-header">
 <div class="quarto-title">
 <h1 class="font-heading text-4xl !w-full max-w-[40rem] sm:text-6xl mb-12 mt-8 font-normal text-center dark:text-gray-100">A Simpler Newsletter Form : Building The Form with HTMX</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
-</div>
+
+    
+  
+    
+  </div>
+  
+
+
 <p class="prose lg:prose-lg text-xl !w-full max-w-[40rem] !mb-6 !mt-2 text-gray-900 dark:text-gray-200 text-center">— OR —</p><p class="prose lg:prose-lg text-lg !mb-16 !w-full max-w-[40rem] text-gray-900 dark:text-gray-200 text-center" role="doc-subtitle">“How to show API results nicely and dynamically”</p></header>
+
+
 
 <section class="level2" id="introduction">
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="introduction">Introduction</h2>
@@ -127,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="making-the-form">Making the form</h2>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">I won’t go into many details as there is nothing really special here, just your average form doing an honest job. The HTML is pretty basic : make a form that contains labels linked to inputs, and a submit button. The inputs are mostly of type <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">text</code>. Don’t forget to set the mail one to <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">email</code>, you know, it’s nicer. I put my label+input into a div to style them together. Nothing more to say.</p>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Tailwind allow us to easily make a responsive form that looks nice. To do that, you add special class that are then parsed and added to your stylesheet by Tailwind. For example, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">bg-gray-100</code> will be interpreted as :</p>
-<div class="mb-4" id="cb1"><pre class="sourceCode css code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode css"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="fu">.bg-gray-100</span> {</span>
+<div class="mb-4" id="cb1"><pre class="sourceCode css code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode css"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="fu">.bg-gray-100</span> {</span>
 <span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="va">--tw-bg-opacity</span><span class="ch">:</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="fu">rgb(</span><span class="dv">247</span> <span class="dv">246</span> <span class="dv">243</span> / <span class="fu">var(</span><span class="va">--tw-bg-opacity</span><span class="fu">))</span><span class="op">;</span></span>
 <span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>}</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
@@ -136,9 +160,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="demo">Demo</h3>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">You can resize the width of the box to simulate responsiveness, and see my beautiful js in action.</p>
 <div class="demo-container">
-<iframe class="demo" id="demo0" src="https://thomasdargent.com/api/brevo_form_example" title="Basic responsive form">
-</iframe>
-<div class="resizer"></div>
+    <iframe class="demo" id="demo0" src="https://thomasdargent.com/api/brevo_form_example" title="Basic responsive form">
+    </iframe>
+    <div class="resizer"></div>
 </div>
 </section>
 <section class="level3" id="nice-to-know">
@@ -147,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="text-base sm:text-xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="responsiveness">Responsiveness</h4>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">The demo size on my website is very small (it’s a blog post, not designed to fill a full HD screen) so I had to tweak a few things to make sure it plays nice. Those wouldn’t be a problem normally (but might be of interest to you, especially if you want to copy the code):</p>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">First, I defined two new breakpoints, <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">xxsm</code> and <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">xsm</code> :</p>
-<div class="mb-4" id="cb2"><pre class="sourceCode js code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode javascript"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> {</span>
+<div class="mb-4" id="cb2"><pre class="sourceCode js code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode javascript"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> {</span>
 <span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>  <span class="dt">content</span><span class="op">:</span> [<span class="st">'*.html'</span>]<span class="op">,</span></span>
 <span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>  <span class="dt">theme</span><span class="op">:</span> {</span>
 <span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>    <span class="dt">extend</span><span class="op">:</span> {</span>
@@ -159,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>  }<span class="op">,</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Then I had to make sure that everything wouldn’t get too small by settings a min width to the <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">body</code> with <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">min-w-40</code>. Then I had to make sure that everything wouldn’t get too big with <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">w-full max-w-screen-sm mx-auto</code> on the main div. Then I had to… nope that’s all.</p>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">To collapse the names field when there isn’t enough room, I use this little grid pattern :</p>
-<div class="mb-4" id="cb3"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"grid grid-cols-1 xsm:grid-cols-2 gap-4"</span><span class="dt">&gt;</span></span>
+<div class="mb-4" id="cb3"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"grid grid-cols-1 xsm:grid-cols-2 gap-4"</span><span class="dt">&gt;</span></span>
 <span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a><span class="co">&lt;!-- The grid has one column on small size, and 2 otherwise. Notice I can use my custom breakpoint without issue--&gt;</span></span>
 <span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"inline-block w-full"</span><span class="dt">&gt;</span> </span>
 <span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>    <span class="co">&lt;!-- w-full to take the full size of the column--&gt;</span></span>
@@ -174,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section class="level3" id="full-static-code">
 <h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="full-static-code">Full static code</h3>
-<div class="mb-4" id="cb4"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="ot"> class</span><span class="op">=</span><span class="st">"bg-slate-100 w-full min-w-40 bg-gray-100 font-body text-gray-900"</span><span class="dt">&gt;</span></span>
+<div class="mb-4" id="cb4"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="ot"> class</span><span class="op">=</span><span class="st">"bg-slate-100 w-full min-w-40 bg-gray-100 font-body text-gray-900"</span><span class="dt">&gt;</span></span>
 <span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"w-full max-w-screen-sm mx-auto p-4"</span><span class="dt">&gt;</span></span>
 <span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">h1</span></span>
 <span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a><span class="ot">            class</span><span class="op">=</span><span class="st">"text-center text-xl text-pacific-blue-600"</span><span class="dt">&gt;</span></span>
@@ -250,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section class="level3" id="getting-the-api-results">
 <h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="getting-the-api-results">Getting the API results</h3>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Careful, it will be quick ! Don’t blink !</p>
-<div class="mb-4" id="cb5"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> class</span><span class="op">=</span><span class="st">"pt-8"</span></span>
+<div class="mb-4" id="cb5"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> class</span><span class="op">=</span><span class="st">"pt-8"</span></span>
 <span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a><span class="ot">    id</span><span class="op">=</span><span class="st">"newsletter-form"</span></span>
 <span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="ot">    method</span><span class="op">=</span><span class="st">"post"</span></span>
 <span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a><span class="ot">    hx-post</span><span class="op">=</span><span class="st">"{% url 'brevo_handler' %}"</span></span>
@@ -264,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section class="level4" id="returning-a-success-div">
 <h4 class="text-base sm:text-xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="returning-a-success-div">Returning a success div</h4>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Ok, so first we need to return html code in our view. This is simple, instead of using a <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">HttpResponse</code> we use <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">render</code>.</p>
-<div class="mb-4" id="cb6"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="co"># ...</span></span>
+<div class="mb-4" id="cb6"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="co"># ...</span></span>
 <span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>response <span class="op">=</span> requests.post(BREVO_URL, json<span class="op">=</span>obj, headers<span class="op">=</span>headers)</span>
 <span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a></span>
 <span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a><span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">201</span>:  <span class="co"># Success</span></span>
@@ -272,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a><span class="cf">else</span>:  </span>
 <span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>    <span class="co"># Handle Brevo API errors</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Next we will design a small success page :</p>
-<div class="mb-4" id="cb7"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="op">&lt;!</span>doctype html<span class="op">&gt;</span></span>
+<div class="mb-4" id="cb7"><pre class="sourceCode python code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="op">&lt;!</span>doctype html<span class="op">&gt;</span></span>
 <span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="op">&lt;</span>div <span class="kw">class</span><span class="op">=</span><span class="st">"text-gray-500 relative h-72 overflow-hidden pt-8"</span><span class="op">&gt;</span></span>
 <span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>    <span class="op">&lt;</span>h2 <span class="kw">class</span><span class="op">=</span><span class="st">"text-center text-lg text-pacific-blue-600"</span><span class="op">&gt;</span>Successfully subscribed <span class="op">!&lt;/</span>h2<span class="op">&gt;</span></span>
 <span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>    <span class="op">&lt;</span>div</span>
@@ -293,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-19"><a aria-hidden="true" href="#cb7-19" tabindex="-1"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
 <span id="cb7-20"><a aria-hidden="true" href="#cb7-20" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">And to make it reaaaally nice, define an animation for the <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">popping</code> class, which you may do in your <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">tailwind.css</code> file (not the built one). It will make sure your users feel the satisfaction of subscribing. :</p>
-<div class="mb-4" id="cb8"><pre class="sourceCode css code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode css"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="fu">.popping</span> {</span>
+<div class="mb-4" id="cb8"><pre class="sourceCode css code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode css"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="fu">.popping</span> {</span>
 <span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a>        <span class="kw">opacity</span><span class="ch">:</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a>        <span class="kw">animation</span><span class="ch">:</span> <span class="dv">fadeInScale 0.5</span><span class="dt">s</span> <span class="dv">forwards</span><span class="op">;</span></span>
 <span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a>        <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span> <span class="co">/* Ensure it's positioned relative to the parent */</span></span>
@@ -315,9 +339,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section class="level3" id="a-successful-success-page-that-leads-to-success">
 <h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="a-successful-success-page-that-leads-to-success">A successful success page that leads to success :</h3>
 <div class="demo-container">
-<iframe class="demo" id="demo1" src="https://thomasdargent.com/api/brevo_success_example" title="Basic responsive form showing a success animation if it was successful">
-</iframe>
-<div class="resizer"></div>
+    <iframe class="demo" id="demo1" src="https://thomasdargent.com/api/brevo_success_example" title="Basic responsive form showing a success animation if it was successful">
+    </iframe>
+    <div class="resizer"></div>
 </div>
 </section>
 </section>
@@ -325,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="showing-the-user-errors">Showing the user errors</h2>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">So HTML can swap an element on return, but what if we just want to add information to the same element ? Well, HTMX allows us to do that, using some plain old vanilla Js too !</p>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">First, let’s add a div to be filled with errors and sorrow, just like its author :</p>
-<div class="mb-4" id="cb9"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb9-1"><a aria-hidden="true" href="#cb9-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"error-msg"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"mb-4 border-pink-800 text-pink-800 shadow-pink-800 font-bold border-2 shadow-punk p-1 hidden"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<div class="mb-4" id="cb9"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb9-1"><a aria-hidden="true" href="#cb9-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"error-msg"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"mb-4 border-pink-800 text-pink-800 shadow-pink-800 font-bold border-2 shadow-punk p-1 hidden"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb9-2"><a aria-hidden="true" href="#cb9-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span></span>
 <span id="cb9-3"><a aria-hidden="true" href="#cb9-3" tabindex="-1"></a><span class="ot">    type</span><span class="op">=</span><span class="st">"submit"</span></span>
 <span id="cb9-4"><a aria-hidden="true" href="#cb9-4" tabindex="-1"></a><span class="ot">    class</span><span class="op">=</span><span class="st">"block mx-auto text-pacific-blue-100 bg-pacific-blue-900 p-4 hover:scale-110 hover:shadow-md"</span><span class="dt">&gt;</span></span>
@@ -333,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-6"><a aria-hidden="true" href="#cb9-6" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Ignore shadow-punk (just a cool custom shadow class I made). What matters here is the div being hidden initially.</p>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Then we can add our HTMX handling in our form :</p>
-<div class="mb-4" id="cb10"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb10-1"><a aria-hidden="true" href="#cb10-1" tabindex="-1"></a>hx-on:htmx:response-error="</span>
+<div class="mb-4" id="cb10"><pre class="sourceCode html code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode html"><span id="cb10-1"><a aria-hidden="true" href="#cb10-1" tabindex="-1"></a>hx-on:htmx:response-error="</span>
 <span id="cb10-2"><a aria-hidden="true" href="#cb10-2" tabindex="-1"></a>              document.querySelector('#error-msg').classList.remove('hidden');</span>
 <span id="cb10-3"><a aria-hidden="true" href="#cb10-3" tabindex="-1"></a>              document.querySelector('#error-msg').innerHTML = event.detail.xhr.responseText;"</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Three things to note :</p>
@@ -346,9 +370,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section class="level3" id="demonstrating-our-errors">
 <h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="demonstrating-our-errors">Demonstrating our errors :</h3>
 <div class="demo-container">
-<iframe class="demo" id="demo2" src="https://thomasdargent.com/api/brevo_error_example" title="Our form now display errors returned by the server unerdneath the form">
-</iframe>
-<div class="resizer"></div>
+    <iframe class="demo" id="demo2" src="https://thomasdargent.com/api/brevo_error_example" title="Our form now display errors returned by the server unerdneath the form">
+    </iframe>
+    <div class="resizer"></div>
 </div>
 </section>
 </section>
@@ -357,6 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">We’ve built a nice looking, modern form using HTMX, TailwindCSS, and Django. No more page reloads, and users get instant feedback thanks to HTMX. Whether it’s a smooth success message or a user-friendly error, everything happens seamlessly within the page.</p>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Next time, we’ll take things up a notch by adding Captcha for an extra layer of security. XOXO</p>
 </section>
+
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -769,4 +794,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
+
+
+
 <script src="../js/iframe_demo.js"></script><script src="../js/ts/menu.ts"></script><script src="../js/switch_theme.js"></script></body></html>

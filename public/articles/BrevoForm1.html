@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+
 <meta charset="utf-8"/>
 <meta content="quarto-1.4.554" name="generator"/>
+
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+
 <title>A Simpler Newsletter Form : Creating New Contacts with Brevo.</title>
 <style>
 code{white-space: pre-wrap;}
@@ -51,6 +55,8 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
+
+
 <script src="./quarto_files/libs/clipboard/clipboard.min.js" type="module"></script>
 <script src="./quarto_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="./quarto_files/libs/quarto-html/popper.min.js" type="module"></script>
@@ -61,6 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
+
 <link href="../img/favicon.ico" rel="icon" type="image/x-icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet"/><link as="font" crossorigin="anonymous" href="../fonts/LeMurmure-Regular.woff2" rel="preload" type="font/woff2"/><link href="../build/tailwind.css" rel="stylesheet"/><script>
                 if (localStorage.getItem('dark-mode') === 'true' || (!('dark-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.querySelector('html').classList.add('dark');
@@ -68,48 +76,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                     document.querySelector('html').classList.remove('dark');
                 }
             </script><meta content="Today a blog post about '“A Guide to Using Their API with Django”'" name="description"/></head>
+
 <body class="bg-gray-100 fullContent w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900 dark:bg-gray-1000 dark:text-gray-200"><nav class="fixed isolate w-52 dark:w-56 z-50 m-0 p-4 text-xl lg:m-8">
-<a class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent dark:border-0 dark:bg-pink-400 dark:text-gray-1000 dark:font-black" href="https://thomasdargent.com">Thomas Dargent</a>
-<button class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100 border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" id="show-btn" type="button">↧</button>
-<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-900 dark:border dark:border-pink-400 dark:[&amp;_li+li]:border-t dark:[&amp;_li+li]:border-pink-400 hidden sm:block text-base" id="menu">
-<li class="p-1">
-<a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#portfolio">Portfolio</a>
-</li>
-<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#blog">Blog</a></li>
-<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#contact">Contact</a></li>
-</ul>
-<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-900 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
-<input class="sr-only" id="light-switch" name="light-switch" type="checkbox"/>
-<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
-<svg class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" viewbox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
-<path d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"></path>
-<polygon points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"></polygon>
-<polygon points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" style="transform-origin: 244.396px 245.729px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
-<polygon points="314.274 177.389 322.388 158.397 341.324 150.733 330.842 168.392"></polygon>
-<polygon points="230.871 150.733 238.986 169.724 257.92 177.389 247.439 159.729" style="transform-origin: 244.396px 164.061px;" transform="matrix(-1, 0, 0, -1, -0.000030517578, 0)"></polygon>
-<path d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"></path>
-</svg>
-<div class="border-b border-pink-600 h-1/2 w-full"></div>
-<svg class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" viewbox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
-<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"></path>
-<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"></polygon>
-<polygon points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" style="transform-origin: 238.011px 239.826px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
-<polygon points="348.134 132.81 360.922 103.07 390.763 91.069 374.244 118.722"></polygon>
-<polygon points="216.695 91.069 229.483 120.809 259.324 132.81 242.805 105.157" style="transform-origin: 238.01px 111.94px;" transform="matrix(-1, 0, 0, -1, 0, 0.000015258789)"></polygon>
-</svg>
-<span class="sr-only">Switch to light / dark version</span>
-</label>
-</div>
-</nav>
-<div class="px-6 pb-16 pt-48 lg:pt-16 sm:px-16 sm:pl-52 lg:pl-72 xl:pl-96" id="quarto-content">
+			<a class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent dark:border-0 dark:bg-pink-400 dark:text-gray-1000 dark:font-black" href="https://thomasdargent.com">Thomas Dargent</a>
+			<button class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100 border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" id="show-btn" type="button">↧</button>
+			<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-1000 dark:border dark:border-pink-400 dark:[&amp;_li+li]:border-t dark:[&amp;_li+li]:border-pink-400 hidden sm:block text-base" id="menu">
+				<li class="p-1">
+					<a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#portfolio">Portfolio</a>
+				</li>
+				<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#blog">Blog</a></li>
+				<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#contact">Contact</a></li>
+			</ul>
+			<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-1000 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
+					<input class="sr-only" id="light-switch" name="light-switch" type="checkbox"/>
+					<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
+						<svg alt="Dark theme icon" aria-label="Switch to dark" class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" role="img" viewBox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"></path>
+							<polygon points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"></polygon>
+							<polygon points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" style="transform-origin: 244.396px 245.729px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+							<polygon points="314.274 177.389 322.388 158.397 341.324 150.733 330.842 168.392"></polygon>
+							<polygon points="230.871 150.733 238.986 169.724 257.92 177.389 247.439 159.729" style="transform-origin: 244.396px 164.061px;" transform="matrix(-1, 0, 0, -1, -0.000030517578, 0)"></polygon>
+							<path d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"></path>
+						  </svg>
+						  <div class="border-b border-pink-600 h-1/2 w-full"></div>
+						<svg alt="Light theme icon" aria-label="Switch to light" class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" role="img" viewBox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"></path>
+							<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"></polygon>
+							<polygon points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" style="transform-origin: 238.011px 239.826px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+							<polygon points="348.134 132.81 360.922 103.07 390.763 91.069 374.244 118.722"></polygon>
+							<polygon points="216.695 91.069 229.483 120.809 259.324 132.81 242.805 105.157" style="transform-origin: 238.01px 111.94px;" transform="matrix(-1, 0, 0, -1, 0, 0.000015258789)"></polygon>
+						  </svg>
+						<span class="sr-only">Switch to light / dark version</span>
+					</label>
+			</div>
+		</nav>
+
+<div class="px-6 pb-16 pt-48 sm:pt-16 lg:pt-16 sm:px-16 sm:pl-56 lg:pl-72 xl:pl-96" id="quarto-content">
+
 <main class="content" id="quarto-document-content">
+
 <header class="prose lg:prose-lg text-center font-normal" id="title-block-header">
 <div class="quarto-title">
 <h1 class="font-heading text-4xl !w-full max-w-[40rem] sm:text-6xl mb-12 mt-8 font-normal text-center dark:text-gray-100">A Simpler Newsletter Form : Creating New Contacts with Brevo.</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
-</div>
+
+    
+  
+    
+  </div>
+  
+
+
 <p class="prose lg:prose-lg text-xl !w-full max-w-[40rem] !mb-6 !mt-2 text-gray-900 dark:text-gray-200 text-center">— OR —</p><p class="prose lg:prose-lg text-lg !mb-16 !w-full max-w-[40rem] text-gray-900 dark:text-gray-200 text-center" role="doc-subtitle">“A Guide to Using Their API with Django”</p></header>
+
+
 
 <section class="level2" id="wrestling-with-an-outdated-documentation">
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="wrestling-with-an-outdated-documentation">Wrestling with an outdated documentation</h2>
@@ -131,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb1"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb1"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    <span class="co"># Extracting the posted data from the request</span></span>
 <span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>    email <span class="op">=</span> request.POST.get(<span class="st">"email"</span>)</span>
 <span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>    last_name <span class="op">=</span> request.POST.get(<span class="st">"last_name"</span>)</span>
@@ -145,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb2"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb2"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>    <span class="co"># Constructing the Brevo API request payload with the posted data</span></span>
 <span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>    obj <span class="op">=</span> {</span>
@@ -168,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb3"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb3"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>    response <span class="op">=</span> requests.post(BREVO_URL, json<span class="op">=</span>obj, headers<span class="op">=</span>headers)</span>
 <span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a></span>
@@ -182,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>urls.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="urls.py" id="cb4"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="urls.py" id="cb4"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
 <span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
 <span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a></span>
 <span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
@@ -202,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>views.py</strong></pre>
 </div>
-<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb5"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="views.py" id="cb5"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>    <span class="co">#...</span></span>
 <span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">201</span>:  <span class="co"># Success</span></span>
 <span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>        <span class="cf">return</span> render(request, <span class="st">"_success_newsletter.html"</span>)</span>
@@ -220,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section class="level2" id="full-code">
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="full-code">Full code</h2>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">And here’s the full code to copy paste without thinking 😛 :</p>
-<div class="cell overflow-auto  !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 mt-4 p-2 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-execution_count="2" id="8b9cad21-164f-4265-9950-2bd578c38932">
+<div class="cell overflow-auto  !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 mt-4 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-execution_count="2" id="8b9cad21-164f-4265-9950-2bd578c38932">
 <div class="sourceCode cell-code mt-4" id="cb6"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> brevo_handler(request):</span>
 <span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>    <span class="co"># Extracting the posted data from the request</span></span>
 <span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>    email <span class="op">=</span> request.POST.get(<span class="st">"email"</span>)</span>
@@ -261,6 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="conclusion">Conclusion</h2>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Here you go, simple indeed. Sometimes it’s easier to not use pre-made solutions. Next time we’ll make a dynamic form to uses our API.</p>
 </section>
+
 </main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -673,4 +698,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
+
+
+
 <script src="../js/iframe_demo.js"></script><script src="../js/ts/menu.ts"></script><script src="../js/switch_theme.js"></script></body></html>
