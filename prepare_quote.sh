@@ -1,0 +1,1 @@
+python3 public/data/script_sort_quote.py public/data/quotes.json public/data/quotes_sorted.json

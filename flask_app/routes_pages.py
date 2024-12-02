@@ -1,18 +1,34 @@
-from flask import Blueprint, render_template
-
+from flask import Blueprint, render_template, current_app
+from .routes_api import pick_quote
 bp = Blueprint("pages", __name__)
 
 
 @bp.route("/brevo_form_example")
 def brevo_form_example():
-    return render_template("brevo_form.html")  # test: brevo/....
-
+    prefix = "brevo/"
+    return render_template(f"{prefix}brevo_form.html")
 
 @bp.route("/brevo_success_example")
 def brevo_success_example():
-    return render_template("brevo_success.html")  # test: brevo/....
+    prefix = "brevo/"
+    return render_template(f"{prefix}brevo_success.html")  # test: brevo/....
 
 
 @bp.route("/brevo_error_example")
 def brevo_error_example():
-    return render_template("brevo_error.html")  # test: brevo/....
+    prefix = "brevo/"
+    return render_template(f"{prefix}brevo_error.html")  # test: brevo/....
+
+@bp.route("/mass_effect_quote/")
+@bp.route("/mass_effect_quote")
+def mass_effect_quote():
+    quote = pick_quote('mass_effect')
+    prefix = "quotes/"
+    return render_template(f"{prefix}mass_effect_quote.html", quote=quote)
+
+@bp.route("/wisdom/")
+@bp.route("/wisdom")
+def show_quote():
+    quote = pick_quote()
+    prefix = "quotes/"
+    return render_template(f"{prefix}show_quote.html", quote=quote)
