@@ -13,7 +13,8 @@
 		"prodData": "./scripts/prepare_quote.sh && python ./scripts/process_data.py public/data dist/backend/data",
 		"deploy": "python -m pytest && ./scripts/push_prod.sh",
 		"testPy": "python -m pytest",
-		"testHTML": "python -m flask_app.app & SERVER_PID=$! && sleep 5 && node tests/axe-core.test.js || EXIT_CODE=$?; node tests/pa11y.test.js || EXIT_CODE=$EXIT_CODE || $? && (kill $SERVER_PID 2>/dev/null || echo \"Server process already exited\") && exit ${EXIT_CODE:-0}"
+		"testHTML": "python -m flask_app.app & SERVER_PID=$! && sleep 5 && node tests/axe-core.test.js || EXIT_CODE=$?; node tests/pa11y.test.js || EXIT_CODE=$EXIT_CODE || $? && (kill $SERVER_PID 2>/dev/null || echo \"Server process already exited\") && exit ${EXIT_CODE:-0}",
+		"testJS": "mocha"
 	},
 	"author": "",
 	"license": "ISC",
@@ -35,6 +36,7 @@
 		"@vue/runtime-dom": "^3.5.12",
 		"autoprefixer": "^10.4.19",
 		"axe-core": "^4.10.2",
+		"mocha": "^11.0.1",
 		"pa11y": "^8.0.0",
 		"parcel": "^2.12.0",
 		"postcss": "^8.4.39",
