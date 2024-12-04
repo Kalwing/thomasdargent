@@ -17,8 +17,10 @@
 			crossorigin="anonymous"></script>
 	</head>
 	<body class="h-full w-full min-w-40 bg-gray-100 font-body text-gray-900">
-		<div class="mx-auto flex h-full max-w-[38rem] items-center">
+		<div
+			class="mx-auto flex h-full max-w-[38rem] flex-col items-center justify-center px-2 sm:px-0">
 			<blockquote
+				id="quote-container"
 				class="mx-auto text-pretty bg-gray-200 p-4 leading-snug [&>div:nth-child(even)_span]:bg-pacific-blue-300 [&>div:nth-child(even)_span]:text-pacific-blue-900">
 				{% for line in quote.lines %}
 				<div class="[&+div]:mt-4">
@@ -28,10 +30,70 @@
 					</span>
 					{% endif %}
 					<br />
-					{{ line.quote}}<br />
+					<div class="quote">{{ line.quote}}<br /></div>
 				</div>
 				{% endfor %}
 			</blockquote>
+			<button
+				hx-get="{{ url_for('api.quote_giver') }}"
+				hx-target="#quote-container"
+				hx-swap="innerHTML"
+				class="mt-8 bg-pacific-blue-500 bg-opacity-30 p-1 text-pacific-blue-600 transition-all hover:-translate-y-[5px] hover:bg-opacity-50">
+				Another one ?
+			</button>
 		</div>
+		<script>
+			document.body.addEventListener('htmx:beforeRequest', () => {
+				const quoteContainer = document.getElementById('quote-container');
+				quoteContainer.style.transition = 'all 0.25s';
+				quoteContainer.style.opacity = '25%';
+				quoteContainer.style.transform = 'scale(0.2)';
+			});
+			document.body.addEventListener('htmx:afterOnLoad', function (event) {
+				const quoteContainer = document.getElementById('quote-container');
+
+				// Get the response content from the event
+				const responseText = event.detail.xhr.responseText;
+
+				try {
+					const quoteData = JSON.parse(responseText);
+
+					// Clear existing content
+					quoteContainer.innerHTML = '';
+
+					// Iterate through quote lines and create DOM elements
+					quoteData.lines.forEach((line) => {
+						const lineDiv = document.createElement('div');
+						lineDiv.className = '[&+div]:mt-4';
+
+						if (line.author) {
+							const authorSpan = document.createElement('span');
+							authorSpan.className = 'relative -left-8 -top-2 bg-pink-400 px-2 py-1 text-pink-800';
+							authorSpan.textContent = `${line.author} -`;
+							lineDiv.appendChild(authorSpan);
+
+							const lineBreak = document.createElement('br');
+							lineDiv.appendChild(lineBreak);
+						}
+
+						const quoteDiv = document.createElement('div');
+						quoteDiv.className = 'quote';
+						quoteDiv.textContent = line.quote;
+
+						lineDiv.appendChild(quoteDiv);
+						quoteContainer.appendChild(lineDiv);
+					});
+
+					// Restore opacity and scale
+					quoteContainer.style.opacity = '100%';
+					quoteContainer.style.transform = '';
+				} catch (error) {
+					console.error('Error rendering quote:', error);
+					// Fallback to original content if parsing fails
+					quoteContainer.style.opacity = '100%';
+					quoteContainer.style.transform = '';
+				}
+			});
+		</script>
 	</body>
 </html>
