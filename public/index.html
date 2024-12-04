@@ -60,7 +60,8 @@
 					</label>
 			</div>
 		</nav>
-		<section class="relative flex min-h-[max(100vh,42rem)] w-screen items-center justify-center overflow-hidden">
+		<main>
+		<section class="relative flex min-h-[max(100vh,42rem)] w-screen items-center justify-center overflow-hidden" aria-hidden="true">
 			<div id="Logo" class="relative">
 				<img src="img/card.png?as=webp&quality=100&width=350" alt="Logo Thomas Dargent" class="w-48 sm:w-80 xl:w-96 dark:sm:w-48 dark:xl:w-56 dark:mix-blend-color-dodge opacity-80" />
 				<div class="absolute top-0 left-0 hidden w-full h-full bg-pink-400 mix-blend-darken dark:block"></div>
@@ -98,8 +99,8 @@
 				<img alt="Pink flowers" id="flowers" class="absolute bottom-0 max-w-4xl max-h-80 left-1/2 -translate-x-1/2">
 			</div>
 		</section>
-		<section id="whoAmI" class="block px-6 py-16 overflow-x-hidden bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 sm:px-16 lg:pl-72 xl:pl-96">
-			<h1 class="relative text-right font-heading text-6xl sm:text-8xl lg:text-left dark:text-pink-400 after:content-[''] after:w-full after:h-[2px] after:bg-pink-600 after:absolute after:top-1/2 lg:after:left-72 sm:after:right-72 after:right-44 dark:after:block after:hidden">Who am I ?</h1>
+		<section id="whoAmI" aria-labelledby="whoami-title" class="block px-6 py-16 overflow-x-hidden bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 sm:px-16 lg:pl-72 xl:pl-96">
+			<h1 id="whoami-title" class="relative text-right font-heading text-6xl sm:text-8xl lg:text-left dark:text-pink-400 after:content-[''] after:w-full after:h-[2px] after:bg-pink-600 after:absolute after:top-1/2 lg:after:left-72 sm:after:right-72 after:right-44 dark:after:block after:hidden">Who am I ?</h1>
 			<div class="flex flex-col md:flex-row">
 				<img
 					src="img/avatar.png?as=webp&quality=60&width=300"
@@ -132,17 +133,17 @@
 				</div>
 			</div>
 		</section>
-		<section id="portfolio" class="block px-6 py-16 bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 dark:text-gray-200 sm:px-16 lg:pl-72 xl:pl-96">
+		<section id="portfolio" aria-labelledby="portfolio-title" class="block px-6 py-16 bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 dark:text-gray-200 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
-				<h1 class="text-left font-heading text-8xl dark:text-pink-400">Portfolio</h1>
+				<h1 id="portfolio-title" class="text-left font-heading text-8xl dark:text-pink-400">Portfolio</h1>
 				<p class="text-gray-900 prose dark:text-gray-200">Here's some projects I'm proud of !</p>
 				<div class="flex flex-wrap mt-2 mb-4 gap-6">
 					<div id="portfolioGallery"></div>
 				</div>
 		</section>
-		<section id="blog" class="block min-h-[70vh] bg-gray-100 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 dark:text-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
+		<section id="blog" aria-labelledby="blog-title" class="block min-h-[70vh] bg-gray-100 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 dark:text-gray-200 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
-				<h1 class="font-heading text-8xl dark:text-pink-400 ">Blog</h1>
+				<h1 id="blog-title" class="font-heading text-8xl dark:text-pink-400 ">Blog</h1>
 				<p>I sometime write about stuff. You can read about it here.</p>
 				<p class="prose dark:text-gray-200 ">
 					In the spirit of keeping this website a bit more like the old web, there's no comment or
@@ -178,9 +179,10 @@
 		</section>
 		<section
 			id="contact"
+			aria-labelledby="contact-title"
 			class="relative block h-[70vh] overflow-hidden bg-gray-200 dark:bg-gray-1000 dark:border-t-2 dark:border-pink-600 px-6 py-16 sm:px-16 lg:pl-72 xl:pl-96">
 			<div>
-				<h1 class="text-right font-heading text-6xl sm:text-8xl lg:text-left relative dark:text-pink-400 dark:after:content-[''] dark:after:block dark:after:h-10 dark:after:w-10 dark:after:absolute dark:after:-top-8 dark:after:right-20 dark:sm:after:right-36 dark:lg:after:left-44 dark:after:bg-[url(../img/star.svg)] dark:after:bg-contain">Contact</h1>
+				<h1 id="contact-title" class="text-right font-heading text-6xl sm:text-8xl lg:text-left relative dark:text-pink-400 dark:after:content-[''] dark:after:block dark:after:h-10 dark:after:w-10 dark:after:absolute dark:after:-top-8 dark:after:right-20 dark:sm:after:right-36 dark:lg:after:left-44 dark:after:bg-[url(../img/star.svg)] dark:after:bg-contain">Contact</h1>
 			</div>
 			<div class="block text-gray-900 prose dark:text-gray-200">
 				<p>
@@ -204,6 +206,7 @@
 			<img id="sakine" class="absolute hidden dark:block h-[48rem] -right-44 -bottom-[24rem] xsm:-bottom-[28rem] sm:-right-36 sm:top-56 lg:scale-x-[-1] lg:top-0  lg:-left-44 2xl:left-auto 2xl:-right-56 2xl:h-[76rem] 2xl:scale-x-[1]"
 				alt="Picture of my baby cat that is so cute" style="object-fit: contain;" aria-hidden="true">
 		</section>
+		</main>
 		<script type="module" src="./js/set-lines.js" defer></script>
 		<script type="module" src="./js/ts/menu.ts"></script>
 		<script type="module" src="./js/switch_theme.js"></script>
