@@ -1,0 +1,10 @@
+{
+	"static": ["/public/index.html", "../public/articles/"],
+	"web": [
+		"http://127.0.0.1:5000/wisdom",
+		"http://127.0.0.1:5000/mass_effect_quote",
+		"http://127.0.0.1:5000/brevo_form_example",
+		"http://127.0.0.1:5000/brevo_success_example",
+		"http://127.0.0.1:5000/brevo_error_example"
+	]
+}
