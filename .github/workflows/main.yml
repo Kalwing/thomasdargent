@@ -34,9 +34,22 @@ jobs:
         run: npm install
       - name: Run Flask server and HTML accessibility tests
         run: |
-          python -m flask_app.app --port=5000 &  # Start the Flask server in the background
-          SERVER_PID=$!              # Capture the server PID
-          sleep 5                    # Allow the server time to start
-          node tests/axe-core.test.js || EXIT_CODE=$? # Run tests and capture exit code
-          kill $SERVER_PID           # Stop the Flask server
-          exit ${EXIT_CODE:-0}       # Exit with the test script's exit code if it exists
+          # Start the Flask server in the background
+          python -m flask_app.app -p 5000 &
+          SERVER_PID=$!  # Capture the server PID
+          # Allow the server time to start
+          sleep 5
+          # Check if the server is running
+          (curl -sSf http://localhost:5000 > /dev/null || {
+            echo "Server failed to start";
+            kill $SERVER_PID;
+            exit 1;
+          })
+          # Run the first test and capture its exit code
+          node tests/axe-core.test.js || EXIT_CODE=$?
+          # Run the second test and update the exit code if necessary
+          node tests/pa11y.test.js || EXIT_CODE=$EXIT_CODE || $?
+          # Kill the Flask server
+          (kill $SERVER_PID 2>/dev/null || echo "Server process already exited")
+          # Exit with the final exit code
+          exit ${EXIT_CODE:-0}

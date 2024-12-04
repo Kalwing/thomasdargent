@@ -8,7 +8,7 @@ const fs = require('fs');
 	const browser = await puppeteer.launch();
 	const results = [];
 	const pages = [];
-	const logFilePath = path.resolve(__dirname, 'accessibility.log');
+	const logFilePath = path.resolve(__dirname, 'axe-core.accessibility.log');
 	const logStream = fs.createWriteStream(logFilePath, { flags: 'w' });
 
 	// Helper function to log to the file
