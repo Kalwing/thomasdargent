@@ -1,4 +1,5 @@
 # thomasdargent.com
+
 ![CI Tests Workflow](https://github.com/Kalwing/thomasdargent/actions/workflows/main.yml/badge.svg)
 ![Screenshot of the homepage in light and dark mode](./screenshot.png)
 
@@ -21,7 +22,7 @@ Feel free to explore, read, and interact!
 - **Styling**: Tailwind CSS
 - **Bundler**: Parcel
 - **Hosting**: Digital Ocean
-- **Testing**: Puppeteer for accessibility and browser tests, Pytest for server-side testing
+- **Testing**: Axe-core and Pa11y for accessibility and browser tests, Pytest for server-side testing
 
 ## Setup Instructions
 
