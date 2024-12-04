@@ -21,6 +21,7 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-flask
       - name: Run python tests
+        working-directory: ./thomasdargent
         run: python -m pytest
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -29,6 +30,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install
       - name: Run Flask server and HTML accessibility tests
+        working-directory: ./thomasdargent
         run: |
           python -m flask_app.app --port=5000 &  # Start the Flask server in the background
           SERVER_PID=$!              # Capture the server PID
