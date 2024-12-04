@@ -1,5 +1,5 @@
 # thomasdargent.com
-
+![CI Tests Workflow](https://github.com/Kalwing/thomasdargent/actions/workflows/main.yml/badge.svg)
 ![Screenshot of the homepage in light and dark mode](./screenshot.png)
 
 ## About the Website
