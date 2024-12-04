@@ -25,7 +25,21 @@ jobs:
       - name: List files
         run: ls -R
       - name: Run python tests
-        run: python -m pytest
+        run: |
+          coverage run -m pytest
+          coverage xml
+      - name: Create Coverage Badge
+        uses: jaywcjlove/coverage-badges-cli@main
+        with:
+          style: flat
+          source: coverage.xml
+          output: py-coverage-badge.svg
+      - name: Upload Coverage Badge
+        uses: actions/upload-artifact@v3
+        with:
+          name: py-coverage-badge
+          path: py-coverage-badge.svg
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:

@@ -17,3 +17,5 @@ articles_jupyter/_*
 public/data/quotes_sorted.json
 tests/accessibility.log
 tests/*.log
+htmlcov/
+.coverage

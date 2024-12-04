@@ -17,8 +17,8 @@ handle_error() {
 deploy() {
     log_status "Uploading dist..."
     echo "${CDEBUG}"
-    scp -r ../dist kalwing:~/thomasdargent || handle_error "Failed to upload dist directory"
-    scp -r ../flask_app kalwing:~/thomasdargent || handle_error "Failed to upload flask directory"
+    scp -r dist kalwing:~/thomasdargent || handle_error "Failed to upload dist directory"
+    scp -r flask_app kalwing:~/thomasdargent || handle_error "Failed to upload flask directory"
 
     log_status "Cleaning previous deployment..."
     ssh kalwing 'rm -rf /var/www/thomasdargent/dist' || handle_error "Failed to delete the dist folder"

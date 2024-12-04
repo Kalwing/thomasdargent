@@ -45,6 +45,6 @@ def create_app(config_name="prod"):
     return app
 
 # For development/local run
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     app = create_app('dev')
     app.run(debug=True)
