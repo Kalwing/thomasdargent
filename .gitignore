@@ -14,3 +14,5 @@ dist/
 articles_jupyter/data/
 articles_jupyter/unfinished/
 articles_jupyter/_*
+public/data/quotes_sorted.json
+tests/accessibility.log
