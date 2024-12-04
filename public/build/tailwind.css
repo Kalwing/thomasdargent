@@ -1604,6 +1604,9 @@ select {
 .-left-5 {
   left: -1.25rem;
 }
+.-left-6 {
+  left: -1.5rem;
+}
 .-left-8 {
   left: -2rem;
 }
@@ -1658,20 +1661,11 @@ select {
 .top-1\/2 {
   top: 50%;
 }
-.top-32 {
-  top: 8rem;
-}
-.top-8 {
-  top: 2rem;
-}
 .top-24 {
   top: 6rem;
 }
-.-left-4 {
-  left: -1rem;
-}
-.-left-6 {
-  left: -1.5rem;
+.top-8 {
+  top: 2rem;
 }
 .isolate {
   isolation: isolate;
@@ -1944,32 +1938,8 @@ select {
   --tw-translate-y: -275%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.translate-y-1 {
-  --tw-translate-y: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 .translate-y-2 {
   --tw-translate-y: 0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-x-4 {
-  --tw-translate-x: -1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-x-8 {
-  --tw-translate-x: -2rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-x-16 {
-  --tw-translate-x: -4rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-x-32 {
-  --tw-translate-x: -8rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-x-44 {
-  --tw-translate-x: -11rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .-rotate-1 {
@@ -2053,14 +2023,8 @@ select {
 .content-center {
   align-content: center;
 }
-.content-start {
-  align-content: flex-start;
-}
 .items-start {
   align-items: flex-start;
-}
-.items-end {
-  align-items: flex-end;
 }
 .items-center {
   align-items: center;
@@ -2070,9 +2034,6 @@ select {
 }
 .justify-evenly {
   justify-content: space-evenly;
-}
-.justify-items-start {
-  justify-items: start;
 }
 .justify-items-center {
   justify-items: center;
@@ -2088,9 +2049,6 @@ select {
 }
 .gap-6 {
   gap: 1.5rem;
-}
-.self-start {
-  align-self: flex-start;
 }
 .overflow-auto {
   overflow: auto;
@@ -2121,10 +2079,6 @@ select {
 }
 .border-4 {
   border-width: 4px;
-}
-.border-x {
-  border-left-width: 1px;
-  border-right-width: 1px;
 }
 .border-b {
   border-bottom-width: 1px;
@@ -2227,33 +2181,19 @@ select {
   --tw-gradient-to: rgb(23 161 197 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-pacific-blue-600\/80 {
-  --tw-gradient-from: rgb(22 101 127 / 0.8) var(--tw-gradient-from-position);
+.from-pacific-blue-600\/20 {
+  --tw-gradient-from: rgb(22 101 127 / 0.2) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(22 101 127 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-pacific-blue-500\/20 {
-  --tw-gradient-from: rgb(23 161 197 / 0.2) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(23 161 197 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-pacific-blue-300\/20 {
-  --tw-gradient-from: rgb(115 216 237 / 0.2) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(115 216 237 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-pacific-blue-600\/20 {
-  --tw-gradient-from: rgb(22 101 127 / 0.2) var(--tw-gradient-from-position);
+.from-pacific-blue-600\/80 {
+  --tw-gradient-from: rgb(22 101 127 / 0.8) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(22 101 127 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .via-pacific-blue-900\/50 {
   --tw-gradient-to: rgb(28 71 93 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(28 71 93 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.via-pacific-blue-900\/60 {
-  --tw-gradient-to: rgb(28 71 93 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(28 71 93 / 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 .via-pacific-blue-900\/70 {
   --tw-gradient-to: rgb(28 71 93 / 0)  var(--tw-gradient-to-position);
@@ -2267,15 +2207,6 @@ select {
 }
 .to-pacific-blue-900\/70 {
   --tw-gradient-to: rgb(28 71 93 / 0.7) var(--tw-gradient-to-position);
-}
-.to-pacific-blue-300\/30 {
-  --tw-gradient-to: rgb(115 216 237 / 0.3) var(--tw-gradient-to-position);
-}
-.to-pacific-blue-300\/15 {
-  --tw-gradient-to: rgb(115 216 237 / 0.15) var(--tw-gradient-to-position);
-}
-.to-pacific-blue-500\/30 {
-  --tw-gradient-to: rgb(23 161 197 / 0.3) var(--tw-gradient-to-position);
 }
 .fill-gray-700 {
   fill: #5E6C6A;
@@ -2312,6 +2243,10 @@ select {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -2343,10 +2278,6 @@ select {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -3377,6 +3308,10 @@ select {
 
 @media (min-width: 640px) {
 
+  .sm\:-left-8 {
+    left: -2rem;
+  }
+
   .sm\:-right-36 {
     right: -9rem;
   }
@@ -3395,10 +3330,6 @@ select {
 
   .sm\:top-56 {
     top: 14rem;
-  }
-
-  .sm\:-left-8 {
-    left: -2rem;
   }
 
   .sm\:block {
