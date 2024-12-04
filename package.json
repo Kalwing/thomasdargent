@@ -13,7 +13,7 @@
 		"prodData": "./prepare_quote.sh && python ./process_data.py public/data dist/backend/data",
 		"deploy": "python -m pytest && ./push_prod.sh",
 		"testPy": "python -m pytest",
-		"testHTML": "python -m flask_app.app -p 5000 & SERVER_PID=$! && sleep 5 && node tests/axe-core.test.js || EXIT_CODE=$?; node tests/pa11y.test.js || EXIT_CODE=$EXIT_CODE || $? && (kill $SERVER_PID 2>/dev/null || echo \"Server process already exited\") && exit ${EXIT_CODE:-0}"
+		"testHTML": "python -m flask_app.app & SERVER_PID=$! && sleep 5 && node tests/axe-core.test.js || EXIT_CODE=$?; node tests/pa11y.test.js || EXIT_CODE=$EXIT_CODE || $? && (kill $SERVER_PID 2>/dev/null || echo \"Server process already exited\") && exit ${EXIT_CODE:-0}"
 	},
 	"author": "",
 	"license": "ISC",

@@ -5,6 +5,9 @@ from pathlib import Path
 
 bp = Blueprint("api", __name__)
 
+@bp.route('/', methods=['GET'])
+def home():
+    return "", 200
 
 @bp.route("/error_brevo", methods=["GET", "POST"])
 def brevo_error():

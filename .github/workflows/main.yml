@@ -35,12 +35,12 @@ jobs:
       - name: Run Flask server and HTML accessibility tests
         run: |
           # Start the Flask server in the background
-          python -m flask_app.app -p 5000 &
+          python -m flask_app.app &
           SERVER_PID=$!  # Capture the server PID
           # Allow the server time to start
           sleep 5
           # Check if the server is running
-          (curl -sSf http://localhost:5000 > /dev/null || {
+          (curl -sSf http://127.0.0.1:5000 > /dev/null || {
             echo "Server failed to start";
             kill $SERVER_PID;
             exit 1;

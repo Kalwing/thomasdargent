@@ -10,9 +10,15 @@ def client():
     with app.test_client() as client:
         yield client
 
+
+def test_base(client):
+    response = client.get('/')
+    assert response.status_code == 200
+
+
 def test_brevo(client):
     response = client.get('/error_brevo')
-    assert response.status_code <= 400
+    assert response.status_code >= 400
     assert response.json == {'code': 'error_access'}
 
     response = client.get('/success_brevo')
