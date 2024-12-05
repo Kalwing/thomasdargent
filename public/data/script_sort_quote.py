@@ -9,11 +9,21 @@ def sort_quotes(path_in=Path("./quotes.json"), path_out=Path("./quotes_sorted.js
         for obj in file:
             if obj["tag"] not in tags.keys():
                 tags[obj["tag"]] = []
-            tags[obj["tag"]].append(
-                {
-                    "lines": obj["lines"]
-                }
-            )
+            if ("date" in obj) :
+                tags[obj["tag"]].append(
+                    {
+                        "lines": obj["lines"],
+                        "date": obj["date"]
+                    }
+                )
+            else:
+                tags[obj["tag"]].append(
+                    {
+                        "lines": obj["lines"]
+                    }
+                )
+
+
 
     with open(path_out, "w") as file:
         file.write(json.dumps(tags))

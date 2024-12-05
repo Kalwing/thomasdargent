@@ -5,14 +5,14 @@
 	"scripts": {
 		"buildCSS": "postcss css/tailwind.css -o public/build/tailwind.css --minify",
 		"watchCSS": "postcss css/tailwind.css -o public/build/tailwind.css --watch",
-		"devBundle": "parcel",
+		"devBundle": "rm -rf dist && rm -rf .parcel-cache && parcel",
 		"devFlask": "python -m flask_app.app",
 		"warning": "echo \"\\033[0;33mRemember to record new backend static/templates files in your package.json targets parameters.\\n \\033[1mOtherwise they won't be processed by parcel 😥.\\033[0m\"",
-		"buildBundle": "rm -rf dist && ./scripts/generate_articles.sh && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
-		"fullBuild": "rm -rf dist && ./scripts/generate_articles.sh --regenerate && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
+		"buildBundle": "rm -rf dist && rm -rf .parcel-cache && ./scripts/generate_articles.sh && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
+		"fullBuild": "rm -rf dist && rm -rf .parcel-cache && ./scripts/generate_articles.sh --regenerate && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
 		"prodData": "./scripts/prepare_quote.sh && python ./scripts/process_data.py public/data dist/backend/data",
 		"deploy": "python -m pytest && ./scripts/push_prod.sh",
-		"testPy": "python -m pytest",
+		"testPy": "coverage run -m pytest",
 		"testHTML": "python -m flask_app.app & SERVER_PID=$! && sleep 5 && node tests/axe-core.test.js && node tests/pa11y.test.js || EXIT_CODE=$? && (kill $SERVER_PID 2>/dev/null || echo \"Server process already exited\") && exit ${EXIT_CODE:-0}",
 		"testJS": "mocha"
 	},
