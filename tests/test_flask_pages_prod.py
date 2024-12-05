@@ -1,5 +1,8 @@
 import pytest
 from flask_app.app import create_app
+from pathlib import Path
+
+pytestmark = pytest.mark.skipif(Path("/home/runner") in Path().absolute().parents, reason="Dist folder not uploaded to github, can't test prod")
 
 @pytest.fixture
 def client():
