@@ -51,6 +51,7 @@ const fs = require('fs');
 		logToFile(`Checked: ${pagePath}`);
 		if (result.violations.length > 0) {
 			logToFile(`Violations found on ${pagePath}:`);
+			console.log(`Violations found on ${pagePath}`);
 			for (var i = 0; i < result.violations.length; i++) {
 				if (result.violations[i].id == 'color-contrast') {
 					// I ignore contrast violations as it doesn't take into account media queries
@@ -72,6 +73,9 @@ const fs = require('fs');
 	// Fail the test if there are any violations
 	const totalViolations = results.reduce((sum, r) => sum + r.violations.length, 0);
 	if (totalViolations > 0) {
+		for (const result of results) {
+			console.log(result);
+		}
 		process.exit(1);
 	} else {
 		console.log('All pages passed accessibility checks!');

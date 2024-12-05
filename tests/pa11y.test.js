@@ -43,6 +43,7 @@ const { assert } = require('console');
 		const to_delete = [];
 		if (result.issues.length > 0) {
 			logToFile(`Violations found on ${pagePath}:`);
+			console.log(`Violations found on ${pagePath}`);
 			const n_issues = result.issues.length;
 			const filteredIssues = result.issues.filter((issue) => {
 				if (issue.code === 'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail') {

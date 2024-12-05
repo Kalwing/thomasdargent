@@ -46,9 +46,10 @@ jobs:
             exit 1;
           })
           # Run the first test and capture its exit code
-          node tests/axe-core.test.js || EXIT_CODE=$?
+          node tests/axe-core.test.js
           # Run the second test and update the exit code if necessary
-          node tests/pa11y.test.js || EXIT_CODE=$EXIT_CODE || $?
+          node tests/pa11y.test.js || EXIT_CODE=$?
+          echo $EXIT_CODE
           # Kill the Flask server
           (kill $SERVER_PID 2>/dev/null || echo "Server process already exited")
           # Exit with the final exit code

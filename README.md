@@ -1,7 +1,7 @@
 # thomasdargent.com
 
 ![CI Tests Workflow](https://github.com/Kalwing/thomasdargent/actions/workflows/main.yml/badge.svg)
-![Python Coverage](https://raw.githubusercontent.com/Kalwing/thomasdargent/main/py-coverage-badge.svg)
+
 ![Screenshot of the homepage in light and dark mode](./screenshot.png)
 
 ## About the Website
