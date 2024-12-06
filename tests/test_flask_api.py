@@ -34,6 +34,13 @@ def test_quote(client):
     keys = response.json["lines"][0].keys()
     assert "author" in keys and "quote" in keys
 
+    for i in range(100):
+        response = client.get('/get_quote?avoid=basic')
+        assert response.status_code == 200
+        keys = response.json["lines"][0].keys()
+        assert "author" in keys and "quote" in keys
+        assert response.json["tag"] != "basic"
+
     response = client.get('/get_quote/basic')
     assert response.status_code == 200
     keys = response.json["lines"][0].keys()
@@ -43,13 +50,24 @@ def test_quote(client):
     response = client.get('/get_quote/sqefsefsef')
     assert response.status_code == 404
 
+    response = client.get('/get_quote/basic?avoid=basic')
+    assert response.status_code == 404
+
 def test_quote_date(client):
     response = client.get('/get_quote/date')
     assert response.status_code == 200
     keys = response.json["lines"][0].keys()
     assert "author" in keys and "quote" in keys
 
-    quote = pick_quote("date", date_freq=1)
+    date = datetime.date(1997, 2, 18)
+    quote = pick_quote(date=date, tag="date", date_freq=1)
+    assert "author" in quote['lines'][0] and "quote" in quote['lines'][0]
+
+    date = datetime.date(2024, 9, 15)  # There's a quote that falls only in september
+    quote = pick_quote(date=date, tag="date", date_freq=1)
+    assert "author" in quote['lines'][0] and "quote" in quote['lines'][0]
+
+    quote = pick_quote(tag="date", date_freq=1)
     assert "author" in quote['lines'][0] and "quote" in quote['lines'][0]
 
 def test_date(client):

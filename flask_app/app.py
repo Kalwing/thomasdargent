@@ -35,7 +35,7 @@ def create_app(config_name="prod"):
     app.config.from_object(config_class)
 
     # Register blueprints
-    if config_name == 'prod':
+    if config_name == 'prod': # pragma: no cover
         app.register_blueprint(routes_api.bp, url_prefix="/api")
         app.register_blueprint(routes_pages.bp, url_prefix="/api")
     else:

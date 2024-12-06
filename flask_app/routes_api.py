@@ -44,8 +44,10 @@ def date_match(date: datetime.date, pattern: str) -> bool:
         match = match and (date.strftime("%Y") == yyyy)
     return match
 
-def pick_quote(tag: str=None, date_freq: float=0.25):
+def pick_quote(date: datetime.date=None, tag: str=None, to_avoid: list[str]=[], date_freq: float=0.25) -> dict:
     if tag is not None:
+        if tag in to_avoid:
+            return None
         # Decide if we have a tag or if we check on date related quote before reading a file for nothing
         test_date = tag == "date"  and random.random() < date_freq
         if test_date or tag != "date":
@@ -55,10 +57,10 @@ def pick_quote(tag: str=None, date_freq: float=0.25):
                     quotes = json.loads(file.read())
 
                 if test_date:
+                    tested_date = date if date is not None else datetime.date.today()
                     potential_quotes = []
-                    today = datetime.date.today()
                     for quote in quotes[tag]:
-                        if date_match(today, quote["date"]):
+                        if date_match(tested_date, quote["date"]):
                             potential_quotes.append(quote)
                     if potential_quotes:
                         return random.choice(potential_quotes)
@@ -69,12 +71,21 @@ def pick_quote(tag: str=None, date_freq: float=0.25):
                 return None
     path = Path(current_app.static_folder)/'data/quotes.json'
     with open(path, 'r') as file:
-        return random.choice(json.loads(file.read()))
+        quote_array = json.loads(file.read())
+        r = random.choice(quote_array)
+        # dated quote should only appear at the defined date
+        while r["tag"] in ("date", *to_avoid):
+            # Do not pop the quote that failed, as pop is O(N),
+            # and the list of quote is quite big, the odds are that it would be
+            # more costly.
+            r = random.choice(quote_array)
+        return r
 
 @bp.route("/get_quote", methods=["GET"])
 @bp.route("/get_quote/<tag>", methods=["GET"])
 def quote_giver(tag: str=None):
-    _json = pick_quote(tag)
+    to_avoid = request.args.getlist("avoid", type=str)
+    _json = pick_quote(tag=tag, to_avoid=to_avoid)
     if _json is None:
         return "Wrong tag", 404
     response = jsonify(_json)

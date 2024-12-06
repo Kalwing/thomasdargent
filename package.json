@@ -11,7 +11,7 @@
 		"buildBundle": "rm -rf dist && rm -rf .parcel-cache && ./scripts/generate_articles.sh && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
 		"fullBuild": "rm -rf dist && rm -rf .parcel-cache && ./scripts/generate_articles.sh --regenerate && npm run buildCSS && parcel build --no-source-maps && npm run prodData && npm run warning",
 		"prodData": "./scripts/prepare_quote.sh && python ./scripts/process_data.py public/data dist/backend/data",
-		"deploy": "python -m pytest && ./scripts/push_prod.sh",
+		"deploy": "coverage run -m pytest && ./scripts/push_prod.sh",
 		"testPy": "coverage run -m pytest",
 		"testHTML": "python -m flask_app.app & SERVER_PID=$! && sleep 5 && node tests/axe-core.test.js && node tests/pa11y.test.js || EXIT_CODE=$? && (kill $SERVER_PID 2>/dev/null || echo \"Server process already exited\") && exit ${EXIT_CODE:-0}",
 		"testJS": "mocha"

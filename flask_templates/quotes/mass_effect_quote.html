@@ -48,7 +48,7 @@
 							>{{ line.author }}:</span
 						><br />
 						{% endif %}
-						<div class="quote">{{ line.quote}}</div>
+						<div class="quote">{{ line.quote|safe }}</div>
 					</div>
 					{% endfor %}
 				</blockquote>

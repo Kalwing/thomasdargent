@@ -1833,7 +1833,7 @@
 		"lines": [
 			{
 				"author": "Donald Knuth",
-				"quote": "In fact what I would like to see is thousands of computer scientis let loose to do whatever they want. THat's what really advances the field."
+				"quote": "In fact what I would like to see is thousands of computer scientists let loose to do whatever they want. That's what really advances the field."
 			}
 		],
 		"tag": "dev"
@@ -2574,11 +2574,11 @@
 	{
 		"lines": [
 			{
-				"author": "Serj Tankian",
+				"author": "System of a Down",
 				"quote": "Pretending that we live doesn't make us alive."
 			}
 		],
-		"tag": "basic"
+		"tag": "lyric"
 	},
 	{
 		"lines": [
@@ -2614,7 +2614,7 @@
 				"quote": "My cock is much bigger than yours."
 			}
 		],
-		"tag": "basic"
+		"tag": "lyric"
 	},
 	{
 		"lines": [
@@ -2650,7 +2650,7 @@
 				"quote": "Always want to play but you never want to lose."
 			}
 		],
-		"tag": "basic"
+		"tag": "lyric"
 	},
 	{
 		"lines": [
@@ -2668,7 +2668,7 @@
 				"quote": "It has to start somewhere, it has to start sometime, what better place than here? What better time than now?"
 			}
 		],
-		"tag": "basic"
+		"tag": "lyric"
 	},
 	{
 		"lines": [
@@ -2677,7 +2677,7 @@
 				"quote": "When ignorance reigns, life is lost..."
 			}
 		],
-		"tag": "basic"
+		"tag": "lyric"
 	},
 	{
 		"lines": [
@@ -2839,7 +2839,8 @@
 				"quote": "You don't hate mondays, you hate the pain of existence."
 			}
 		],
-		"tag": "political"
+		"tag": "date",
+		"date": "0 */*/*"
 	},
 	{
 		"lines": [
@@ -3113,7 +3114,7 @@
 	{
 		"lines": [
 			{
-				"author": "",
+				"author": "???",
 				"quote": "Why do you want to die Henri?"
 			},
 			{
@@ -3517,5 +3518,1123 @@
 		],
 		"tag": "date",
 		"date": "1 */*/*"
+	},
+	{
+		"lines": [
+			{
+				"author": "Everything Everywhere All At Once",
+				"quote": "When I choose to see the good side of things, I'm not being naive. It is strategic and necessary. It's how I've learned to survive through everything."
+			}
+		],
+		"tag": "movie"
+	},
+	{
+		"lines": [
+			{
+				"author": "chronicintrovert",
+				"quote": "i can't do this anymore! i mean i can, and i will, obviously. but i can't fucking do this anymore!"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [{ "author": "", "quote": "Oh Christ, It's THIS ASSHOLE AGAIN" }],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Miles Morales",
+				"quote": "\"Everyone keeps telling me how my story is supposed to go.\""
+			}
+		],
+		"tag": "spiderman"
+	},
+	{
+		"lines": [
+			{
+				"author": "Rio Morales",
+				"quote": "Wherever you go from here, you have to promise to take care of that little boy for me. Make sure he never forgets where he came from. And he never doubts that he's loved. And never lets anyone tell him that he doesn't belong there."
+			}
+		],
+		"tag": "spiderman"
+	},
+	{
+		"lines": [
+			{ "author": "Spider-punk", "quote": "\"Taking a crap on the establishment. I salute you.\"" }
+		],
+		"tag": "spiderman"
+	},
+	{
+		"lines": [
+			{
+				"author": "Emiliano Zapata",
+				"quote": "\"I'd rather die on my feet than live on my knees\""
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Shepard",
+				"quote": "Maybe you’re right. Maybe we can’t win this. But we’ll fight you regardless! Just like we did Sovereign. Just like I’m doing now! However insignificant we may be. We will fight! We will sacrifice! And we will find a way! That’s what humans do!"
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [{ "author": "Thane", "quote": "Removing evil isn't the same as creating good" }],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Chris Cleave",
+				"quote": "A scar does not form on the dying. A scar means, I survived"
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "Javik",
+				"quote": "Despair is the enemy's greatest weapon. Do not let them wield it."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Drack",
+				"quote": "Parents aren't meant to be a goal or a finish line. We're the starting line. Where you go from there? It's all you. Remember that."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Fred Hampton",
+				"quote": "You can kill the revolutionary but you can never kill the revolution."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Fred Hampton",
+				"quote": "Nothing is more important than stopping fascism, because fascism is gonna stop us all."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Fred Hampton",
+				"quote": "We're gonna have to do more than talk. We're gonna have to do more than listen. We're gonna have to do more than learn. We're gonna have to start practicing and that's very hard."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Fred Hampton",
+				"quote": "If you walk through life and don't help anybody, you haven't had much of a life"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Rage Against the Machine",
+				"quote": "Fuck you I won't do what you tell me. Fuck you I won't do what you tell me"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Black Sabbath",
+				"quote": "Politicians argue for their own cause. Generals talk of peace but they want war"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Black Sabbath",
+				"quote": "Black Sabbath, sabbath bloody sabbath/ Evil is on the rise/ Evil is on the loose"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Days N' Daze",
+				"quote": "Rise to live, don't die to sleep. Fight for your life, don't give up the fight"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Blackbird Raum",
+				"quote": "The great divide between the rich and the poor/ The powerful and the weak/ The haves and the have-nots/ It's a world of contradictions"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "We live on borrowed time but can't decide who the payments are for."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "We're the moron brothers/ We're the idiots of the world/ We're the ones who don't know what to do/ We're the ones who don't know where to go"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [{ "author": "NoFX", "quote": "I had a garden but my flowers died of negligence." }],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "THE COP GROWLS ‘TAKE OFF TH OSE JEANS, CITIZEN.’ I COMPLY, REVEALING THE FULL LENGTH DENIM TATTOOS ON BOTH LEGS. THE COP SCREAMS; DEFEATED"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "IF THE ZOO BANS ME FOR HOLLERING AT THE ANIMALS I WILL FACE GOD AND WALK BACKWARDS INTO HELL"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "i just need to say, to anyone reading this.. You are Important, You are loved, and You belong in this world, if you have over 5000 followers"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "girls always love to telling people not to‘ Mansplain’ but they do not care of, ‘Man’s Pain’"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "if your grave doesnt say ‘rest in peace’ on it you are automatically drafted into the skeleton war"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "trying to heal….. please donate to my go fund me… $10 will make me less racist… $100 will make me extremely less racist…thank you…"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "the human mind… perhaps the most powerful weapon. second only to the ‘GUN’"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "blocked. blocked. blocked. youre all blocked. none of you are free of sin"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "i lvoe and cherish all of the girls of this site, and other websites. you all become my wife more and more with each passing day. Thank you"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "THERAPIST",
+				"quote": "your problem is, that youre perfect, and everyone is jealous of your good posts, and that makes you rightfully upset."
+			},
+			{
+				"author": "Dril",
+				"quote": "I agree"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "drunk driving may kill a lot of people, but it also helps a lot of people get to work on time, so, it; s impossible to say if its bad or not"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "look, im not saying that martin luther king jr was a gamer. that would be ludicrous. im simply saying that if games had existed at the time"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "my friend the only crypto currency you wanna get your hands on is this: bird seed. There is a lot of birds and they all gotta eat"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "DOCTOR",
+				"quote": "you cant keep doing this to yourself. being The Last True Good Boy online will destroy you. you must stop posting with honor"
+			},
+			{
+				"author": "Dril",
+				"quote": "No"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "Politic’s is back baby. It’s good again. Awoouu (wolf Howl)"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "im afraid i must say that i do not find the mysteries featured on ‘scooby-doo’ challenging enough."
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "Should i learn Letters first? Or choose the path of Numbers? A queston every baby must ask it self."
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "every generation deserves at least 5 movies named ‘Spider Man 2’"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dril",
+				"quote": "sorry boys.. im goin A.W.O.L.. !!! Another Weekend On-Line"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "THEA",
+				"quote": "On ira, S'aimer sur les barricades, Cramer toute la capitale, S'tenir la main sur les toits, Mais promis c'est amical, Mais promis c'est amical."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "THEA",
+				"quote": "Parce qu'il faut bien laisser une trace, Dans un regard ou dans la glace, Oh mon amour fais moi la place."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "THEA",
+				"quote": "Je te chant'rai qu'la vie est belle, J'en crois pas un mot mais, Je croyais en rien avant ton ‘je t’aime’"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "THEA",
+				"quote": "Y'a que la tristesse qui nous retient, Tout est colère, tout est venin."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "THEA",
+				"quote": "Toutes nos ivresses se sont éteintes, Corps libertaires au creux d’tes mains."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "THEA",
+				"quote": "Même plus envie de débattre, La colère voudrait tout foutre en l’air."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "My Chemical Romance",
+				"quote": "He said, ‘Son, when you grow up, would you be the savior of the broken, the beaten, and the damned?’ He said, ‘Will you defeat them, your demons and all the non-believers, the plans that they have made?’"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "My Chemical Romance",
+				"quote": "We'll carry on, we'll carry on, and though you're dead and gone, believe me, your memory will carry on, we'll carry on."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "My Chemical Romance",
+				"quote": "So paint it black and take it back, and let's shout it loud and clear"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "My Chemical Romance",
+				"quote": "We want it all, we wanna play this part, I won't explain or say I'm sorry, I'm unashamed, I'm gonna show my scar."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "My Chemical Romance",
+				"quote": "They're gonna clean up your looks with all the lies in the books to make a citizen out of you."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "My Chemical Romance",
+				"quote": "They're gonna rip up your heads, your aspirations to shreds, another cog in the murder machine."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "Come on underachievers, Come on all you underpass believers; We’ll give you the skill for street livin', It feels pretty great to just give in, so just give in."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "I define success as not working, and I live like a king"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "We've got no competition, We've got no accomplished mission, We just wanna live and let others live."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "Let's just fuck and drink and be alive, not just survive."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Gringe",
+				"quote": "Lancer un pavé dans la mare ou une vitrine, c'est tout c'qui reste quand le dialogue est rompu."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Gringe",
+				"quote": "On les a taxés d'incivisme et d'ignorance (Comme d'hab'), ils ont répondu par la légitime violence (Eh ouais)."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Greenday",
+				"quote": "Summer has come and passed, the innocent can never last, wake me up when September ends."
+			}
+		],
+		"tag": "date",
+		"date": "* */9/*"
+	},
+	{
+		"lines": [
+			{
+				"author": "Greenday",
+				"quote": "My mind is set on overdrive, the clock is laughin' in my face."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Minutes til Midnight",
+				"quote": "I'm going out fighting, Like lightning, I'm thunder and the rain."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dua Lipa",
+				"quote": "All night, I'll riot with you; I know you got my back and you know I got you."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dua Lipa",
+				"quote": "It's time I wave goodbye from the window."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dua Lipa",
+				"quote": "Let's be bad together, make the devil smile."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "Pourquoi tu joues les rebelles avec des idées toutes faites, si quand tu croises ton patron tu penses qu'à faire des courbettes ?"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "J'me suis fait tout seul, j'me suis fécondé."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "J'voudrais m'noyer dans les airs, j'veux qu'on m'enciele, pas qu'on m'enterre."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Et j'y traduirai la Grâce; j'm'accrocherai à c'que j'pourrai; j'm'en fous qu'tu sois dans l'espace."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Ma douce, pleure pas tes morts, tu leur ferais du tort; s'ils étaient vivants, te verraient comme ça, s'ils étaient vibrants, te prendraient dans leurs bras; tu les rendrais tristes, te voir dans cet état."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Mais qu'ils ont de la chance, d'avoir quitté ce monde; Bien sûr, ils nous manquent, mais quelle bénédiction."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "La vie me va comme un gant d'boxe, et je refuse de rester au sol en attendant le décompte; L'amour me sauvera, j'serai jamais sauvé par le gong."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Je rentre dans l'arène, dans la ronde; La mort me donnera raison de ce monde."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Dans l'miroir est mon adversaire."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "J'veux aller au bout du jour, pas au bout de la nuit."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Trop proche de la dèche, précaire est la vocation, mais trop fier pour faire d'la lèche pour d'la dotation."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Ils pensent être les rois du monde, moi, je suis le roi de moi; Si, demain, c'est la fin du monde, j'suis préparé depuis des mois."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "Qu’on était sublime, sublime; Beaux, vrais, forts, on était sublime."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "J’aime quand le ciel est mauve, le soir, et s’accorde avec ma peine pastel."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "J'suis intenable, j'suis increvable; Peu importe, j'ai d'la force, tout est possible, tout est faisable."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Disiz",
+				"quote": "J'veux que d'la lumière, que d'la vie, que d'la vibe, que d'la graille; Je suis boosté, j'suis en roue libre, je suis high, je suis high."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "grandson",
+				"quote": "The price of your greed is your son and your daughter, what you gon' do when there's blood in the water?"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "grandson",
+				"quote": "Now I am the violence, I am the sickness; Won't accept your silence, beg me for forgiveness."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "grandson",
+				"quote": "When the last tree's fallen, the animal can't hide, money won't solve it : what's your alibi?"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "grandson",
+				"quote": "When I go into the ground, I won't go quietly, I'm bringin' my crown.\nWhen I go into the ground, Oh, they gotta bury me, bury me face down."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "grandson",
+				"quote": "I've been on the run, since I was a boy,\nBut now I'm done runnin', got another thing comin',\nWatch my enemies get destroyed."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "grandson",
+				"quote": "Is it time to speak up or time for silence?\nTime for peace or is it time for violence?\nIs there anybody out there that's payin' attention?"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "grandson",
+				"quote": "Do you have enough love in your heart, to go and get your hands dirty?"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "Or maybe, tear it apart.\nStart with assumption, that a million people are smart,\nSmarter than one."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "We are the queer ! We are the whore !\nAmmunition in the class war; We are worker, We love our queen, We sacrifice."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "We are the whore ! We are the queer !"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "I think that our kids will probably see the end of humanity as we know it, cause this world’s about to blow it."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "Will they see what they saw in ancient Rome, the destruction of the home? Will they see the end of civility?"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "We've been divided, we've been bled, like a chicken without a head, running frantically amok, taking but not giving a fuck."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "History is just an alibi; It’s believing every lie man has ever dared to write."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "It’s time, it needs to be said. I’m sorry to be the one to inform you, but man and womankind has unfortunately been pronounced dead."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "Maintenant, t'es dans l'grand bain, devine comment on nage."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "Comme à chaque fois qu'tu déménages, c'est un monde qui s'écroule; Écoute, l'histoire s'écrit en tournant les pages."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "Souvent seul avec tes problèmes, souvent, c'est toi l'problème."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "T'es au moment d'ta vie où tu peux devenir c'que tu veux; Le même moment où c'est l'plus dur de savoir c'que tu veux."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "Ah, c'qui compte c'est pas l'arrivée, c'est la quête."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "Quand t'as l'désert à traverser, il y a rien à faire, sauf d'avancer."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "En vrai, tu peux pas tout contrôler faut que tu l'acceptes; Être heureux, c'est comme le reste, faut d'abord apprendre à l'être, je sais."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Orelsan",
+				"quote": "Tu vas te coucher en disant demain j'le fais, tu t'réveilles en disant demain j'le fais, mon ami."
+			}
+		],
+		"tag": "lyric"
+	},
+
+	{
+		"lines": [
+			{
+				"author": "Flora Cash",
+				"quote": "I saw the part of you, That only when you're older, you will see too."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Flora Cash",
+				"quote": "It's like you told me, go forward slowly, it's not a race to the end."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Flora Cash",
+				"quote": "Well, you look like yourself, but you're somebody else; Only it ain't on the surface\nWell, you talk like yourself, no, I hear someone else though."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "The Last Dinner Party",
+				"quote": "I wish I knew you, when touch was innocent,\nI wish I knew you, before it felt like a sin."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Linkin Park",
+				"quote": "Time is a valuable thing, watch it fly by as the pendulum swings, watch it count down to the end of the day."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Linkin Park",
+				"quote": "What it meant to me will eventually be, a memory of a time when I tried so hard."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Linkin Park",
+				"quote": "I don't know what you're expecting of me, put under the pressure of walking in your shoes."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Linkin Park",
+				"quote": "I don't know what's worth fighting for or why I have to scream."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "System of a Down",
+				"quote": "Grab a brush and put a little makeup, hide your scars to fade away the shakeup."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "System of a Down",
+				"quote": "Always wanna play, but you never wanna lose."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "System of a Down",
+				"quote": "Such a lonely day should be banned; It's a day that I can't stand."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "System of a Down",
+				"quote": "Dead man lying on the bottom of the grave, wondering when savior comes, is he gonna be saved?"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "mazie",
+				"quote": "Even though by now I think we should have realized: Everyone is dumb (dumb, dumb, dumb, dumb, dumb, dumb, dumb)."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "IAM",
+				"quote": "Pour s'apercevoir que l'espoir émerge du noir; Une partie de tout homme la force manipule; D'un rien il suffit pour que l'être bascule."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "IAM",
+				"quote": "Petit présomptueux ne vois-tu pas le nombre déployé ? L'armée des ombres, tu seras éliminé."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Deftones",
+				"quote": "Shut up, you don't know me ! Squeal like a pig when you pickpocket, big fuckin' head!"
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Portugal. The Man",
+				"quote": "As I finally meet my end, I won't be scared, I won't defend the things I've done."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Portugal. The Man",
+				"quote": "I just wanna sleep forever; Never see tomorrow or lead or follow,\nI don't wanna work forever; Know what I know or beg or borrow."
+			}
+		],
+		"tag": "lyric"
+	},
+	{
+		"lines": [
+			{
+				"author": "Buffalo Grill (to Thomas Dargent)",
+				"quote": "Bon anniversaire les p'tits Indiens ! Bon anniversaire les p'tits cow-boys ! Venez chanter et danser avec tous vos copains. Ici tout est permis, on s'amuse bien !"
+			}
+		],
+		"tag": "date",
+		"date": "* 18/01/1997"
 	}
 ]

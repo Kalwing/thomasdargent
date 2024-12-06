@@ -30,13 +30,17 @@
 						<span class="relative -left-6 -top-2 bg-pink-400 px-2 py-1 text-pink-950 sm:-left-8">
 							{{ line.author }} - </span
 						><br />
+						{% else %}
+						<span class="relative -left-6 -top-2 bg-pink-400 px-2 py-1 text-pink-950 sm:-left-8">
+							??? - </span
+						><br />
 						{% endif %}
-						<div class="quote">{{ line.quote}}<br /></div>
+						<div class="quote">{{ line.quote|safe }}<br /></div>
 					</div>
 					{% endfor %}
 				</blockquote>
 				<button
-					hx-get="{{ url_for('api.quote_giver') }}"
+					hx-get="{{ url_for('api.quote_giver') }}?avoid=political&avoid=mass_effect&avoid=spiderman"
 					hx-target="#quote-container"
 					hx-swap="innerHTML"
 					class="mt-8 bg-pacific-blue-500 bg-opacity-30 p-1 text-pacific-blue-600 transition-all hover:-translate-y-[5px] hover:bg-opacity-50">
@@ -73,6 +77,15 @@
 							authorSpan.className =
 								'relative -left-6 -top-2 bg-pink-400 px-2 py-1 text-pink-950 sm:-left-8';
 							authorSpan.textContent = `${line.author} -`;
+							lineDiv.appendChild(authorSpan);
+
+							const lineBreak = document.createElement('br');
+							lineDiv.appendChild(lineBreak);
+						} else {
+							const authorSpan = document.createElement('span');
+							authorSpan.className =
+								'relative -left-6 -top-2 bg-pink-400 px-2 py-1 text-pink-950 sm:-left-8';
+							authorSpan.textContent = `??? -`;
 							lineDiv.appendChild(authorSpan);
 
 							const lineBreak = document.createElement('br');
