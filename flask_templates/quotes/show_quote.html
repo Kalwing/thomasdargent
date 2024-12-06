@@ -94,7 +94,7 @@
 
 						const quoteDiv = document.createElement('div');
 						quoteDiv.className = 'quote';
-						quoteDiv.textContent = line.quote;
+						quoteDiv.innerHTML = line.quote.replace(/\\n/g, '<br/>');
 
 						lineDiv.appendChild(quoteDiv);
 						quoteContainer.appendChild(lineDiv);

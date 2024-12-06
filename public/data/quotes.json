@@ -3325,7 +3325,7 @@
 		"lines": [
 			{
 				"author": "",
-				"quote": "You're a terrible person.\nI'm sorry, but you're irreparably evil"
+				"quote": "You're a terrible person.\\nI'm sorry, but you're irreparably evil"
 			}
 		],
 		"tag": "meme"
@@ -3343,7 +3343,7 @@
 		"lines": [
 			{
 				"author": "Hot Priest",
-				"quote": "And love isn't something that weak people do.\nBeing a romantic takes a hell lot of hope."
+				"quote": "And love isn't something that weak people do.\\nBeing a romantic takes a hell lot of hope."
 			}
 		],
 		"tag": "movie"
@@ -3427,7 +3427,7 @@
 		"lines": [
 			{
 				"author": "",
-				"quote": "j'enai marre\n\tde etre bogosse"
+				"quote": "j'enai marre\\n\\tde etre bogosse"
 			}
 		],
 		"tag": "meme"
@@ -4288,7 +4288,7 @@
 		"lines": [
 			{
 				"author": "grandson",
-				"quote": "When I go into the ground, I won't go quietly, I'm bringin' my crown.\nWhen I go into the ground, Oh, they gotta bury me, bury me face down."
+				"quote": "When I go into the ground, I won't go quietly, I'm bringin' my crown.\\nWhen I go into the ground, Oh, they gotta bury me, bury me face down."
 			}
 		],
 		"tag": "lyric"
@@ -4297,7 +4297,7 @@
 		"lines": [
 			{
 				"author": "grandson",
-				"quote": "I've been on the run, since I was a boy,\nBut now I'm done runnin', got another thing comin',\nWatch my enemies get destroyed."
+				"quote": "I've been on the run, since I was a boy,\\nBut now I'm done runnin', got another thing comin',\\nWatch my enemies get destroyed."
 			}
 		],
 		"tag": "lyric"
@@ -4306,7 +4306,7 @@
 		"lines": [
 			{
 				"author": "grandson",
-				"quote": "Is it time to speak up or time for silence?\nTime for peace or is it time for violence?\nIs there anybody out there that's payin' attention?"
+				"quote": "Is it time to speak up or time for silence?\\nTime for peace or is it time for violence?\\nIs there anybody out there that's payin' attention?"
 			}
 		],
 		"tag": "political"
@@ -4324,7 +4324,7 @@
 		"lines": [
 			{
 				"author": "NoFX",
-				"quote": "Or maybe, tear it apart.\nStart with assumption, that a million people are smart,\nSmarter than one."
+				"quote": "Or maybe, tear it apart.\\nStart with assumption, that a million people are smart,\\nSmarter than one."
 			}
 		],
 		"tag": "political"
@@ -4333,7 +4333,7 @@
 		"lines": [
 			{
 				"author": "NoFX",
-				"quote": "We are the queer ! We are the whore !\nAmmunition in the class war; We are worker, We love our queen, We sacrifice."
+				"quote": "We are the queer ! We are the whore !\\nAmmunition in the class war; We are worker, We love our queen, We sacrifice."
 			}
 		],
 		"tag": "political"
@@ -4487,7 +4487,7 @@
 		"lines": [
 			{
 				"author": "Flora Cash",
-				"quote": "Well, you look like yourself, but you're somebody else; Only it ain't on the surface\nWell, you talk like yourself, no, I hear someone else though."
+				"quote": "Well, you look like yourself, but you're somebody else; Only it ain't on the surface\\nWell, you talk like yourself, no, I hear someone else though."
 			}
 		],
 		"tag": "lyric"
@@ -4496,7 +4496,7 @@
 		"lines": [
 			{
 				"author": "The Last Dinner Party",
-				"quote": "I wish I knew you, when touch was innocent,\nI wish I knew you, before it felt like a sin."
+				"quote": "I wish I knew you, when touch was innocent,\\nI wish I knew you, before it felt like a sin."
 			}
 		],
 		"tag": "lyric"
@@ -4622,7 +4622,7 @@
 		"lines": [
 			{
 				"author": "Portugal. The Man",
-				"quote": "I just wanna sleep forever; Never see tomorrow or lead or follow,\nI don't wanna work forever; Know what I know or beg or borrow."
+				"quote": "I just wanna sleep forever; Never see tomorrow or lead or follow,\\nI don't wanna work forever; Know what I know or beg or borrow."
 			}
 		],
 		"tag": "lyric"
@@ -4635,6 +4635,6 @@
 			}
 		],
 		"tag": "date",
-		"date": "* 18/01/1997"
+		"date": "* 18/01/*"
 	}
 ]

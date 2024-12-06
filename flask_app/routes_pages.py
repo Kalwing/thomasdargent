@@ -33,6 +33,6 @@ def mass_effect_quote():
 def show_quote():
     quote = pick_quote(to_avoid=["political", "mass_effect", "spiderman"])
     for i in range(len(quote["lines"])):
-        quote["lines"][i]["quote"] = quote["lines"][i]["quote"].replace('\n', "<br/>")
+        quote["lines"][i]["quote"] = quote["lines"][i]["quote"].replace('\\n', "<br/>")
     prefix = "quotes/"
     return render_template(f"{prefix}show_quote.html", quote=quote)
