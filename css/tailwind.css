@@ -38,7 +38,7 @@
 		@apply shadow-punk m-5 inline-block max-w-fit rotate-3 border-2 border-pink-400 shadow-pink-400 after:absolute after:-bottom-8 after:-right-8 after:block after:w-12 after:rotate-12 after:rounded-full after:border-2 after:border-pink-600 after:bg-gray-100 after:py-3 after:text-center after:text-pink-600 after:shadow-md after:content-['LIFE'] hover:bg-pink-600 sm:mx-8 sm:my-6;
 	}
 	.project {
-		@apply shadow-punk m-5 inline-block max-w-fit -rotate-3 border-2 border-gray-900 shadow-gray-900 after:absolute after:-bottom-8 after:-right-8 after:block after:w-12 after:rotate-12 after:bg-pink-600 after:py-3 after:text-center after:text-sm after:text-gray-100 after:opacity-95 after:shadow-sm after:content-['Project'] hover:bg-gray-900 hover:text-gray-100 sm:mx-8 sm:my-6;
+		@apply shadow-punk m-5 inline-block max-w-fit -rotate-3 border-2 border-gray-900 shadow-gray-900 after:absolute after:-bottom-8 after:-right-8 after:block after:w-12 after:rotate-12 after:bg-pink-600 after:py-3 after:text-center after:text-sm after:text-gray-100 after:opacity-95 after:shadow-sm after:content-['Project'] hover:bg-gray-900 hover:text-gray-100 dark:border-pacific-blue-900 dark:shadow-pacific-blue-900 dark:hover:bg-pacific-blue-900 sm:mx-8 sm:my-6;
 	}
 	.readings {
 		@apply m-4 inline-block max-w-fit rotate-2 border-2 border-gray-900 shadow-gray-900 after:absolute after:-bottom-4 after:-right-8 after:block after:w-10 after:-rotate-12 after:content-baseline after:rounded-full after:border-2 after:border-pacific-blue-900 after:bg-gray-100 after:pb-0 after:pt-1 after:text-center after:text-2xl after:shadow-sm after:content-['📖'] hover:bg-pacific-blue-300 sm:mx-8 sm:my-6;

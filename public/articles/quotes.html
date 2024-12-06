@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+<meta charset="utf-8"/>
+<meta content="quarto-1.4.554" name="generator"/>
+
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+
+
+<title>Quote me on this</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="./quarto_files/libs/clipboard/clipboard.min.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/popper.min.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/tippy.umd.min.js" type="module"></script>
+<script src="./quarto_files/libs/quarto-html/anchor.min.js" type="module"></script>
+<link href="./quarto_files/libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="./quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
+
+
+
+
+
+<link href="../img/favicon.ico" rel="icon" type="image/x-icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet"/><link as="font" crossorigin="anonymous" href="../fonts/LeMurmure-Regular.woff2" rel="preload" type="font/woff2"/><link href="../build/tailwind.css" rel="stylesheet"/><script>
+                if (localStorage.getItem('dark-mode') === 'true' || (!('dark-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.querySelector('html').classList.add('dark');
+                } else {
+                    document.querySelector('html').classList.remove('dark');
+                }
+            </script><meta content="Today a blog post about '“Building things out of spite”'" name="description"/></head>
+
+<body class="bg-gray-100 fullContent w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900 dark:bg-gray-1000 dark:text-gray-200"><nav class="fixed isolate w-52 dark:w-56 z-50 m-0 p-4 text-xl lg:m-8">
+			<a class="w-full border-b inline-block border-pink-800 bg-gray-200 px-1 pb-1 pt-2 not-italic lg:bg-transparent dark:border-0 dark:bg-pink-400 dark:text-gray-1000 dark:font-black" href="https://thomasdargent.com">Thomas Dargent</a>
+			<button class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100 border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" id="show-btn" type="button">↧</button>
+			<ul class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-1000 dark:border dark:border-pink-400 dark:[&amp;_li+li]:border-t dark:[&amp;_li+li]:border-pink-400 hidden sm:block text-base" id="menu">
+				<li class="p-1">
+					<a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#portfolio">Portfolio</a>
+				</li>
+				<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#blog">Blog</a></li>
+				<li class="p-1"><a class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400" href="https://thomasdargent.com/#contact">Contact</a></li>
+			</ul>
+			<div class="flex flex-col justify-center mx-6 mt-2 items-center bg-gray-200 border border-pacific-blue-500 lg:border-0 dark:bg-gray-1000 lg:bg-transparent rounded-full dark:border dark:border-pink-600">
+					<input class="sr-only" id="light-switch" name="light-switch" type="checkbox"/>
+					<label class="relative cursor-pointer p-1 grid grid-cols-3" for="light-switch">
+						<svg alt="Dark theme icon" aria-label="Switch to dark" class="dark:fill-gray-700 fill-pacific-blue-500 h-4 w-4 mt-1" role="img" viewBox="17.6262 123.819 352.1318 344.5168" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 205.513 205.745 C 268.065 204.767 287.003 164.344 287.789 123.819 C 287.499 164.344 301.297 205.092 369.758 205.178 C 298.116 205.93 287.767 247.714 288.352 288.239 C 288.781 247.714 268.065 203.606 205.513 205.745 Z"></path>
+							<polygon points="314.275 232.401 322.389 251.392 341.325 259.057 330.842 241.397"></polygon>
+							<polygon points="230.871 259.057 238.986 240.065 257.921 232.401 247.439 250.06" style="transform-origin: 244.396px 245.729px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+							<polygon points="314.274 177.389 322.388 158.397 341.324 150.733 330.842 168.392"></polygon>
+							<polygon points="230.871 150.733 238.986 169.724 257.92 177.389 247.439 159.729" style="transform-origin: 244.396px 164.061px;" transform="matrix(-1, 0, 0, -1, -0.000030517578, 0)"></polygon>
+							<path d="M 162.82 155.163 C 112.361 251.928 90.773 398.67 321.209 399.04 C 141.603 595.849 -165.971 328.478 162.82 155.163 Z"></path>
+						  </svg>
+						  <div class="border-b border-pink-600 h-1/2 w-full"></div>
+						<svg alt="Light theme icon" aria-label="Switch to light" class="dark:fill-[#FDD162] fill-gray-700 ml-2 h-6 w-6" role="img" viewBox="176.732 48.923 258.842 257.472" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 176.732 177.215 C 275.311 175.683 305.157 112.384 306.395 48.923 C 305.938 112.384 327.683 176.192 435.574 176.327 C 322.67 177.504 306.36 242.935 307.283 306.395 C 307.958 242.935 275.311 173.865 176.732 177.215 Z"></path>
+							<polygon points="348.135 218.956 360.923 248.696 390.764 260.697 374.245 233.044"></polygon>
+							<polygon points="216.696 260.697 229.484 230.957 259.325 218.956 242.806 246.609" style="transform-origin: 238.011px 239.826px;" transform="matrix(-1, 0, 0, -1, 0, 0.000030517578)"></polygon>
+							<polygon points="348.134 132.81 360.922 103.07 390.763 91.069 374.244 118.722"></polygon>
+							<polygon points="216.695 91.069 229.483 120.809 259.324 132.81 242.805 105.157" style="transform-origin: 238.01px 111.94px;" transform="matrix(-1, 0, 0, -1, 0, 0.000015258789)"></polygon>
+						  </svg>
+						<span class="sr-only">Switch to light / dark version</span>
+					</label>
+			</div>
+		</nav>
+
+<div class="px-6 pb-16 pt-48 sm:pt-16 lg:pt-16 sm:px-16 sm:pl-56 lg:pl-72 xl:pl-96" id="quarto-content">
+
+<main class="content" id="quarto-document-content">
+
+<header class="prose lg:prose-lg text-center font-normal" id="title-block-header">
+<div class="quarto-title">
+<h1 class="font-heading text-4xl !w-full max-w-[40rem] sm:text-6xl mb-12 mt-8 font-normal text-center dark:text-gray-100">Quote me on this</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+<p class="prose lg:prose-lg text-xl !w-full max-w-[40rem] !mb-6 !mt-2 text-gray-900 dark:text-gray-200 text-center">— OR —</p><p class="prose lg:prose-lg text-lg !mb-16 !w-full max-w-[40rem] text-gray-900 dark:text-gray-200 text-center" role="doc-subtitle">“Building things out of spite”</p></header>
+
+
+
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">The other day, I updated my computer (From Ubuntu 20.04 !!!), and I immediately found myself in a rabbit hole of personalization, After tweaking my Vim and ohmyZsh profiles (themes and plugin) for hours (It took me a looong time to get them <em>just right</em>), using my terminal now felt like using a beautiful, well lubricated, machine. Now that my terminal was looking good, I thought about adding something extra…</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">I always loved the concept of the “quote of the day”. When I was in high school, there was an option to display Dilbert comics on the homepage. I didn’t really like them, but having this little “advent calendar” every day was nice. So when I set up my zsh, I used a quote plugin to display a new quote at each terminal opening ! And it worked, and it was great.</p>
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">I then noticed that most quotes were… very American. Pardon my French point of view, but the editorial line was very personal development oriented. Very individualistic. Most of all, there were some people I didn’t like. So when, sipping my morning coffee, I landed on a quote by Bill Cosby… I snapped. I had to save my little quote machine. Here I will present this little project of mine, nothing technical, but hey, I said I was gonna blog.</p>
+<section class="level2" id="building-an-api">
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="building-an-api">Building an API</h2>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">First I had to build a small API to get my quotes. Why not fetch the data locally ? Well, I would like to be able to use my dotfiles on servers via ssh. Then the question is how the data has to be stored. Here’s my specifications, I need to: Have a list of element that have:</p>
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
+<li>A list of author/dialogue line pairs, so that I can display dialogues</li>
+<li>A tag to define the category of the quote (basic/movie/lyric…)</li>
+</ul>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">I wanted the API to run on my existent flask infrastructure for my website. I saw two options, a database with two table (quote and quote handler) or a simple file. Having a database just for this small project and to hold very few quotes seemed a bit much. Here’s the mighty JSON structure I chose, just enough to store a few lines:</p>
+<div class="mb-4" id="cb1"><pre class="sourceCode javascript code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode javascript"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>[</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>    {</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>        <span class="st">"lines"</span><span class="op">:</span> [</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>            {</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>                <span class="st">"author"</span><span class="op">:</span> <span class="st">"Donald Knuth"</span><span class="op">,</span></span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>                <span class="st">"quote"</span><span class="op">:</span> <span class="st">"To program is to write to another programmer about our solutions to a problem"</span></span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>            }<span class="op">,</span></span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>            {</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a>                <span class="st">"author"</span><span class="op">:</span> <span class="st">"Dlanod Knuth"</span><span class="op">,</span></span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a>                <span class="st">"quote"</span><span class="op">:</span> <span class="st">"To program is to write to another programmer about anything but a solution"</span></span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a>            }</span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a>        ]<span class="op">,</span></span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a>        <span class="st">"tag"</span><span class="op">:</span> <span class="st">"dev"</span></span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-15"><a aria-hidden="true" href="#cb1-15" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb1-16"><a aria-hidden="true" href="#cb1-16" tabindex="-1"></a>]</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">As that was settled, I had to fill the “database”. After collecting a few quotes I liked, I built a simple API with Flask.</p>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>routes_api.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="routes_api.py" id="cb2"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="at">@bp.route</span>(<span class="st">"/get_quote"</span>, methods<span class="op">=</span>[<span class="st">"GET"</span>])</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="at">@bp.route</span>(<span class="st">"/get_quote/&lt;tag&gt;"</span>, methods<span class="op">=</span>[<span class="st">"GET"</span>])</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="kw">def</span> quote_giver(tag: <span class="bu">str</span><span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>    _json <span class="op">=</span> pick_quote(tag<span class="op">=</span>tag)</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>    <span class="cf">if</span> _json <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Wrong tag"</span>, <span class="dv">404</span></span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>    response <span class="op">=</span> jsonify(_json)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>    <span class="cf">return</span> response</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+</div>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Using a JSON file meant that I couldn’t select according to the tag easily, so I made a script that made another one split by tags:</p>
+<div class="mb-4" id="cb3"><pre class="sourceCode json code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode json"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>    <span class="dt">"tag0"</span> <span class="fu">:</span> <span class="ot">[</span> <span class="fu">{</span><span class="dt">"lines"</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span><span class="dt">"lines"</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span> <span class="er">...</span> <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>    <span class="dt">"tag1"</span> <span class="fu">:</span> <span class="ot">[</span> <span class="fu">{</span><span class="dt">"lines"</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span><span class="dt">"lines"</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span> <span class="er">...</span> <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>    <span class="dt">"tag3"</span> <span class="fu">:</span> <span class="ot">[</span> <span class="fu">{</span><span class="dt">"lines"</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span><span class="dt">"lines"</span> <span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span> <span class="er">...</span> <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>    <span class="er">...</span></span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">}</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Now I could make function to pick the quote accordingly.</p>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>routes_api.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="routes_api.py" id="cb4"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="kw">def</span> pick_quote(tag<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a>    <span class="cf">if</span> tag <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>        path <span class="op">=</span> Path(current_app.static_folder)<span class="op">/</span><span class="st">'data/quotes.json'</span> </span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>            <span class="cf">return</span> random.choice(json.loads(<span class="bu">file</span>.read()))</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>        path <span class="op">=</span> Path(current_app.static_folder)<span class="op">/</span><span class="st">'data/quotes_sorted.json'</span>  </span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>            quotes <span class="op">=</span> json.loads(<span class="bu">file</span>.read())</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>                <span class="cf">return</span> random.choice(quotes[tag])</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a>            <span class="cf">except</span> <span class="pp">KeyError</span> <span class="im">as</span> e:  <span class="co"># incorrect tag</span></span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a>                <span class="cf">return</span> <span class="va">None</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+</div>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">And it worked great ! Task done, ready to go back to the terminal !</p>
+</section>
+<section class="level2" id="losing-track-and-building-a-web-page">
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="losing-track-and-building-a-web-page">Losing track and building a web page</h2>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4"><img alt="Screenshot of my page to display quotes" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 bg-gray-200 !mt-8 !mb-10 dark:shadow-gray-700 dark:border-gray-700" src="img/quote_basic.png?width=700?as=webp"/></p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">I couldn’t help myself. I was there, fetching quotes in my browser, and I thought: hey, what if I built a web page to display them ? So, having no self-control, I did. I built a small webpage that fetched quotes dynamically using a touch of HTMX (but again, I didn’t want to add too much stuff in my flask files, so I did most of the JSON object -&gt; HTML conversion in the webpage).</p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">It worked fine, except that when I reloaded twice, nothing happened. Well in dev mode there was no issue, everything worked fine. Without dev mode, nothing happened. I was puzzled for quite sometime before I figured that the request was indeed sent, but the browser cached the answer the first time… Makes sense. So I added some lines to my Flask API:</p>
+<div class="code-with-filename mt-4">
+<div class="code-with-filename-file bg-gray-900 inline-block text-gray-100 dark:bg-gray-200 dark:text-gray-900 py-1 px-2 -rotate-3">
+<pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><strong>routes_api.py</strong></pre>
+</div>
+<div class="sourceCode !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700" data-filename="routes_api.py" id="cb5"><pre class="sourceCode python code-with-copy" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="at">@bp.route</span>(<span class="st">"/get_quote"</span>, methods<span class="op">=</span>[<span class="st">"GET"</span>])</span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a><span class="at">@bp.route</span>(<span class="st">"/get_quote/&lt;tag&gt;"</span>, methods<span class="op">=</span>[<span class="st">"GET"</span>])</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="kw">def</span> quote_giver(tag: <span class="bu">str</span><span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>    _json <span class="op">=</span> pick_quote(tag<span class="op">=</span>tag)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>    <span class="cf">if</span> _json <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Wrong tag"</span>, <span class="dv">404</span></span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a>    response <span class="op">=</span> jsonify(_json)</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a>    response.headers[<span class="st">'Cache-Control'</span>] <span class="op">=</span> <span class="st">'no-cache, no-store, must-revalidate'</span></span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a>    response.headers[<span class="st">'Pragma'</span>] <span class="op">=</span> <span class="st">'no-cache'</span></span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a>    response.headers[<span class="st">'Expires'</span>] <span class="op">=</span> <span class="st">'0'</span></span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a>    <span class="cf">return</span> response</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+</div>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Now that was perfect. You can see it live <a href="https://thomasdargent.com/api/wisdom">here</a>. Great stuff. Now I could finally get back to my termin…</p>
+</section>
+<section class="level2" id="still-lost-building-two-web-pages">
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="still-lost-building-two-web-pages">Still lost, building two web pages</h2>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4"><img alt="Screenshot of my page to display mass effect quotes" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 bg-gray-200 !mt-8 !mb-10 dark:shadow-gray-700 dark:border-gray-700" src="img/quote_me.png?width=700?as=webp"/></p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Ok. Please don’t yell at me. I was collecting some more quote and noticed that I had a LOT of quote from Mass Effect. Yes, it’s my favorite game, I would die for Jack and Cortez, sue me. So I also built a webpage for those special quotes, with some random event and everything… You can see it <a href="https://thomasdargent.com/mass_effect_quote">here</a>.</p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Time to get back to the terminal.</p>
+</section>
+<section class="level2" id="back-on-track-the-mighty-terminal">
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="back-on-track-the-mighty-terminal">Back on track: the mighty terminal</h2>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">There. So I just had to figure a way to get from the API to the terminal. It’s been a long time since I did anything “new” in shell. I knew I would use curl to get the JSON object, but after that… I discovered jq which is really well documented, and I ended with this (more or less) one-liner:</p>
+<div class="mb-4" id="cb6"><pre class="sourceCode bash code-with-copy overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700 mt-4" style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="sourceCode bash"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="fu">fetch_kwote ()</span> <span class="kw">{</span></span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">[[</span> <span class="va">$#</span> <span class="ot">&lt;</span> 1 <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>        <span class="bu">echo</span> <span class="st">"Usage fetch_kwote API_url [timeout]"</span></span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>        <span class="bu">exit</span> 1</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">[[</span> <span class="va">$#</span> <span class="ot">-eq</span> 2 <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>        <span class="va">timeout</span><span class="op">=</span><span class="va">$2</span></span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>        <span class="va">timeout</span><span class="op">=</span>5</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>    <span class="ex">curl</span> <span class="at">--connect-timeout</span> <span class="va">$timeout</span> <span class="at">--silent</span> <span class="va">$1</span> <span class="kw">|</span> <span class="ex">jq</span> <span class="st">'[.lines.[] | .author, .quote]'</span> <span class="kw">|</span> <span class="ex">display_kwote</span> <span class="kw">||</span> <span class="bu">exit</span> 1</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a><span class="kw">}</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Here I get the JSON from the address given as the first parameter, in silent (the goal is to display just the quote, not curl infos !), and with a defined timeout (I need to connect quickly). The result is piped to jq. Jq get the <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">lines</code> key, iterate over the array piping each to extract <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">author</code> and <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">quote</code>. The result is a series of string alternating between author and quote. Which I then feed to <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">display_kwote</code> my display function. I won’t put it here as it is useless, it collects author and quote alternatively, and display them with different colors.</p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">And that’s it! With the magic of curl, jq, and a touch of spite, my terminal now gives me the quote I want, the quotes I NEED.</p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4"><img alt="Screenshot of my terminal displaying a quote from Tolkien" class="shadow-punk border border-gray-900 p-2 shadow-gray-900 bg-gray-200 !mt-8 !mb-10 dark:shadow-gray-700 dark:border-gray-700" src="img/quote_term.png?width=700?as=webp"/></p>
+<section class="level3" id="birthdays-and-dr.-manhattan">
+<h3 class="text-lg sm:text-2xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600" data-anchor-id="birthdays-and-dr.-manhattan">Birthdays and Dr. Manhattan</h3>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">One thing I realized is that I wanted to display some quotes on special days. For example, on my birthday, I want my terminal to sing. Or on the 10th of November, telling us that Dr. Manhattan is starting to come back to life… That means I had to add three things:</p>
+<ol class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-decimal pl-8 lg:prose-lg" type="1">
+<li>A way to define the correct date range for a quote in the JSON file</li>
+<li>A way to fetching quote with a higher probability for quotes corresponding to the date given</li>
+<li>A way to avoid displaying those quote when they’re outside their defined interval.</li>
+</ol>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">For 1. I added a “date” field to some object of the form <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">weekday day/month/year</code>, with an <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">*</code> when the element is not defined. Which for my birthday would give <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">* 18/01/*</code> (remember it !). I also set their tag to <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">date</code> but that might change, I’ll think about it !</p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">For 2. I added a probability to display a date object, and otherwise display any object (not dated)</p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">For 3. a simple <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">avoid</code> get list parameter. I can now make sure I never miss those two national holidays.</p>
+</section>
+</section>
+<section class="level2" id="conclusion">
+<h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="conclusion">Conclusion</h2>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">What I love with those kinds of easy projects is that they keep you happy for a long time. You feel gratification at first, but then, as you keep using the tool, building around it, as it settles into dust, you forget how it was made. You forget about its existence and then eventually you rediscover it, and it brings you joy again. And there’s no surprise that a little spite is what would fuel a project I’d actually use every day.</p>
+<blockquote class="blockquote">
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">‘I wish it need not have happened in my time,’ said Frodo. ‘lmao’ said Gandalf, ‘well it has.’ - joshcarlosjosh</p>
+</blockquote>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Take care, XOXO.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../js/iframe_demo.js"></script><script src="../js/ts/menu.ts"></script><script src="../js/switch_theme.js"></script></body></html>

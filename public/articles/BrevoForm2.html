@@ -281,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a><span class="ot">    hx-target</span><span class="op">=</span><span class="st">"#newsletter-form"</span></span>
 <span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a><span class="ot">    </span><span class="dt">&gt;</span></span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">There’s two new tags there : <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">hx-post</code> and <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">hx-target</code>. Let’s see what they do :</p>
-<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
 <li><code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">hx-post</code> : You know when you use a submit button, the page reload. For small forms like this that might not be the sole content of the page, it’s a bad idea. This HTMX attribute catch the post request and send it to “brevo_handler” without reloading.</li>
 <li><code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">hx-target</code> : Swap the target with the return of the api. In this case, it will replace the form with a success page. Wait. That means we have to define a success page ? …And we have to return it 😱 ?!</li>
 </ul>
@@ -361,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-2"><a aria-hidden="true" href="#cb10-2" tabindex="-1"></a>              document.querySelector('#error-msg').classList.remove('hidden');</span>
 <span id="cb10-3"><a aria-hidden="true" href="#cb10-3" tabindex="-1"></a>              document.querySelector('#error-msg').innerHTML = event.detail.xhr.responseText;"</span></code><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></pre></div>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">Three things to note :</p>
-<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
 <li><code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">hx-on</code> allows us to do custom js on a custom event reception.</li>
 <li><code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">htmx:response-error</code> is triggered when the call returns an error (4** or 5**). The doc recommend using <code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">responseError</code> but I always get unreliable results with it. If you know more, email me !</li>
 <li>We simply remove the hidden class to show the error div, and then inject the error message from the server’s response.</li>

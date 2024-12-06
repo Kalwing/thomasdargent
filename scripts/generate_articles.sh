@@ -13,7 +13,9 @@ if [ $? -eq 0 ]; then
         if [ $? -ne 0 ]; then
             echo "\033[0;33mNo dark syntax highlighting found\033[0m"
         fi
-        python3 ./scripts/quarto-translator.py public/articles
+        python3 ./scripts/quarto-translator.py public/articles || exit 1
+        rm -rf ./public/articles/img || exit 1
+        cp -r ./articles_jupyter/img ./public/articles/img || exit 1
     else
         echo "\033[0;31mCopy failed\033[0m"
     fi

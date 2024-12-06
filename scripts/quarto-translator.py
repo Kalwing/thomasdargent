@@ -176,7 +176,7 @@ def modify_html(folder_path: Path, filename, output_name):
                 "shadow-punk border border-gray-900 p-2 shadow-gray-900 bg-gray-200 !mt-8 !mb-10 dark:shadow-gray-700 dark:border-gray-700"
             )
             # Compress images
-            img["src"] = img["src"] + "?as=webp&quality=80&width=800"
+            img["src"] = img["src"] + "?as=webp"
 
         # 11. Ajouter le script pour les iframes à la fin
         body = soup.body
@@ -248,7 +248,7 @@ def modify_html(folder_path: Path, filename, output_name):
                     code["class"] = "p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap"
             for ul in main.find_all("ul"):
                 ul["class"] = (
-                    "prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-disc pl-8 lg:prose-lg"
+                    "prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg"
                 )
                 for code in ul.find_all("code"):
                     code["class"] = "p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap"
@@ -262,7 +262,7 @@ def modify_html(folder_path: Path, filename, output_name):
 
             for ol in main.find_all("ol"):
                 ol["class"] = (
-                    "prose prose-stone dark:prose-invert !w-full max-w-[40em] lg:max-w-[35em] list-decimal pl-8 lg:prose-lg"
+                    "prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-decimal pl-8 lg:prose-lg"
                 )
                 for code in ol.find_all("code"):
                     code["class"] = "p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap"

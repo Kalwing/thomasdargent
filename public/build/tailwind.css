@@ -1304,6 +1304,57 @@ select {
     margin-bottom: 1.5rem;
   }
 }
+.life {
+		box-shadow: 0.3rem 0.3rem 0 var(--tw-shadow-color);
+		margin: 1.25rem;
+		display: inline-block;
+		max-width: fit-content;
+		--tw-rotate: 3deg;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+		border-width: 2px;
+		--tw-border-opacity: 1;
+		border-color: rgb(217 153 199 / var(--tw-border-opacity));
+		--tw-shadow-color: #D999C7;
+		--tw-shadow: var(--tw-shadow-colored);
+	}
+.life::after {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  display: block;
+  width: 3rem;
+  --tw-rotate: 12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(185 73 142 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 246 243 / var(--tw-bg-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(185 73 142 / var(--tw-text-opacity));
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-content: 'LIFE';
+  content: var(--tw-content);
+}
+.life:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 73 142 / var(--tw-bg-opacity));
+}
+@media (min-width: 640px) {
+
+  .life {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
 .project {
 		box-shadow: 0.3rem 0.3rem 0 var(--tw-shadow-color);
 		margin: 1.25rem;
@@ -1345,6 +1396,16 @@ select {
   background-color: rgb(29 52 58 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(247 246 243 / var(--tw-text-opacity));
+}
+.project:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(28 71 93 / var(--tw-border-opacity));
+  --tw-shadow-color: #1c475d;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.project:hover:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 71 93 / var(--tw-bg-opacity));
 }
 @media (min-width: 640px) {
 
@@ -1766,6 +1827,9 @@ select {
 }
 .inline-flex {
   display: inline-flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;
