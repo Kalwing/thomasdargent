@@ -1,6 +1,7 @@
 import sys
 from bs4 import BeautifulSoup
 from pathlib import Path
+import re
 
 def modify_html(folder_path: Path, filename, output_name):
     processed = []
@@ -248,7 +249,7 @@ def modify_html(folder_path: Path, filename, output_name):
                     code["class"] = "p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap"
             for ul in main.find_all("ul"):
                 ul["class"] = (
-                    "prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg"
+                    "prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] marker:text-gray-700/60 dark:marker:text-gray-700/75 list-disc pl-8 lg:prose-lg"
                 )
                 for code in ul.find_all("code"):
                     code["class"] = "p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap"
@@ -273,7 +274,42 @@ def modify_html(folder_path: Path, filename, output_name):
                 for code in table.find_all("code"):
                     code["class"] = "p-1 text-pink-700 shadow-inner dark:text-pacific-blue-500 "
             for blockquote in main.find_all("blockquote"):
-                blockquote["class"] = "blockquote"
+                blockquote["class"] = "blockquote max-w-[40rem]"
+                for p in blockquote.find_all("p"):
+                    p["class"] = p["class"].replace("mb-", "") + "mb-0"
+                    p_content = p.text
+                    authors = re.search("—-.*—-", p_content)
+                    if authors is not None:
+                        p.string = p_content[:authors.start()]
+
+                        author_span = soup.new_tag('span')
+                        author_span["class"] = "float-right block bg-pink-200/80 dark:bg-pacific-blue-900/80 p-1 rotate-1"
+                        author_str = authors.group(0)[2:-2]  # remove em dash + hyphen minus
+                        author_span.string = f"— {author_str}"
+                        p.insert_after(author_span)
+
+                        if authors.end() < len(p_content):
+                            p_rest = soup.new_tag('p')
+                            p_rest["class"] = p["class"]
+                            p_rest.string = p_content[authors.end():]
+                            author_span.insert_after(p_rest)
+            footnotes = main.find_all("a", {"class": "footnote-ref"})
+            if footnotes:
+                fn_script = soup.new_tag("script", src="../js/scroll_back_footnote.js")
+                body.append(fn_script)
+                top_highlighter = soup.new_tag("div")
+                top_highlighter["class"] = "absolute h-full z-10 bg-gray-100/75 dark:bg-gray-1000/75 w-full block top-0 left-0 backdrop-blur-sm sr-hidden opacity-100 transition-opacity duration-1000 delay-100 hidden"
+                top_highlighter["id"] = "highlightTop"
+                bot_highlighter = soup.new_tag("div")
+                bot_highlighter["class"] = "absolute h-full z-10 bg-gray-100/75 dark:bg-gray-1000/75 w-full block left-0 backdrop-blur-sm opacity-100 transition-opacity duration-1000 delay-100 sr-hidden hidden"
+                bot_highlighter["id"] = "highlightBot"
+                main.append(top_highlighter)
+                main.append(bot_highlighter)
+            for footnote in footnotes:
+                footnote["class"].extend(["!no-underline", "group-hover:scale-110", "transition-all", "inline-block", "group"])
+                sups = footnote.find_all("sup")
+                for sup in sups:
+                    sup["class"] = "rounded-full border border-pacific-blue-600 dark:border-pink-400 px-[0.35rem] pt-[0.1rem] shadow-sm font-semibold shadow-pacific-blue-600 dark:shadow-pink-800/65 m-1 transition-all -top-[0.65rem] group-hover:-top-2 text-base"
         sections = soup.find_all("section")
         if sections:
             for section in sections:

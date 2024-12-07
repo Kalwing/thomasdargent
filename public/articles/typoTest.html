@@ -143,12 +143,12 @@ definition
 </dd>
 </dl>
 <p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">First, let’s check out how different fonts and sizes look on each heading.</p>
-<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] marker:text-gray-700/60 dark:marker:text-gray-700/75 list-disc pl-8 lg:prose-lg">
 <li>unordered list
-<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] marker:text-gray-700/60 dark:marker:text-gray-700/75 list-disc pl-8 lg:prose-lg">
 <li>sub-item 1</li>
 <li>sub-item 2
-<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-disc pl-8 lg:prose-lg">
+<ul class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] marker:text-gray-700/60 dark:marker:text-gray-700/75 list-disc pl-8 lg:prose-lg">
 <li>sub-sub-item 1</li>
 <li></li>
 </ul></li>
@@ -158,7 +158,7 @@ definition
 </ul>
 <section class="level2" id="heres-an-h2-tag">
 <h2 class="text-2xl sm:text-3xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-600 dark:text-pink-400" data-anchor-id="heres-an-h2-tag">Here’s an H2 Tag</h2>
-<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">H2 tags come right after the H1 tag. Usually, there’s one H1 tag per document, which is the title. The H2 tags are the main headings of the article, and they are kind of necessary because they help search engines understand the topic of that document. Here is a footnote<a class="footnote-ref" href="#fn1" id="fnref1" role="doc-noteref"><sup>1</sup></a> reference,<a class="footnote-ref" href="#fn2" id="fnref2" role="doc-noteref"><sup>2</sup></a> and another.<a class="footnote-ref" href="#fn3" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">H2 tags come right after the H1 tag. Usually, there’s one H1 tag per document, which is the title. The H2 tags are the main headings of the article, and they are kind of necessary because they help search engines understand the topic of that document. Here is a footnote<a class="footnote-ref !no-underline group-hover:scale-110 transition-all inline-block group" href="#fn1" id="fnref1" role="doc-noteref"><sup class="rounded-full border border-pacific-blue-600 dark:border-pink-400 px-[0.35rem] pt-[0.1rem] shadow-sm font-semibold shadow-pacific-blue-600 dark:shadow-pink-800/65 m-1 transition-all -top-[0.65rem] group-hover:-top-2 text-base">1</sup></a> reference,<a class="footnote-ref !no-underline group-hover:scale-110 transition-all inline-block group" href="#fn2" id="fnref2" role="doc-noteref"><sup class="rounded-full border border-pacific-blue-600 dark:border-pink-400 px-[0.35rem] pt-[0.1rem] shadow-sm font-semibold shadow-pacific-blue-600 dark:shadow-pink-800/65 m-1 transition-all -top-[0.65rem] group-hover:-top-2 text-base">2</sup></a> and another.<a class="footnote-ref !no-underline group-hover:scale-110 transition-all inline-block group" href="#fn3" id="fnref3" role="doc-noteref"><sup class="rounded-full border border-pacific-blue-600 dark:border-pink-400 px-[0.35rem] pt-[0.1rem] shadow-sm font-semibold shadow-pacific-blue-600 dark:shadow-pink-800/65 m-1 transition-all -top-[0.65rem] group-hover:-top-2 text-base">3</sup></a></p>
 <p class="prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4">This paragraph won’t be part of the note, because it isn’t indented.</p>
 <ol class="prose prose-stone dark:prose-invert !w-full max-w-[40em] mb-4 lg:max-w-[35em] list-decimal pl-8 lg:prose-lg" type="1">
 <li>A list whose numbering</li>
@@ -186,8 +186,8 @@ definition
 <div class="shadow-punk shadow-pacific-blue-600 inline-block p-2">
 <p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">This content can be styled with a border</p>
 </div>
-<blockquote class="blockquote">
-<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">Blockquote</p>
+<blockquote class="blockquote max-w-[40rem]">
+<p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  4mb-0">Blockquote</p>
 </blockquote>
 <section class="level5" id="theres-an-h5-too">
 <h5 class="anchored" data-anchor-id="theres-an-h5-too">There’s an H5 too?</h5>
@@ -234,7 +234,7 @@ Warning
 <pre style=" --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"><code class="p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap">{ some.code }</code></pre>
 <p class="prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4">The whole paragraph can be indented, or just the first line. In this way, multi-paragraph footnotes work like multi-paragraph list items.<a class="footnote-back" href="#fnref3" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section></div></main>
+</section></div><div class="absolute h-full z-10 bg-gray-100/75 dark:bg-gray-1000/75 w-full block top-0 left-0 backdrop-blur-sm sr-hidden opacity-100 transition-opacity duration-1000 delay-100 hidden" id="highlightTop"></div><div class="absolute h-full z-10 bg-gray-100/75 dark:bg-gray-1000/75 w-full block left-0 backdrop-blur-sm opacity-100 transition-opacity duration-1000 delay-100 sr-hidden hidden" id="highlightBot"></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -650,4 +650,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../js/iframe_demo.js"></script><script src="../js/ts/menu.ts"></script><script src="../js/switch_theme.js"></script></body></html>
+<script src="../js/iframe_demo.js"></script><script src="../js/ts/menu.ts"></script><script src="../js/switch_theme.js"></script><script src="../js/scroll_back_footnote.js"></script></body></html>
