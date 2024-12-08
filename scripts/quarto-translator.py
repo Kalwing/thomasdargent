@@ -13,7 +13,7 @@ def modify_html(folder_path: Path, filename, output_name):
             continue
         print("\033[1;34m#", end="")
 
-        # Charger le fichier HTML
+        # load HTML
         with open(file_path, "r", encoding="utf-8") as file:
             soup = BeautifulSoup(file, "html5lib")
 
@@ -21,7 +21,7 @@ def modify_html(folder_path: Path, filename, output_name):
         html = soup.find("html")
         html.attrs = {"lang": "en"}
 
-        # 1. Remplacer "NAMEFILE_files" par "quarto_files"
+        # 1. Replace "NAMEFILE_files" by "quarto_files" (there's no point to dupplicate all those files)
         head = soup.find("head")
         for link_tag in head.find_all("link"):
             link_tag["href"] = "./quarto_files/" + "/".join(link_tag["href"].split("/")[1:])
@@ -30,13 +30,13 @@ def modify_html(folder_path: Path, filename, output_name):
                 script_tag["src"] = "./quarto_files/" + "/".join(script_tag["src"].split("/")[1:])
             script_tag["type"] = "module"
 
-        # 2. Modifier la balise body
+        # 2. Style body
         body = soup.body
         body["class"] = (
             "bg-gray-100 fullContent w-screen overflow-x-hidden bg-gray-100 font-body text-gray-900 dark:bg-gray-1000 dark:text-gray-200"
         )
 
-        # 3. Supprimer Bootstrap
+        # 3. Erase unused script (Bootstrap, clipboard)
         bootstrap_links = soup.find_all("link", {"id": "quarto-bootstrap"})
         for bootstrap_link in bootstrap_links:
             bootstrap_link.decompose()
@@ -44,6 +44,26 @@ def modify_html(folder_path: Path, filename, output_name):
         bootstrap_link.decompose()
         bootstrap_script = soup.find("script", {"src": "./quarto_files/libs/bootstrap/bootstrap.min.js"})
         bootstrap_script.decompose()
+
+
+        clipboards = soup.find_all("button", {"class": "code-copy-button"})
+        for clip_btn in clipboards:
+            clip_btn.decompose()
+        script_to_delete = [
+            "./quarto_files/libs/quarto-html/quarto.js",
+            "./quarto_files/libs/clipboard/clipboard.min.js",
+            "./quarto_files/libs/quarto-html/popper.min.js",
+            "./quarto_files/libs/quarto-html/tippy.umd.min.js",
+            "./quarto_files/libs/quarto-html/anchor.min.js",
+        ]
+        for script_src in script_to_delete:
+            script = soup.find("script", {"src": script_src})
+            script.decompose()
+        quarto_script = soup.find("script", {"id": "quarto-html-after-body"})
+        quarto_script.decompose()
+
+        tippy_css = soup.find("link", {"href": "./quarto_files/libs/quarto-html/tippy.css"})
+        tippy_css.decompose()
 
         # 4. HEAD
         head = soup.head
@@ -95,14 +115,14 @@ def modify_html(folder_path: Path, filename, output_name):
         head.append(dark_select_tag)
 
 
-        # 5. Modifier les classes de #quarto-content
+        # 5. Style #quarto-content
         quarto_content = soup.find(id="quarto-content")
         if quarto_content:
             quarto_content["class"] = (
                 "px-6 pb-16 pt-48 sm:pt-16 lg:pt-16 sm:px-16 sm:pl-56 lg:pl-72 xl:pl-96"
             )
 
-        # 6. Modifier les classes des titres
+        # 6. Style titles
         for h1 in soup.find_all("h1"):
             h1["class"] = (
                 "font-heading text-4xl !w-full max-w-[40rem] sm:text-6xl mb-12 mt-8 font-normal text-center dark:text-gray-100"
@@ -122,7 +142,7 @@ def modify_html(folder_path: Path, filename, output_name):
                 "text-base sm:text-xl !w-full max-w-[40rem] mb-4 mt-8 font-bold text-pacific-blue-900 dark:text-pink-600"
             )
 
-        # 7. Ajouter des classes à sourceCode, s'il n'est pas dans un div avec la classe "cell"
+        # 7. Style sourceCode, if its not in a "cell"
         for source_code in soup.find_all(class_="sourceCode"):
             if (
                 source_code.parent.name == "div"
@@ -158,20 +178,20 @@ def modify_html(folder_path: Path, filename, output_name):
         for code_filename in soup.find_all(class_="code-with-filename"):
             code_filename["class"] = " ".join(code_filename["class"]) + " mt-4"
 
-        # 8. Ajouter des classes aux éléments avec la classe "cell"
+        # 8. Style "cell"
         for cell in soup.find_all(class_="cell"):
             cell["class"] = (
                 " ".join(cell["class"])
                 + " overflow-auto  !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 mt-4 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
             )
 
-        # 9. Ajouter des classes aux éléments avec la classe "cell-output"
+        # 9. Style "cell-output"
         for cell_output in soup.find_all(class_="cell-output"):
             cell_output["class"] = (
                 " ".join(cell_output["class"]) + " bg-gray-200 dark:bg-gray-900 p-2 shadow-inner"
             )
 
-        # 10. Modifier les classes des balises <img>
+        # 10. Style <img>
         for img in soup.find_all("img"):
             img["class"] = (
                 "shadow-punk border border-gray-900 p-2 shadow-gray-900 bg-gray-200 !mt-8 !mb-10 dark:shadow-gray-700 dark:border-gray-700"
@@ -179,7 +199,7 @@ def modify_html(folder_path: Path, filename, output_name):
             # Compress images
             img["src"] = img["src"] + "?as=webp"
 
-        # 11. Ajouter le script pour les iframes à la fin
+        # 11. Add the custom script at the end
         body = soup.body
         demo_script = soup.new_tag("script", src="../js/iframe_demo.js")
         body.append(demo_script)
@@ -188,7 +208,7 @@ def modify_html(folder_path: Path, filename, output_name):
         switch_theme_script = soup.new_tag("script", src="../js/switch_theme.js")
         body.append(switch_theme_script)
 
-        # 12. Ajouter un menu au début du body
+        # 12. Add the menu to body
         nav_html = """
         <nav class="fixed isolate w-52 dark:w-56 z-50 m-0 p-4 text-xl lg:m-8">
 			<a
@@ -196,7 +216,7 @@ def modify_html(folder_path: Path, filename, output_name):
 				href="https://thomasdargent.com"
 				>Thomas Dargent</a
 			>
-			<button id="show-btn" class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100  border border-pink-950 text-center dark:bg-gray-900 dark:border-pink-600" type="button">↧</button>
+			<button id="show-btn" class="-rotate-1 rotate-1 shadow-md sm:hidden w-full bg-gray-100  border border-pink-950 text-center dark:bg-gray-1000 dark:border-pink-600" type="button">↧</button>
 			<ul id="menu" class="mt-4 *:bg-gray-200 *:lg:bg-transparent dark:*:bg-gray-1000 dark:border dark:border-pink-400 dark:[&_li+li]:border-t dark:[&_li+li]:border-pink-400 hidden sm:block text-base">
 				<li class="p-1">
 					<a href="https://thomasdargent.com/#portfolio" class="hover:ml-4 hover:text-pacific-blue-600 dark:hover:text-pink-400">Portfolio</a>
@@ -231,17 +251,17 @@ def modify_html(folder_path: Path, filename, output_name):
         nav_tag = BeautifulSoup(nav_html, "html5lib").nav
         body.insert(0, nav_tag)
 
-        # 13. Mettre --tw-prose-pre-code et --tw-prose-pre-bg à 'null' pour tous les éléments <pre>
+        # 13. Set --tw-prose-pre-code et --tw-prose-pre-bg to 'null' for all <pre> element
         for pre in soup.find_all("pre"):
             style_attr = pre.get("style", "")
-            # Ajouter les nouveaux styles tout en conservant les styles existants
+            # Add new styles while keeping the old ones
             new_style = " --tw-prose-pre-code: null; --tw-prose-pre-bg: null;"
             pre["style"] = style_attr + new_style
 
-        # 14. Mettre en forme le texte
+        # 14. Format Text
         main = soup.find("main")
         if main:
-            for p in main.find_all("p"):  # Ne trouve que les <p> directement dans <main>
+            for p in main.find_all("p"):  # Only format <p> directly in <main>
                 p["class"] = (
                     "prose lg:prose-lg !w-full max-w-[40em] prose-stone dark:prose-invert max-w-[40em]  mb-4"
                 )
@@ -269,7 +289,7 @@ def modify_html(folder_path: Path, filename, output_name):
                     code["class"] = "p-1 text-pink-700 dark:text-pacific-blue-500 shadow-inner text-nowrap"
             for table in main.find_all(
                 "table", recursive=False
-            ):  # Ne trouve que les table directement dans <main>
+            ):  # only find table directly in <main>
                 table.parent["class"] = "prose-sm lg:prose-base prose-stone dark:prose-invert"
                 for code in table.find_all("code"):
                     code["class"] = "p-1 text-pink-700 shadow-inner dark:text-pacific-blue-500 "
@@ -295,6 +315,7 @@ def modify_html(folder_path: Path, filename, output_name):
                             author_span.insert_after(p_rest)
             footnotes = main.find_all("a", {"class": "footnote-ref"})
             if footnotes:
+                # Add the scroll and "focus" effect when going back to a reference
                 fn_script = soup.new_tag("script", src="../js/scroll_back_footnote.js")
                 body.append(fn_script)
                 top_highlighter = soup.new_tag("div")
@@ -305,11 +326,26 @@ def modify_html(folder_path: Path, filename, output_name):
                 bot_highlighter["id"] = "highlightBot"
                 main.append(top_highlighter)
                 main.append(bot_highlighter)
+                # Separate the footnote section
+                footnote_section = main.find("section", {"id": "footnotes"})
+                footnote_section["class"].extend(["shadow-inner", "px-2", "mt-28", "border-t", "border-pacific-blue-600", "max-w-[40rem]"])
+                footnote_texts = footnote_section.find_all("li")
+                for text in footnote_texts:
+                    text["class"] = "footnote relative before:hidden before:absolute before:content-[''] before:w-1 before:h-full before:bg-pacific-blue-600/25 dark:before:bg-pink-400/40 before:-left-6 before:top-0"
             for footnote in footnotes:
-                footnote["class"].extend(["!no-underline", "group-hover:scale-110", "transition-all", "inline-block", "group"])
+                # Style the footnote links
+                footnote["class"].extend(["!no-underline", "transition-all", "inline-block", "group"])
                 sups = footnote.find_all("sup")
                 for sup in sups:
-                    sup["class"] = "rounded-full border border-pacific-blue-600 dark:border-pink-400 px-[0.35rem] pt-[0.1rem] shadow-sm font-semibold shadow-pacific-blue-600 dark:shadow-pink-800/65 m-1 transition-all -top-[0.65rem] group-hover:-top-2 text-base"
+                    sup_container = soup.new_tag("span")
+                    sup_container["class"] = "text-center items-center justify-center inline-flex relative rounded-full border border-pacific-blue-600 dark:border-pink-400 pt-2 px-1 pb-[0.4rem] inline-block h-[1.1rem] min-w-4 shadow-sm !font-semibold shadow-pacific-blue-600 dark:shadow-pink-800/65 transition-all -top-2 group-hover:-top-[0.35rem] text-base"
+                    sup["class"] = "text-base leading-none align-baseline static"
+                    sup.wrap(sup_container)
+            # Style the back to footnotes link
+            footnotes_back = main.find_all("a", {"class": "footnote-back"})
+            for footnote_back in footnotes_back:
+                footnote_back["class"] = "footnote-back relative -top-[0.2rem] rounded-full border border-pacific-blue-600 dark:border-pink-400 px-1 pb-0 h-6 w-6 inline-block !no-underline font-semibold align-middle ml-5"
+                footnote_back["class"] += " before:content-[''] before:h-[1px] before:w-[70%] before:block before:absolute before:bg-pacific-blue-600 dark:before:bg-pink-400 before:-left-[70%] before:top-1/2"
         sections = soup.find_all("section")
         if sections:
             for section in sections:
@@ -317,6 +353,7 @@ def modify_html(folder_path: Path, filename, output_name):
                     "p", recursive=False
                 ):  # Ne trouve que les <p> directement dans une section
                     p["class"] = "prose lg:prose-lg !w-full prose-stone  dark:prose-invert max-w-[40rem] mb-4"
+
         # 15. Subtitle
         for p in soup.find_all(
             "p", string=lambda text: text and text.startswith("|") and text.endswith("|")
