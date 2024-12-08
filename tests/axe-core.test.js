@@ -46,30 +46,33 @@ const fs = require('fs');
 
 		// Run axe-core accessibility checks
 		const result = await page.evaluate(() => axe.run());
-		results.push({ page: pagePath, violations: result.violations });
-
 		logToFile(`Checked: ${pagePath}`);
 		if (result.violations.length > 0) {
 			logToFile(`Violations found on ${pagePath}:`);
 			console.log(`Violations found on ${pagePath}`);
-			for (var i = 0; i < result.violations.length; i++) {
-				if (result.violations[i].id == 'color-contrast') {
+			const filteredIssues = result.violations.filter((issue) => {
+				if (issue.id == 'color-contrast') {
+					logToFile(`-> Color Contrast warning: ${issue.nodes}`);
 					// I ignore contrast violations as it doesn't take into account media queries
 					// I found no syntax highlighting style that gave a great contrast (and the closest one were awful)
 					// A prefer-contrast media query is included to fix that.
 					// All other issues are checked manually with firefox dev tools, and google page speed.
 					// As the color themes shouldn't changes, there shouldn't be any problem !
-					logToFile(`Color Contrast warning: ${result.violations[i].nodes.length} nodes`);
-					result.violations.splice(i, 1);
+					return false;
 				} else {
-					logToFile(JSON.stringify(result.violations[i], null, 2));
+					logToFile(
+						`-> ${issue.id}: ${issue.description}\n --> at ${issue.nodes} (${issue.impact})`,
+					);
+					return true; // Include all other issues
 				}
-			}
+			});
+			console.log(filteredIssues);
+			results.push({ page: pagePath, violations: filteredIssues });
 		}
 	}
 
 	await browser.close();
-
+	console.log(results);
 	// Fail the test if there are any violations
 	const totalViolations = results.reduce((sum, r) => sum + r.violations.length, 0);
 	if (totalViolations > 0) {

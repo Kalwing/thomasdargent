@@ -153,6 +153,7 @@ def modify_html(folder_path: Path, filename, output_name):
                     " ".join(source_code["class"])
                     + " overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
                 ).split(" ")
+                source_code["tabindex"] = 0
             if (
                 source_code.parent.name == "div"
                 and not source_code.find_parent(class_="sourceCode")
@@ -168,6 +169,7 @@ def modify_html(folder_path: Path, filename, output_name):
                     " ".join(source_code["class"])
                     + " !mt-0  overflow-auto !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
                 ).split(" ")
+                source_code["tabindex"] = 0
             if source_code.parent.name == "section":
                 source_code["class"] = ("mb-4").split(" ")
         for code_filename in soup.find_all(class_="code-with-filename-file"):
@@ -184,6 +186,8 @@ def modify_html(folder_path: Path, filename, output_name):
                 " ".join(cell["class"])
                 + " overflow-auto  !max-w-[40rem] bg-gray-900 dark:bg-gray-1000 text-sm lg:text-base mb-8 mt-4 p-2 py-4 shadow-gray-1000 dark:shadow-gray-700 shadow-punk border border-gray-900 dark:border-gray-700"
             )
+            for cell_code in cell.find_all(class_='cell-code'):
+                cell_code["tabindex"] = 0
 
         # 9. Style "cell-output"
         for cell_output in soup.find_all(class_="cell-output"):

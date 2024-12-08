@@ -18,63 +18,65 @@
 	</head>
 	<body
 		class="electrolize-regular h-screen w-screen min-w-40 overflow-x-hidden bg-gray-1000 text-pacific-blue-100">
-		<main
-			class="relative mx-auto flex h-full w-full flex-col items-center justify-center overflow-x-hidden"
-			style="
-				background: radial-gradient(
-						ellipse 120% 80% at bottom,
-						rgb(225 246 249 / 0.3) 0%,
-						rgb(23 161 197 / 0.1) 40%,
-						rgb(29 29 29 / 0.8) 70%
-					)
-					no-repeat;
-				background-position: 0% 100%;
-				animation: pulse 10s ease-in infinite;
-			">
-			<h1
-				class="translate-y-2 border border-t-2 border-pacific-blue-600 bg-gradient-to-t from-pacific-blue-600/20 via-pacific-blue-900/70 to-pacific-blue-500/20 p-2">
-				Heard at the Citadel:
-			</h1>
+		<main>
 			<div
-				id="quote-container"
-				class="sf-corner relative isolate z-20 max-w-[40rem] border border-pacific-blue-600 bg-gradient-to-t from-pacific-blue-500/30 via-pacific-blue-900/50 to-pacific-blue-500/20 px-4 py-10 after:absolute after:-bottom-[16px] after:-right-4 after:block after:h-[34px] after:w-[33px] after:rotate-45 after:border-2 after:border-pacific-blue-500 after:bg-gray-1000 after:content-[''] sm:px-16 sm:after:-bottom-[34px] sm:after:-right-8 sm:after:h-[68px] sm:after:w-[66px]">
-				<blockquote
-					class="mx-auto border border-gray-1000 bg-gradient-to-t from-gray-900 to-gray-1000/80 p-4 shadow-inner [&>div:nth-child(odd)_span]:border-pacific-blue-300 [&>div:nth-child(odd)_span]:bg-pacific-blue-900/75 [&>div:nth-child(odd)_span]:text-pacific-blue-300">
-					{% for line in quote.lines %}
-					<div class="[&+div]:mt-4">
-						{% if line.author %}
-						<span
-							class="author relative -left-8 -top-1 border border-pink-400/80 bg-pink-950/60 px-2 py-1 text-gray-200"
-							>{{ line.author }}:</span
-						><br />
-						{% endif %}
-						<div class="quote">{{ line.quote|safe }}</div>
-					</div>
-					{% endfor %}
-				</blockquote>
+				class="relative mx-auto flex h-full w-full flex-col items-center justify-center overflow-x-hidden"
+				style="
+					background: radial-gradient(
+							ellipse 120% 80% at bottom,
+							rgb(225 246 249 / 0.3) 0%,
+							rgb(23 161 197 / 0.1) 40%,
+							rgb(29 29 29 / 0.8) 70%
+						)
+						no-repeat;
+					background-position: 0% 100%;
+					animation: pulse 10s ease-in infinite;
+				">
+				<h1
+					class="translate-y-2 border border-t-2 border-pacific-blue-600 bg-gradient-to-t from-pacific-blue-600/20 via-pacific-blue-900/70 to-pacific-blue-500/20 p-2">
+					Heard at the Citadel:
+				</h1>
+				<div
+					id="quote-container"
+					class="sf-corner relative isolate z-20 max-w-[40rem] border border-pacific-blue-600 bg-gradient-to-t from-pacific-blue-500/30 via-pacific-blue-900/50 to-pacific-blue-500/20 px-4 py-10 after:absolute after:-bottom-[16px] after:-right-4 after:block after:h-[34px] after:w-[33px] after:rotate-45 after:border-2 after:border-pacific-blue-500 after:bg-gray-1000 after:content-[''] sm:px-16 sm:after:-bottom-[34px] sm:after:-right-8 sm:after:h-[68px] sm:after:w-[66px]">
+					<blockquote
+						class="mx-auto border border-gray-1000 bg-gradient-to-t from-gray-900 to-gray-1000/80 p-4 shadow-inner [&>div:nth-child(odd)_span]:border-pacific-blue-300 [&>div:nth-child(odd)_span]:bg-pacific-blue-900/75 [&>div:nth-child(odd)_span]:text-pacific-blue-300">
+						{% for line in quote.lines %}
+						<div class="[&+div]:mt-4">
+							{% if line.author %}
+							<span
+								class="author relative -left-8 -top-1 border border-pink-400/80 bg-pink-950/60 px-2 py-1 text-gray-200"
+								>{{ line.author }}:</span
+							><br />
+							{% endif %}
+							<div class="quote">{{ line.quote|safe }}</div>
+						</div>
+						{% endfor %}
+					</blockquote>
+				</div>
+				<button
+					hx-get="{{ url_for('api.quote_giver', tag='mass_effect') }}"
+					hx-target="#quote-container"
+					hx-swap="innerHTML"
+					class="sf-corner-sm relative z-20 mt-4 border border-pacific-blue-600 bg-gradient-to-t from-pacific-blue-600/80 to-pacific-blue-900/70 px-4 py-2 transition-all hover:-translate-y-[2px] hover:scale-105">
+					Explore.
+				</button>
 			</div>
-			<button
-				hx-get="{{ url_for('api.quote_giver', tag='mass_effect') }}"
-				hx-target="#quote-container"
-				hx-swap="innerHTML"
-				class="sf-corner-sm relative z-20 mt-4 border border-pacific-blue-600 bg-gradient-to-t from-pacific-blue-600/80 to-pacific-blue-900/70 px-4 py-2 transition-all hover:-translate-y-[2px] hover:scale-105">
-				Explore.
-			</button>
+			<div class="absolute bottom-0 left-0 right-0 top-0 overflow-hidden">
+				<img
+					src="../../public/img/mass_effect/me_normandy.webp"
+					class="absolute hidden max-h-16 rotate-[25deg] opacity-90"
+					hidden="true"
+					alt="The Normandy SR-2"
+					id="normandy" />
+				<img
+					src="../../public/img/mass_effect/me_hamster.webp"
+					class="absolute hidden h-16 opacity-90"
+					hidden="true"
+					alt="Shepard's hamster"
+					id="hamster" />
+			</div>
 		</main>
-		<div class="absolute bottom-0 left-0 right-0 top-0 overflow-hidden">
-			<img
-				src="../../public/img/mass_effect/me_normandy.webp"
-				class="absolute hidden max-h-16 rotate-[25deg] opacity-90"
-				hidden="true"
-				alt="The Normandy SR-2"
-				id="normandy" />
-			<img
-				src="../../public/img/mass_effect/me_hamster.webp"
-				class="absolute hidden h-16 opacity-90"
-				hidden="true"
-				alt="Shepard's hamster"
-				id="hamster" />
-		</div>
 	</body>
 	<style>
 		.electrolize-regular {

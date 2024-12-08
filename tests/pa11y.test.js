@@ -40,7 +40,6 @@ const { assert } = require('console');
 		const result = await pa11y(pagePath);
 
 		logToFile(`Checked: ${pagePath}`);
-		const to_delete = [];
 		if (result.issues.length > 0) {
 			logToFile(`Violations found on ${pagePath}:`);
 			console.log(`Violations found on ${pagePath}`);
