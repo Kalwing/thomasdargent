@@ -151,4 +151,25 @@
 			transform: translate(-50%, -50%) scale(1); /* End at full size */
 		}
 	}
+
+	.welcome {
+		animation: colorShift 2s infinite;
+		font-weight: bolder;
+		display: inline-block;
+	}
+
+	@keyframes colorShift {
+		0% {
+			@apply text-pacific-blue-500;
+			transform: translateY(0);
+		}
+		50% {
+			@apply text-pink-600;
+			transform: translateY(-0.5rem);
+		}
+		100% {
+			@apply text-pacific-blue-500;
+			transform: translateY(0);
+		}
+	}
 }
