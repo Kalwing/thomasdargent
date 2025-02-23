@@ -893,7 +893,7 @@
 		"lines": [
 			{
 				"author": "Grunt",
-				"quote": "We'll push our ennemies to the edge of space, then steps on their fingers one at a time until the void takes them."
+				"quote": "We'll push our enemies to the edge of space, then steps on their fingers one at a time until the void takes them."
 			}
 		],
 		"tag": "mass_effect"
@@ -1130,7 +1130,7 @@
 	{
 		"lines": [
 			{
-				"author": "James",
+				"author": "James Vega",
 				"quote": "You need to cut yourself some slack. Whatever it takes to get that data back from Cerberus, we're behind you."
 			}
 		],
@@ -1185,7 +1185,7 @@
 		"lines": [
 			{
 				"author": "Shepard",
-				"quote": "You want me to sit there and watch you cook ?"
+				"quote": "You want me to sit there and watch you cook?"
 			},
 			{
 				"author": "Kaidan Alenko",
@@ -1229,7 +1229,7 @@
 		"lines": [
 			{
 				"author": "Jack",
-				"quote": "Oh that's just fuckin perfect. Did it occurs to you that maybe I'm trying to grow as a goddamn person?"
+				"quote": "Oh that's just fuckin perfect. Did it occur to you that maybe I'm trying to grow as a goddamn person?"
 			}
 		],
 		"tag": "mass_effect"
@@ -2274,10 +2274,10 @@
 		"lines": [
 			{
 				"author": "Mikhail Bakunin",
-				"quote": "The urge to destory is a creative urge."
+				"quote": "The urge to destroy is a creative urge."
 			}
 		],
-		"tag": "political"
+		"tag": "basic"
 	},
 	{
 		"lines": [
@@ -3235,7 +3235,7 @@
 		"lines": [
 			{
 				"author": "Jack Kerouak",
-				"quote": "I have nothing to offer anyone  except my own confusion."
+				"quote": "I have nothing to offer anyone except my own confusion."
 			}
 		],
 		"tag": "basic"
@@ -3561,7 +3561,10 @@
 	},
 	{
 		"lines": [
-			{ "author": "Spider-punk", "quote": "\"Taking a crap on the establishment. I salute you.\"" }
+			{
+				"author": "Spider-punk",
+				"quote": "\"Taking a crap on the establishment. I salute you.\""
+			}
 		],
 		"tag": "spiderman"
 	},
@@ -3584,7 +3587,12 @@
 		"tag": "mass_effect"
 	},
 	{
-		"lines": [{ "author": "Thane", "quote": "Removing evil isn't the same as creating good" }],
+		"lines": [
+			{
+				"author": "Thane",
+				"quote": "Removing evil isn't the same as creating good."
+			}
+		],
 		"tag": "mass_effect"
 	},
 	{
@@ -3714,7 +3722,12 @@
 		"tag": "lyric"
 	},
 	{
-		"lines": [{ "author": "NoFX", "quote": "I had a garden but my flowers died of negligence." }],
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "I had a garden but my flowers died of negligence."
+			}
+		],
 		"tag": "lyric"
 	},
 	{
@@ -4636,5 +4649,214 @@
 		],
 		"tag": "date",
 		"date": "* 18/01/*"
+	},
+	{
+		"lines": [
+			{
+				"author": "NoFX",
+				"quote": "Enjoy Christmas 'cause it's your last \\n No shopping sprees \\n No more presents under dead trees \\n St Nick is dead but we don't grieve \\n We celebrate the last Christmas eve!"
+			}
+		],
+		"tag": "date",
+		"date": "* 24/12/*"
+	},
+	{
+		"lines": [
+			{
+				"author": "Leonard Cohen",
+				"quote": "There's a crack in everything, that's how the light gets in."
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "Philip Pullman",
+				"quote": "After nourishment, shelter and companionship, stories are the thing we need most in the world."
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "C.S. Lewis",
+				"quote": "I sat with my anger long enough until she told me her real name was grief"
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "@hotgirlhala",
+				"quote": "this does not help your cause - guy who hates you and your cause"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Tag",
+				"quote": "La retraite a 60 ans et le kebab a 5€"
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "J. E. Buchrose",
+				"quote": "Happiness comes more from loving than being loved; and often when our affection seems wounded it is only our vanity bleeding. To love, and to be hurt often, and to love again - this is the brave and happy life."
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "Shepard",
+				"quote": "They say it's a suicide mission. I intend to prove them wrong."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Wrex Urdnot",
+				"quote": "I can throw a few Salarians off a cliff if it'll make you feel better."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Grunt",
+				"quote": "I don't need luck. I have ammo."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Samara",
+				"quote": "I serve a code stronger and deeper then any feelings."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Admiral Hackett",
+				"quote": "Then build alliances! Gather everything and everyone you can for the cause."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Ashley Williams",
+				"quote": "Well I've got only one life,but I'll make damn sure the Reapers know my name by the end of it."
+			}
+		],
+		"tag": "mass_effect"
+	},
+	{
+		"lines": [
+			{
+				"author": "Bruce Lee",
+				"quote": "To know oneself is to study oneself in action with another person."
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "Budd Schulberg",
+				"quote": "Isn't everyone a part of everyone else?"
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "Ursula K. LeGuin",
+				"quote": "We live in capitalism. Its power seems inescapable. So did the divine right of kings."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Ursula K. LeGuin",
+				"quote": "Any human power can be resisted and changed by human beings."
+			}
+		],
+		"tag": "political"
+	},
+	{
+		"lines": [
+			{
+				"author": "Ursula K. LeGuin",
+				"quote": "Resistance and change often begin in art."
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "@TheBonkQueen",
+				"quote": "RIP to everyone killed by the gods for their hubris but I'm different. and better. maybe even better than the gods"
+			}
+		],
+		"tag": "meme"
+	},
+	{
+		"lines": [
+			{
+				"author": "Geralt",
+				"quote": "The trail will test you. Force you to move beyond the pain, the fear, the failure. Until you become one with the killer itself. Remember, hesitation will draw  danger to you likee fire. But trust the path you choose...  and it will protect you. Even in darkness. As long as you listen. Always listen."
+			}
+		],
+		"tag": "movie"
+	},
+	{
+		"lines": [
+			{
+				"author": "Dostoevsky",
+				"quote": "your worst sin is that you have destroyed and betrayed yourself for -nothing-"
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "",
+				"quote": "Life is not about what you deserve, It's about how you deal with what you get"
+			}
+		],
+		"tag": "basic"
+	},
+	{
+		"lines": [
+			{
+				"author": "",
+				"quote": "Shepard."
+			}
+		],
+		"tag": "date",
+		"date": "* 07/11/*"
 	}
 ]
