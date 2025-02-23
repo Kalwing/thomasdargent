@@ -5,7 +5,10 @@ const fs = require('fs');
 
 (async () => {
 	const pages_path = JSON.parse(readFileSync(path.resolve(__dirname, 'pages.json'), 'utf-8'));
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({
+		headless: true,
+		args: [`--no-sandbox``--disable-setuid-sandbox`],
+	});
 	const results = [];
 	const pages = [];
 	const logFilePath = path.resolve(__dirname, 'axe-core.accessibility.log');
