@@ -37,7 +37,11 @@ const { assert } = require('console');
 	console.log('Pages to Test:', pages);
 
 	for (const pagePath of pages) {
-		const result = await pa11y(pagePath);
+		const result = await pa11y(pagePath, {
+			chromeLaunchConfig: {
+				args: [`--no-sandbox`, `--disable-setuid-sandbox`],
+			},
+		});
 
 		logToFile(`Checked: ${pagePath}`);
 		if (result.issues.length > 0) {
